@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": "resource/js",
+      "paths": {
+        "@/*": ["*"]
+      }
+    },
+    "include": ["resource/js"]
+  }
+  
