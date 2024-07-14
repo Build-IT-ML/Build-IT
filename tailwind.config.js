@@ -15,12 +15,12 @@ export default {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'primary': "#0D79B9",
-        'secondary': "#1D4489",
-        "linear-blue": "#121B75",
-        "blue-lagoon": "#1E96C8",
-        "cloud-blue": "#96D8E8",
-        "white-blue": "#D6F0F6",
+        'primary': "#257F80",
+        'secondary': "#75C9BF",
+        'primer': '#B3ECEC',
+        'black': "#000000",
+        'white': '#FFFFFF',
+        'gradient-background': 'linear-gradient(to top, #257F80, #75C9BF)',
       },
       fontSize: {
         '3xl': '1.953rem',
@@ -29,6 +29,7 @@ export default {
         '6xl': '3.441rem',
         '7xl': '4.052rem',
         '8xl': '4.441rem',
+        '9xl': '5.052rem',
       },
       lineHeight: {
         '11': '2.6rem',
