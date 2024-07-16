@@ -4,13 +4,15 @@ import { Button } from 'primereact/button';
 import DisableInspect from '@/Utils/disableInspect';
 import Modal from "@/Libs/ModalsDialog";
 
+import Navbar from "../Components/Navbar";
+
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
 
-    useEffect(() => {
-        const cleanup = DisableInspect();
-        return () => cleanup();
-    }, []);
+    // useEffect(() => {
+    //     const cleanup = DisableInspect();
+    //     return () => cleanup();
+    // }, []);
 
     const showModal = () => {
         setModalVisible(true);
@@ -30,6 +32,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Landing Page" />
+            <Navbar/>
             <div className="flex flex-col items-center gap-3 justify-center pt-28 overflow-x-hidden h-screen w-full">
                 <h1 className="text-slate-800 text-4xl font-bold">Coba Di Click 🚀</h1>
 
