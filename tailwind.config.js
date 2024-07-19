@@ -12,7 +12,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        // sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         'primary': "#257F80",
