@@ -10,7 +10,6 @@ import 'primeicons/primeicons.css';
 import Tailwind from 'primereact/passthrough/tailwind';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
 import '@fontsource/poppins';
 
 
