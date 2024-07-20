@@ -22,3 +22,21 @@ Route::get('/', function () {
 
     ]);
 })->name('Welcome');
+
+Route::get('/modul/alprog', function () {
+    return Inertia::render("Modul/Alprog", [
+
+    ]);
+})->name('Modul/Alprog');
+
+Route::get('/modul/basisData', function () {
+    return Inertia::render("Modul/BasisData", [
+
+    ]);
+})->name('Modul/BasisData');
+
+Route::get('/modul/jarkom', function () {
+    return Inertia::render("Modul/Jarkom", [
+
+    ]);
+})->name('Modul/Jarkom');

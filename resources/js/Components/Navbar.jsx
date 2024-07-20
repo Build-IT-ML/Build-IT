@@ -28,7 +28,7 @@ export default function Navbar(){
     return(
         <nav className={`bg-white w-full flex justify-between items-center px-24 py-4 sticky z-20 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
             <span>
-                <img src="asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
+                <img src="../asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
             </span>
             <ul className={` ${!showNav ? "hidden" : "flex"} flex-col justify-center md:w-max-content rounded bg-white top-20 left-12 right-12 border-[1px] border-gray-300 py-6 px-4 md:px-12 space-y-3 absolute shadow  text-primary z-10 md:flex md:relative md:flex-row md:items-center md:top-0 md:space-y-0 md:space-x-6 md:left-0 md:right-0 md:py-0 md:border-none md:shadow-none`}>
                 <li className="">

@@ -40,7 +40,7 @@ export default function Footer() {
     <>
       <footer className="p-12 px-24 space-y-10 md:space-y-0 text-white bg-primary flex flex-wrap justify-between">
         <aside className="w-full md:w-2/4">
-          <img src="asset/images/footer-logo.png" className="" alt="Build-IT 2024" />
+          <img src="../asset/images/footer-logo.png" className="" alt="Build-IT 2024" />
           <p className="capitalize mt-5 w-[450px] my-4">
             empowering students to shape the next generation of information technology
           </p>
