@@ -36,10 +36,15 @@ export default function Welcome() {
         <>
             <Head title="Landing Page" />
             <Navbar/>
-                <div className="">
-                    <div className="h-max w-max px-24">
+                <div className="w-full overflow-hidden">
+                    <img
+                        src="asset/images/banner-landing.png"
+                        alt="banner"
+                        className="absolute z-0 w-screen object-center rounded-none h-[800px] md:h-full object-cover opacity-20"
+                    />
+                    <div className="h-max w-full px-6 md:px-24 z-20">
                         <div className="flex justify-between mb-5">
-                            <div className="flex flex-col mt-20 mb-5 w-1/2">
+                            <div className="flex flex-col mt-20 mb-5 w-full z-10">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3">Offline Course</p>
                                     <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-[494px] mt-5">
@@ -51,10 +56,10 @@ export default function Welcome() {
                                     <Button className="text-primary text-[14px] font-bold leading-[22px] tracking-[0.02em] border-primary border-2 w-[163px] h-[52px] rounded-[5px] flex justify-center text-center hover:bg-secondary">Register Now</Button>
                                 </div>
                             </div>
-                            <div className="right-side mt-16 w-1/2">
-                                <div className="static ml-32">
+                            <div className="w-full right-side mt-16">
+                                <div className="static">
                                     <div
-                                    className="relative left-[80px] top-[0] animate-bounce-custom animate-pulse"
+                                    className="relative left-[80px] top-[0] animate-bounce-custom"
                                     alt="gambar"
                                     >
                                         <IconKotakTop />
@@ -64,29 +69,29 @@ export default function Welcome() {
                                         <img
                                             src="asset/images/landing-page/image-1.png"
                                             alt="gambar"
-                                            className="max-w-[500px] h-[240px] rounded-[10px] object-cover absolute top-[-30px] left-[150px] z-[2]"
+                                            className="max-w-full h-[240px] rounded-[10px] object-cover absolute top-[-30px] left-[150px] z-[2]"
                                         />
                                         {/* image2.png */}
                                         <img
                                             src="asset/images/landing-page/image-2.png"
                                             alt="gambar"
-                                            className="max-w-[500px] h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[40px] z-[4]"
+                                            className="max-w-full h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[40px] z-[4]"
                                         />
                                         {/* image3.png */}
                                         <img
                                             src="asset/images/landing-page/image-3.png"
                                             alt="gambar"
-                                            className="max-w-[500px] h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[395px] z-[4]"
+                                            className="max-w-full h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[395px] z-[4]"
                                         />
                                         <div
                                             alt="gambar"
-                                            className="max-w-[570px] h-[445px] relative bottom-[80px] left-[400px] animate-pulse animate-bounce-custom"
+                                            className="max-w-full h-[445px] relative bottom-[80px] left-[380px] animate-bounce-custom"
                                         >
                                             <IconKotakCenter /> 
                                         </div>
                                     </div>
                                     <div
-                                        className="flex relative bottom-[50px] left-[200px] animate-pulse animate-bounce-custom"
+                                        className="flex relative bottom-[50px] left-[200px] animate-bounce-custom"
                                         width={40}
                                         height={40}
                                     >
@@ -96,8 +101,9 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-                        {/* 3 card */}
-                    <div className="px-24 py-10 bg-gradient-to-t from-secondary to-primary flex justify-between overflow-hidden h-full md:h-max">
+
+                    {/* 3 card */}
+                    <div className="px-24 py-10 bg-gradient-to-t from-secondary to-primary flex justify-between     h-full md:h-max z-50">
                         <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col">
                             <IconHouseOffline />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
