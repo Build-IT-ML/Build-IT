@@ -84,15 +84,15 @@ export const IconKotakTop = () => {
 
 export const IconKotakCenter = () => {
     return(
-        <svg width="403" height="541" viewBox="0 0 403 541" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.49829 206.541C-4.06117 192.355 0.5003 173.915 14.6866 165.356L281.29 4.49835C295.476 -4.06112 313.915 0.500371 322.475 14.6867L515.23 334.156C523.789 348.342 519.228 366.782 505.041 375.341L238.438 536.199C224.252 544.758 205.813 540.197 197.253 526.01L4.49829 206.541Z" fill="url(#paint0_linear_161_362)"/>
-            <defs>
-            <linearGradient id="paint0_linear_161_362" x1="147.988" y1="84.9272" x2="371.74" y2="455.77" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#257F80"/>
-            <stop offset="1" stop-color="#75C9BF"/>
-            </linearGradient>
-            </defs>
-        </svg>
+    <svg width="520" height="541" viewBox="0 0 520 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.49829 206.541C-4.06117 192.355 0.5003 173.915 14.6866 165.356L281.29 4.49835C295.476 -4.06112 313.915 0.500371 322.475 14.6867L515.23 334.156C523.789 348.342 519.228 366.782 505.041 375.341L238.438 536.199C224.252 544.758 205.813 540.197 197.253 526.01L4.49829 206.541Z" fill="url(#paint0_linear_161_362)"/>
+        <defs>
+        <linearGradient id="paint0_linear_161_362" x1="147.988" y1="84.9272" x2="371.74" y2="455.77" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#257F80"/>
+        <stop offset="1" stop-color="#75C9BF"/>
+        </linearGradient>
+        </defs>
+    </svg>
     );
 }
 
