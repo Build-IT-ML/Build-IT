@@ -35,15 +35,14 @@ export default function Welcome() {
     return (
         <>
             <Head title="Landing Page" />
-            <Navbar/>
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
                         alt="banner"
-                        className="absolute z-0 w-screen object-center rounded-none h-[800px] md:h-full object-cover opacity-20"
+                        className="absolute z-0 w-screen object-center rounded-none h-[620px] object-cover opacity-20"
                     />
-                    <div className="h-max w-full px-6 md:px-24 z-20">
-                        <div className="flex justify-between mb-5">
+                    <div className="h-max w-full px-6 md:px-24">
+                        <div className="flex justify-between mb-5 z-20">
                             <div className="flex flex-col mt-20 mb-5 w-full z-10">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3">Offline Course</p>
                                     <IconBuiltIT />
@@ -328,9 +327,7 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-
                 </div>
-            <Footer/>
         </>
     );
 }
