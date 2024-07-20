@@ -26,7 +26,7 @@ export default function Navbar(){
 
 
     return(
-        <nav className={`bg-white w-full flex justify-between items-center px-12 py-4 fixed top-0 ${scrolled ? "shadow" : "shadow-sm"}`}>
+        <nav className={`bg-white w-full flex justify-between items-center px-24 py-4 sticky z-20 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
             <span>
                 <img src="asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
             </span>
@@ -50,7 +50,7 @@ export default function Navbar(){
                     <a href="#">Merchandise</a>
                 </li>
                 <li>
-                    <a href="#" rel="noopener noreferrer" className="block md:hidden w-fit py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
+                    <a href="#" rel="noopener noreferrer" className="w-[120px] h-[52px] block md:hidden w-fit py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
                         Login
                     </a>
                 </li>
