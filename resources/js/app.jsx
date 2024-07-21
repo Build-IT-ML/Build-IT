@@ -11,6 +11,8 @@ import Tailwind from 'primereact/passthrough/tailwind';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 import 'primereact/resources/primereact.min.css';
 import '@fontsource/poppins';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 
 
@@ -22,7 +24,9 @@ createInertiaApp({
         root.render(
             <>
                 <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
+                    <Navbar/>
                     <App {...props} />
+                    <Footer/>
                 </PrimeReactProvider>
             </>
         );
