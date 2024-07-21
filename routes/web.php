@@ -29,7 +29,7 @@ Route::get('/modul/alprog', function () {
     ]);
 })->name('Modul/Alprog');
 
-Route::get('/modul/basisData', function () {
+Route::get('/modul/basisdata', function () {
     return Inertia::render("Modul/BasisData", [
 
     ]);
@@ -40,3 +40,19 @@ Route::get('/modul/jarkom', function () {
 
     ]);
 })->name('Modul/Jarkom');
+
+Route::get('/login', function () {
+    return Inertia::render("Login", [
+
+    ]);
+})->name('Login');
+
+Route::get('/register', function () {
+    return Inertia::render("Daftar", [
+
+    ]);
+})->name('Daftar');
+
+Route::fallback(function () {
+    return Inertia::render('not-found');
+})->name('not-found');
