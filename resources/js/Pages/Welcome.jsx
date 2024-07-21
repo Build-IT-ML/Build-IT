@@ -180,7 +180,7 @@ export default function Welcome() {
                                         menyelesaikan suatu masalah.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                                        <a href="modul/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
                                             <ArrowRight />
@@ -200,7 +200,7 @@ export default function Welcome() {
                                         untuk memudahkan akses.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                                        <a href="modul/basisData" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
                                             <ArrowRight />
@@ -220,7 +220,7 @@ export default function Welcome() {
                                         saling terhubung untuk berbagi sumber.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                                        <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
                                             <ArrowRight />
