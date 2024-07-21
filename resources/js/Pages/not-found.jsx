@@ -4,6 +4,7 @@ import { Logo404, LogoBuild } from "../Components/Icons/404";
 export default function Custom404() {
   return (
     <>
+        <Head title="404" />
       <div className="animate-bounce absolute my-8 m-4 top-0 right-0 pt-24">
         <LogoBuild/>
       </div>
