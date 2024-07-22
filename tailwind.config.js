@@ -43,6 +43,15 @@ export default {
         '18': '4rem',
         '19': '4.2rem',
       },
+      animation: {
+        "bounce-custom": 'bounce-custom 4s ease-in-out infinite',
+      },
+      keyframes: {
+        "bounce-custom": {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(15px)' },
+        },
+      },
     },
   },
   plugins: [],
