@@ -18,7 +18,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render("Welcome", [
-
-    ]);
+    return Inertia::render("Welcome", []);
 })->name('Welcome');
+
+Route::get('/login', function () {
+    return Inertia::render("Auth/Login");
+})->name("login");

@@ -5,8 +5,8 @@ import DisableInspect from '@/Utils/disableInspect';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
 
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);

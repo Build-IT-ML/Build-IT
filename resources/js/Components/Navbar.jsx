@@ -26,18 +26,18 @@ export default function Navbar(){
 
 
     return(
-        <nav className={`bg-white w-full flex justify-between items-center px-12 py-4 fixed top-0 ${scrolled ? "shadow" : "shadow-sm"}`}>
+        <nav className={`bg-white w-full flex justify-between items-center px-12 py-4 fixed top-0 z-[9] ${scrolled ? "shadow" : "shadow-sm"}`}>
             <span>
                 <img src="asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
             </span>
-            <ul className={` ${!showNav ? "hidden" : "flex"} flex-col justify-center md:w-max-content rounded bg-white top-20 left-12 right-12 border-[1px] border-gray-300 py-6 px-4 md:px-12 space-y-3 absolute shadow  text-primary z-10 md:flex md:relative md:flex-row md:items-center md:top-0 md:space-y-0 md:space-x-6 md:left-0 md:right-0 md:py-0 md:border-none md:shadow-none`}>
+            <ul className={` ${!showNav ? "hidden" : "flex"} flex-col justify-center md:w-max-content rounded bg-white top-20 left-12 right-12 border border-gray-300 py-6 px-4 md:px-12 space-y-3 absolute shadow  text-primary z-10 md:flex md:relative md:flex-row md:items-center md:top-0 md:space-y-0 md:space-x-6 md:left-0 md:right-0 md:py-0 md:border-none md:shadow-none`}>
                 <li className="">
                     <a href="#">Home</a>
                 </li>
                 <li className="space-x-1 relative">
                     <a href="#">Modul Pelatihan</a>
                     <i className={`pi  ${!show ? "pi-angle-down" : "pi-angle-up"} cursor-pointer transition-all duration-300`} onClick={showDropDown}></i>
-                    <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
+                    <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
                         <a href="#">Algoritma & Pemrograman</a>
                         <a href="#">Basis Data</a>
                         <a href="#">Jaringan Komputer & Komunikasi</a>
