@@ -15,16 +15,17 @@ import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOf
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [openIndex, setOpenIndex] = useState(null);
+    const [imageSrc, setImageSrc] = useState('asset/images/landing-page/merch-front.png');
 
+    const handleAccordionClick = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
     // useEffect(() => {
     //     const cleanup = DisableInspect();
     //     return () => cleanup();
     // }, []);
 
-    const toggleAccordion = () => {
-      setIsOpen(!isOpen);
-    };
 
     const showModal = () => {
         setModalVisible(true);
@@ -112,7 +113,7 @@ export default function Welcome() {
 
                     {/* 3 card */}
                     <div className="px-24 py-10 bg-gradient-to-t from-secondary to-primary flex justify-between     h-full md:h-max z-50">
-                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col">
+                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110">
                             <IconHouseOffline />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">
@@ -122,7 +123,7 @@ export default function Welcome() {
                                 Membantu mahasiswa baru memahami mata kuliah dasar di perkuliahan seperti algoritma & pemrograman, basis data, dan jaringan komputer
                             </p>
                         </div>
-                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col">
+                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110">
                             <IconBookSharing />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">
@@ -132,7 +133,7 @@ export default function Welcome() {
                                 Sharing Session ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
                             </p>
                         </div>
-                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col">
+                        <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110">
                             <IconHumanSharing />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">Sharing Session Hacktiv8</p>
@@ -176,71 +177,27 @@ export default function Welcome() {
                         </div>
 
                         <div className="mt-10 flex flex-row justify-around">
-                            <div className="border-primary rounded-[10px] shadow-md hover:">
-                                <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-alprog.png" alt="" className="w-[213px] h-[213px]"/>
-                                </div>
-                                <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
-                                    <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
-                                        Algoritma dan Pemrograman
-                                    </p>
-                                    <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk 
-                                        menyelesaikan suatu masalah.
-                                    </p>
-                                    <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="modul/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
-                                            Learn More
-                                        </a>
-                                            <ArrowRight />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="border-primary rounded-[10px] shadow-md">
-                                <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-basis-data.png" alt="" className="w-[213px] h-[213px]"/>
-                                </div>
-                                <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
-                                    <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
-                                        Basis Data
-                                    </p>
-                                    <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Basis data adalah kumpulan data yang terorganisir secara sistematis 
-                                        untuk memudahkan akses.
-                                    </p>
-                                    <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="modul/basisData" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
-                                            Learn More
-                                        </a>
-                                            <ArrowRight />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="border-primary rounded-[10px] shadow-md">
-                                <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-jaringan-komputer.png" alt="" className="w-[213px] h-[213px]"/>
-                                </div>
-                                <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
-                                    <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
-                                        Jaringan Komputer
-                                    </p>
-                                    <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
-                                        saling terhubung untuk berbagi sumber.
-                                    </p>
-                                    <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
-                                        <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
-                                            Learn More
-                                        </a>
-                                            <ArrowRight />
-                                    </button>
-                                </div>
-                            </div>
+                            <CardMatkul
+                                heading="Algoritma dan Pemrograman"
+                                description="Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk menyelesaikan suatu masalah."
+                                button="Learn More"
+                            />
+                            <CardMatkul
+                                heading="Basis Data"
+                                description="Basis data adalah kumpulan data yang terorganisir secara sistematis untuk memudahkan akses."
+                                button="Learn More"
+                            />
+                            <CardMatkul 
+                                heading="Jaringan Komputer"
+                                description="Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
+                                saling terhubung untuk berbagi sumber."
+                                button="Learn More"
+                            />
                         </div>
                     </div>
 
                     {/* Timeline Build IT */}
-                    <div className="px-24 mt-40 mb-96">
+                    <div className="px-24 mt-40 mb-36">
                         <div className="flex flex-col justify-center items-center z-10">
                             <h1 className="font-sans text-center font-bold text-primary text-[36px] tracking-widest">
                                 TIMELINE BUILD-IT 2024
@@ -339,46 +296,175 @@ export default function Welcome() {
 
                     {/* Faq */}
                     <div className="px-24">
+                        <div className="flex flex-col justify-center items-center mb-10">
+                            <h1 className="font-sans font-bold text-primary text-[36px] tracking-widest">
+                                FAQ
+                            </h1>
+                            <div className="divider h-[2px] w-[300px] bg-primary mt-2"></div>
+                        </div>
                         <div className="flex justify-between">
-                            <div className="w-1/2">
-                                <div className="border-b border-gray-200">
-                                <button
-                                    className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-                                    onClick={toggleAccordion}
-                                >
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-lg font-medium text-gray-900">test</span>
-                                        <svg
-                                            className={`w-6 h-6 transition-transform transform ${
-                                            isOpen ? 'rotate-180' : ''
-                                            }`}
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 9l-7 7-7-7"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
-                                {isOpen && (
-                                    <div className="px-4 py-2 text-gray-700">
-                                    waw
-                                    </div>
-                                )}
-                                </div>
+                            <div className="w-1/2 mt-20">
+                                <AccordionLanding 
+                                    heading="Apa itu Build IT-2024"
+                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    isOpen={openIndex === 0}
+                                    onClick={() => handleAccordionClick(0)}
+                                />
+                                <AccordionLanding
+                                    heading="Apakah ada kakak cantik yang ngajar?"
+                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    isOpen={openIndex === 1}
+                                    onClick={() => handleAccordionClick(1)}
+                                />
+                                <AccordionLanding 
+                                    heading="Kalo ikut bisa cek kodam gak?"
+                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    isOpen={openIndex === 2}
+                                    onClick={() => handleAccordionClick(2)}
+                                />
                             </div>
-                            <div className="w-full flex justify-center">
+                            <div className="w-full flex justify-center animate-bounce-custom">
                                 <IconFaq />
                             </div>
                         </div>
                     </div>
+
+                    {/* Merchandise */}
+                    <div className="px-24 mt-20 mb-20">
+                        <div className="flex flex-col justify-center items-center mb-10">
+                            <h1 className="font-sans font-bold text-primary text-[36px] tracking-widest">
+                                MERCHANDISE
+                            </h1>
+                            <div className="divider h-[2px] w-[450px] bg-primary mt-2"></div>
+                        </div>
+                        
+                        <div className="border border-primary rounded-[35px] p-5">
+                            <div className="flex justify-between gap-36">
+                                <div className="flex flex-col w-1/2 justify-center items-center">
+                                    <img src={imageSrc} alt="" className="w-[492px] h-[485px] animate-bounce-merch"/>
+                                    <div className="flex flex-row justify-center gap-5">
+                                        <div
+                                            className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
+                                            onClick={() => setImageSrc('asset/images/landing-page/merch-front.png')}
+                                        >
+                                        <div className="border border-primary rounded-[15px] p-1">
+                                            <img src="asset/images/landing-page/merch-front.png" alt="" className="w-[82px] h-[82px]"/>
+                                        </div>
+                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Front</p>
+                                        </div>
+                                        <div
+                                            className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
+                                            onClick={() => setImageSrc('asset/images/landing-page/merch-back.png')}
+                                            >
+                                            <div className="border border-primary rounded-[15px] p-1">
+                                                <img src="asset/images/landing-page/merch-back.png" alt="" className="w-[82px] h-[82px]"/>
+                                            </div>
+                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Back</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col w-1/2 mt-20 gap-16">
+                                    <div className="">
+                                        <div className="flex flex-col">
+                                            <p className="text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build IT 2024</p>
+                                            <p className="font-extrabold text-[24px] tracking-[0.03em] leading-[24px] mt-5">Rp 1.000.000</p>
+                                        </div>
+                                        <div className="divider h-[2px] w-[417px] bg-primary mt-5"></div>
+                                        <p className="text-[14px] leading-[21px] w-[387px] mt-5">
+                                            ini baju Build IT yang sangat bagus dengan bahan yang terbuat dari kain sutra dijamin memberikan kebahagiaan yang maksimal
+                                        </p>
+                                        <div className="bg-primary rounded-[10px] d-block max-w-[417px] h-[50px] p-5 text-white text-[20px] leading-[26px] tracking-[0.03em] flex justify-center items-center mt-3 hover:bg-secondary cursor-pointer shadow-lg">
+                                            Order Now
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col border border-primary rounded-[10px] w-[417px]">
+                                        <div className="flex flex-row p-5 justify-start gap-3 ">
+                                            <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]"/>
+                                            <div className="flex flex-col">
+                                                <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch I</p>
+                                                <p className="font-medium text-[12px] leading-[18px] underline">32 Agustus 2024 - 23 October 2024</p>
+                                            </div>
+                                        </div>
+                                        <div className="border-t border-primary"></div>
+                                        <div className="flex flex-row p-5 justify-start gap-3">
+                                            <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]"/>
+                                            <div className="flex flex-col">
+                                                <p className="text-[16px] font-medium leading-[24px]">Pick-up Offline</p>
+                                                <p className="font-medium text-[12px] leading-[18px] w-[292px]">Gedung Teknologi Informasi, Universitas Udayana, 
+                                                Jimbaran, Bali</p>
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
         </>
+    );
+}
+
+const AccordionLanding = ({heading, description, isOpen, onClick}) => {
+    return(
+        <div className="w-[636px] border border-primary rounded-[10px] m-5 p-2 shadow-lg">
+            <button
+                className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                onClick={onClick}
+            >
+            <div className="flex items-center justify-between">
+                <span className="text-lg font-medium text-gray-900">{heading}</span>
+                <svg
+                    className={`w-6 h-6 transition-transform transform ${
+                    isOpen ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                    />
+                </svg>
+            </div>
+        </button>
+        {isOpen && (
+            <div className="px-4 py-2 text-gray-700">
+                {description}
+            </div>
+        )}
+    </div>
+    );
+}
+
+const CardMatkul = ({heading, description, button}) => {
+    return(
+        <div className="border-primary rounded-[10px] shadow-lg transition-transform transform hover:scale-105 active:scale-110">
+            <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
+                <img src="asset/images/landing-page/icon-jaringan-komputer.png" alt="" className="w-[213px] h-[213px]"/>
+            </div>
+            <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
+                <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
+                    {heading}
+                </p>
+                <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
+                    {description}
+                </p>
+                <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
+                    <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                        {button}
+                    </a>
+                        <ArrowRight />
+                </button>
+            </div>
+        </div>
     );
 }

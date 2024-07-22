@@ -45,11 +45,16 @@ export default {
       },
       animation: {
         "bounce-custom": 'bounce-custom 4s ease-in-out infinite',
+        "bounce-merch": 'bounce-custom 2s ease-in-out infinite',
       },
       keyframes: {
         "bounce-custom": {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(15px)' },
+        },
+        "bounce-merch": {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(40px)' },
         },
       },
     },

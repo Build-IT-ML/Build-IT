@@ -322,3 +322,5 @@ export const IconFaq = () => {
         </svg>
     );
 }
+
+
