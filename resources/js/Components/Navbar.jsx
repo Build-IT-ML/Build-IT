@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "@inertiajs/react";
 
 export default function Navbar(){
     const [show, setIsShow] = useState(false);
@@ -40,9 +41,9 @@ export default function Navbar(){
                         <i className={`pi  ${!show ? "pi-angle-down" : "pi-angle-up"} mt-1`}></i>
                     </div>
                     <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
-                        <a href="/modul/alprog">Algoritma & Pemrograman</a>
-                        <a href="/modul/basisdata">Basis Data</a>
-                        <a href="/modul/jarkom">Jaringan Komputer & Komunikasi</a>
+                        <Link href="/modul/alprog">Algoritma & Pemrograman</Link>
+                        <Link href="/modul/basisdata">Basis Data</Link>
+                        <Link href="/modul/jarkom">Jaringan Komputer & Komunikasi</Link>
                     </li>
                 </li>
                 <li>
@@ -52,15 +53,15 @@ export default function Navbar(){
                     <a href="#">Merchandise</a>
                 </li>
                 <li>
-                    <a href="#" rel="noopener noreferrer" className="w-[120px] h-[52px] block md:hidden w-fit py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
+                    <Link href="#" rel="noopener noreferrer" className="w-fit h-[52px] block md:hidden py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
                         Login
-                    </a>
+                    </Link>
                 </li>
             </ul>    
             <div className="btn-cta">
-                <a href="/login" rel="noopener noreferrer" className="hidden md:block py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
+                <Link href="/login" rel="noopener noreferrer" className="hidden md:block py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
                     Login
-                </a>
+                </Link>
 
                 <button onClick={showNavbar} className="md:hidden">
                     {!showNav ? 
