@@ -22,5 +22,5 @@ Route::get('/', function () {
 })->name('Welcome');
 
 Route::get('/login', function () {
-    return Inertia::render("Auth/Login");
+    return Inertia::render("Login");
 })->name("login");
