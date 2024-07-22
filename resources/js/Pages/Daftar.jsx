@@ -33,10 +33,15 @@ export default function Daftar() {
                 <img
                     src="asset/images/modul/banner-modul.png"
                     alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[800px] h-full object-cover"
+                    className="absolute z-0 w-screen object-center rounded-none h-[850px] h-full object-cover"
+                />
+                <img
+                    src="asset/images/auth-img/layer-kotak.png"
+                    alt="banner"    
+                    className="absolute z-0 w-screen object-center rounded-none h-[850px] h-full object-cover"
                 />
                 <div className="h-max w-full px-6 md:px-24">
-                    <div className="flex flex-col justify-between mt-20 mb-96">
+                    <div className="flex flex-col justify-between mt-20 mb-36">
                         <div className="flex flex-col z-20">
                         <div className="flex justify-center pt-[80px]">
                             <Card className="flex flex-col gap-3 w-[602px] h-full items-center">
@@ -49,14 +54,14 @@ export default function Daftar() {
                                         height={166}
                                     />
                                 </div>
-                                <h1 className="flex justify-center text-lg text-black pt-3">Pendaftaran BUILD IT</h1>
+                                <h1 className="flex justify-center text-lg text-black pt-3 mt-2">Pendaftaran BUILD IT</h1>
                                 <div className="flex flex-col gap-4 w-full pt-3">
                                     <h2 className="font-semibold text-black text-[20px]">NIM</h2>
                                     <input 
                                         type="text" 
                                         name="nim" 
                                         id="" 
-                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black"
+                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black p-2"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4 w-full pt-5">
@@ -65,7 +70,7 @@ export default function Daftar() {
                                         type="text" 
                                         name="nama" 
                                         id="" 
-                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black"
+                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black p-2"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4 w-full pt-5">
@@ -74,7 +79,7 @@ export default function Daftar() {
                                         type="text" 
                                         name="id-line" 
                                         id="" 
-                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black"
+                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black p-2"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-4 w-full pt-5">
@@ -83,7 +88,7 @@ export default function Daftar() {
                                         type="text" 
                                         name="no-wa" 
                                         id="" 
-                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black"
+                                        className="w-[470px] h-[36px] border-2 border-primary rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-black p-2"
                                     />
                                 </div>
                                 
@@ -95,10 +100,10 @@ export default function Daftar() {
                             </Card>
                         </div>
 
-                            <div className="absolute top-[600px] left-[80px] animate-bounce-custom">
+                            <div className="absolute top-[400px] left-[80px] animate-bounce-custom">
                                 <KotakModulPx102 />
                             </div>     
-                            <div className="absolute top-[800px] left-[400px] animate-bounce-custom">
+                            <div className="absolute top-[700px] left-[400px] animate-bounce-custom">
                                 <KotakModulPx41 />
                             </div>     
                         </div>

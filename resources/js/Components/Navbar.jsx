@@ -26,7 +26,7 @@ export default function Navbar(){
 
 
     return(
-        <nav className={`bg-white w-full flex justify-between items-center px-24 py-4 sticky z-20 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
+        <nav className={`bg-white w-full flex justify-between items-center px-24 py-4 sticky z-50 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
             <span>
                 <img src="../asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
             </span>

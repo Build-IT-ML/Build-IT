@@ -4,18 +4,27 @@ import { Button } from 'primereact/button';
 import DisableInspect from '@/Utils/disableInspect';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
-
+import { Accordion, AccordionTab } from 'primereact/accordion';
+import 'primereact/resources/themes/saga-blue/theme.css'; 
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine } from "../Components/Icons/LandingPage";
+
+import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq } from "../Components/Icons/LandingPage";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     // useEffect(() => {
     //     const cleanup = DisableInspect();
     //     return () => cleanup();
     // }, []);
+
+    const toggleAccordion = () => {
+      setIsOpen(!isOpen);
+    };
 
     const showModal = () => {
         setModalVisible(true);
@@ -324,6 +333,48 @@ export default function Welcome() {
                                     </p>
                                     <p className="text-[14px]">On Webex https://webex</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Faq */}
+                    <div className="px-24">
+                        <div className="flex justify-between">
+                            <div className="w-1/2">
+                                <div className="border-b border-gray-200">
+                                <button
+                                    className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                                    onClick={toggleAccordion}
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-lg font-medium text-gray-900">test</span>
+                                        <svg
+                                            className={`w-6 h-6 transition-transform transform ${
+                                            isOpen ? 'rotate-180' : ''
+                                            }`}
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                            />
+                                        </svg>
+                                    </div>
+                                </button>
+                                {isOpen && (
+                                    <div className="px-4 py-2 text-gray-700">
+                                    waw
+                                    </div>
+                                )}
+                                </div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <IconFaq />
                             </div>
                         </div>
                     </div>
