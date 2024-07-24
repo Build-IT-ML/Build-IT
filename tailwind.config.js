@@ -59,6 +59,15 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.smooth-scroll': {
+          'scroll-behavior': 'smooth',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 }
 
