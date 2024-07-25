@@ -343,8 +343,8 @@ export default function Welcome() {
                             </div>
                             <div className="w-full md:w-1/2 mt-0 flex flex-col justify-center items-center" data-aos="fade-right">
                                 <AccordionLanding 
-                                    heading="Apa itu Build IT-2024"
-                                    description="Basic Understanding in Learning and Developing Information Technology atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Workshop Gemastik."
+                                    heading="Apakah kegiatan ini berbayar?"
+                                    description="Tidak, ini merupakan kegiatan yang diselanggarakan oleh Himpunanan Mahasiswa Teknologi Informasi Universitas Udayana untuk memberikan pengetahuan dasar mengenai berbagai hal yang diperlukan sebagai mahasiswa TI."
                                     isOpen={openIndex === 0}
                                     onClick={() => handleAccordionClick(0)}
                                 />
@@ -355,10 +355,16 @@ export default function Welcome() {
                                     onClick={() => handleAccordionClick(1)}
                                 />
                                 <AccordionLanding 
-                                    heading="Kalo ikut bisa cek kodam gak?"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    heading="Apa yang mahasiswa perlu persiapkan sebelum pelatihan BUILD IT 2024??"
+                                    description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz & tugas mandiri dan melakukan installasi tools yang diperlukan yang akan digunakan dalam pelatihan."
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
+                                />
+                                <AccordionLanding 
+                                    heading="Apa yang mahasiswa perlu persiapkan sebelum pelatihan BUILD IT 2024??"
+                                    description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz & tugas mandiri dan melakukan installasi tools yang diperlukan yang akan digunakan dalam pelatihan."
+                                    isOpen={openIndex === 3}
+                                    onClick={() => handleAccordionClick(3)}
                                 />
                             </div>
                         </div>
