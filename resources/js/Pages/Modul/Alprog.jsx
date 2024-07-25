@@ -1,10 +1,12 @@
 import { Head } from "@inertiajs/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from 'primereact/button';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
 
 import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../../Components/Icons/modul";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 export default function Alprog() {
@@ -17,6 +19,16 @@ export default function Alprog() {
     const hideModal = () => {
         setModalVisible(false);
     };
+
+    useEffect(() => {
+        AOS.init({
+          duration: 1000, // Durasi animasi dalam milidetik
+        });
+      }, []);
+
+      useEffect(() => {
+        document.documentElement.classList.add('smooth-scroll');
+    }, []);
 
     const footerContent = (
         <div className="flex justify-end gap-4">
@@ -32,31 +44,31 @@ export default function Alprog() {
                 <img
                     src="../../../asset/images/modul/banner-modul.png"
                     alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[850px] h-full object-cover"
+                    className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
                 />
                 <div className="h-max w-full px-6 md:px-24">
                     <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
                         <div className="flex flex-col z-20">
-                            <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center">
+                            <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
                                 ALGORITMA DAN PEMROGRAMAN
                             </p>
-                            <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full">
+                            <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full" data-aos="fade-up">
                                 Mata kuliah Algoritma dan Pemrograman adalah fondasi penting dalam pendidikan ilmu komputer yang berfokus pada pengenalan konsep dasar algoritma dan teknik pemrograman. Mahasiswa akan mempelajari bagaimana merancang, menganalisis, dan mengimplementasikan algoritma untuk memecahkan berbagai masalah komputasi. Mata kuliah ini mencakup topik-topik seperti struktur data, pengendalian alur program, pemrosesan data, dan teknik pemecahan masalah.
                             </p>
-                            <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold">
+                            <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">
                                 Lihat Modul
                             </button>
-                            <div className="absolute top-[900px] md:top-[600px] left-[80px] animate-bounce-custom z-0">
+                            <div className="absolute top-[900px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                 <KotakModulPx102 />
                             </div>     
-                            <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom">
+                            <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
                                 <KotakModulPx41 />
                             </div>     
                         </div>
-                        <div className="hidden md:block absolute right-0 animate-bounce-custom">
+                        <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
                             <KotakModulPrimary />
                         </div>
-                        <div className="absolute right-0 md:right-[200px] top-[760px] md:top-[280px] animate-bounce-custom">
+                        <div className="absolute right-0 md:right-[200px] top-[760px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
                             <KotakModulSecondary />
                         </div>
                         <div className="w-full mt-20 flex justify-center mb-36">
@@ -67,16 +79,16 @@ export default function Alprog() {
                 </div>
                 <div className="px-6 md:px-24 mt-36 md:mt-96 mb-36">
                     <div className="flex flex-col justify-center items-center z-10">
-                        <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest">
+                        <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-up">
                             PENGISI MATERI
                         </h1>
                         <div className="divider h-[2px] w-full md:w-[706px] bg-primary mt-2"></div>
-                        <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]">
+                        <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-left">
                             Pengisi materi untuk matakuliah Algoritma dan Pemrograman pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Algoritma dan Pemrogaman.
                         </p>
                     </div>
                     <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
@@ -90,7 +102,7 @@ export default function Alprog() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
@@ -103,7 +115,7 @@ export default function Alprog() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
@@ -116,7 +128,7 @@ export default function Alprog() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
