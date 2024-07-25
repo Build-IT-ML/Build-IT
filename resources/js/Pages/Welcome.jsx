@@ -354,9 +354,9 @@ export default function Welcome() {
                                     isOpen={openIndex === 1}
                                     onClick={() => handleAccordionClick(1)}
                                 />
-                                <AccordionLanding 
-                                    heading="Apa yang mahasiswa perlu persiapkan sebelum pelatihan BUILD IT 2024??"
-                                    description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz & tugas mandiri dan melakukan installasi tools yang diperlukan yang akan digunakan dalam pelatihan."
+                                <AccordionLanding
+                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan built it 2024??"
+                                    description="Selama Pelatihan BUILD-TI 2024, mahasiswa akan dibimbing dalam memahami mata kuliah dasar di perkuliahan seperti alprog, basis data, dan jaringan komputer"
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
                                 />
