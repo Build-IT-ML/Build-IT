@@ -145,7 +145,7 @@ export default function Welcome() {
                             <IconBookSharing />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">
-                                Sharing Session Lomba & Penjurusan
+                                Sosialisasi Lomba & Penjurusan
                             </p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
                                 Sharing Session ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
@@ -203,19 +203,22 @@ export default function Welcome() {
                                 description="Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk menyelesaikan suatu masalah."
                                 button="Learn More"
                                 image="asset/images/landing-page/icon-alprog.png"
+                                url="/modul/alprog"
                             />
                             <CardMatkul
                                 heading="Basis Data"
                                 description="Basis data adalah kumpulan data yang terorganisir secara sistematis untuk memudahkan akses."
                                 button="Learn More"
                                 image="asset/images/landing-page/icon-basis-data.png"
+                                url="/modul/basisdata"
                             />
                             <CardMatkul 
-                                heading="Jaringan Komputer"
+                                heading="Jaringan Komputer dan Komunikasi"
                                 description="Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
                                 saling terhubung untuk berbagi sumber."
                                 button="Learn More"
                                 image="asset/images/landing-page/icon-jaringan-komputer.png"
+                                url="/modul/jarkom"
                             />
                         </div>
                     </div>
@@ -341,13 +344,13 @@ export default function Welcome() {
                             <div className="w-full md:w-1/2 mt-0 flex flex-col justify-center items-center" data-aos="fade-right">
                                 <AccordionLanding 
                                     heading="Apa itu Build IT-2024"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    description="Basic Understanding in Learning and Developing Information Technology atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Workshop Gemastik."
                                     isOpen={openIndex === 0}
                                     onClick={() => handleAccordionClick(0)}
                                 />
                                 <AccordionLanding
-                                    heading="Apakah ada kakak cantik yang ngajar?"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    heading="Apakah kegiatan ini wajib dihadiri?"
+                                    description="Ya, kegiatan ini wajib dihadiri oleh mahasiswa baru teknologi informasi angkatan 2024. Untuk mahasiswa lama yang belum mengikuti pada tahun lalu wajib hadir di pembukaan dan sharing session"
                                     isOpen={openIndex === 1}
                                     onClick={() => handleAccordionClick(1)}
                                 />
@@ -373,7 +376,7 @@ export default function Welcome() {
                             </p>
                             <div className="flex md:flex-row flex-col gap-4 mt-5">
                                 <CardContact
-                                    name="Tri Darma"
+                                    name="Tri Darma (Ilmiah)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6281333486847" target="_blank">WA : 081333486847</a>
                                     }
@@ -382,7 +385,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Candra"
+                                    name="Candra (Ketua)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6282235443630">WA : 082235443630</a>
                                     }
@@ -391,7 +394,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Marsya"
+                                    name="Marsya (Kesekre)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+62881037397005">WA : 0881037397005</a>
                                     }
@@ -450,11 +453,11 @@ export default function Welcome() {
                                     <div className="">
                                         <div className="flex flex-col justify-center items-center md:items-start">
                                             <p className="text-primary text-[24px] md:text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build-IT 2024</p>
-                                            <p className="font-extrabold text-[24px] tracking-[0.03em] leading-[24px] mt-5">Rp 1.000.000</p>
+                                            <p className="font-extrabold text-[24px] tracking-[0.03em] leading-[24px] mt-5">Rp 100.000</p>
                                         </div>
                                         <div className="hidden md:block divider h-[2px] w-full md:w-[417px] bg-primary mt-5"></div>
                                         <p className="text-[14px] leading-[21px] w-full md:w-[387px] mt-5 text-center md:text-start">
-                                            Baju edition Build-IT 2024. Dengan bahan yang adem dan desain yang kece, cocok digunakan kemana saja.
+                                            Baju limited edition Build-IT 2024. Dengan bahan yang adem dan desain yang kece, cocok digunakan kemana saja.
                                         </p>
                                         <div className="bg-primary rounded-[10px] d-block max-w-[417px] h-[50px] p-5 text-white text-[20px] leading-[26px] tracking-[0.03em] flex justify-center items-center mt-3 hover:bg-secondary cursor-pointer shadow-lg">
                                             Order Now
@@ -525,7 +528,7 @@ const AccordionLanding = ({heading, description, isOpen, onClick}) => {
     );
 }
 
-const CardMatkul = ({heading, description, button, image, href}) => {
+const CardMatkul = ({heading, description, button, image}) => {
     return(
         <div className="border-primary rounded-[10px] shadow-lg transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-up">
             <div className="border-2 border-primary rounded-t-[10px] w-full md:w-[348px] h-full md:h-[250px] p-10 flex justify-center items-center shadow-lg">
@@ -539,7 +542,9 @@ const CardMatkul = ({heading, description, button, image, href}) => {
                     {description}
                 </p>
                 <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-full md:w-[147px] h-full md:h-[44px] hover:bg-primer md:p-0 p-3">
-                        {href}
+                    <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                        {button}
+                    </a>
                         <ArrowRight />
                 </button>
             </div>
