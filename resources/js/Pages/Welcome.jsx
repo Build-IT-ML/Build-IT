@@ -354,9 +354,9 @@ export default function Welcome() {
                                     isOpen={openIndex === 1}
                                     onClick={() => handleAccordionClick(1)}
                                 />
-                                <AccordionLanding 
-                                    heading="Kalo ikut bisa cek kodam gak?"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                <AccordionLanding
+                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan built it 2024??"
+                                    description="Selama Pelatihan BUILD-TI 2024, mahasiswa akan dibimbing dalam memahami mata kuliah dasar di perkuliahan seperti alprog, basis data, dan jaringan komputer"
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
                                 />
