@@ -32,7 +32,7 @@ export default function Alprog() {
                 <img
                     src="../../../asset/images/modul/banner-modul.png"
                     alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[850px] h-full object-cover"
+                    className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
                 />
                 <div className="h-max w-full px-6 md:px-24">
                     <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
