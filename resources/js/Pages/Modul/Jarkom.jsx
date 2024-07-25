@@ -27,7 +27,7 @@ export default function JaringanKomputer() {
 
     return (
         <>
-            <Head title="Basis Data" />
+            <Head title="Jaringan Komputer" />
             <div className="w-full overflow-hidden">
                 <img
                     src="../../../asset/images/modul/banner-modul.png"
@@ -38,7 +38,7 @@ export default function JaringanKomputer() {
                     <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
                         <div className="flex flex-col z-20">
                             <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center">
-                                JARINGAN DAN KOMPUTER
+                                JARINGAN KOMPUTER DAN KOMUNIKASI
                             </p>
                             <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full">
                                 Mata kuliah Jaringan Komputer dan Komunikasi merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas prinsip-prinsip dasar, arsitektur, dan teknologi yang digunakan dalam jaringan komputer serta komunikasi data. Mahasiswa akan mempelajari berbagai topik seperti model OSI (Open Systems Interconnection), protokol jaringan, pengalamatan IP, subnetting, routing, switching, dan keamanan jaringan.
@@ -60,7 +60,7 @@ export default function JaringanKomputer() {
                             <KotakModulSecondary />
                         </div>
                         <div className="w-full mt-20 flex justify-center mb-36">
-                            <img src="../../../asset/images/modul/alprog-image.png" alt="test" 
+                            <img src="../../../asset/images/modul/jarkom.JPG" alt="test" 
                             className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
                         </div>
                     </div>
@@ -78,12 +78,25 @@ export default function JaringanKomputer() {
                     <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
                         <div>
                             <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
+                                <img src="../../../asset/images/modul/teja.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
 
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Made Cristiano
+                                    Teja
+                                </p>
+                                <p className="mt-5 text-[22px] font-bold">
+                                    TI' 22
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
+                                <img src="../../../asset/images/modul/bayu_lobi.png" alt="" className="max-w-full h-[380px] z-10"/>
+                            </div>
+                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
+                                <p className="text-[24px] font-medium leading-[24px]">
+                                    Bayu Lobi
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22
@@ -96,7 +109,7 @@ export default function JaringanKomputer() {
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Made Cristiano
+                                    Dudek
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22
@@ -105,24 +118,11 @@ export default function JaringanKomputer() {
                         </div>
                         <div>
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
+                                <img src="../../../asset/images/modul/andri.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Made Cristiano
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Nyoman Cristiano
+                                    Andri
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22

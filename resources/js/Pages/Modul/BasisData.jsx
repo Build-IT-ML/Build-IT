@@ -60,7 +60,7 @@ export default function BasisData() {
                             <KotakModulSecondary />
                         </div>
                         <div className="w-full mt-20 flex justify-center mb-36">
-                            <img src="../../../asset/images/modul/alprog-image.png" alt="test" 
+                            <img src="../../../asset/images/modul/basis-image.JPG" alt="test" 
                             className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
                         </div>
                     </div>
@@ -105,11 +105,11 @@ export default function BasisData() {
                         </div>
                         <div>
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/temp-image.png" alt="" className="max-w-full h-[380px] z-10"/>
+                                <img src="../../../asset/images/modul/nanta.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Made Cristiano
+                                    Rapriananta
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22
@@ -122,7 +122,7 @@ export default function BasisData() {
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Nyoman Cristiano
+                                    Eka Putra
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22

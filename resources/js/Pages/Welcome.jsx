@@ -341,13 +341,13 @@ export default function Welcome() {
                             <div className="w-full md:w-1/2 mt-0 flex flex-col justify-center items-center" data-aos="fade-right">
                                 <AccordionLanding 
                                     heading="Apa itu Build IT-2024"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    description="Basic Understanding in Learning and Developing Information Technology atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Workshop Gemastik."
                                     isOpen={openIndex === 0}
                                     onClick={() => handleAccordionClick(0)}
                                 />
                                 <AccordionLanding
-                                    heading="Apakah ada kakak cantik yang ngajar?"
-                                    description="Built IT adalah perlombaan untuk mencari wanita, yang di mana pemenang dilihat dari banyak wanita yang di dapatinya."
+                                    heading="Apakah kegiatan ini wajib dihadiri?"
+                                    description="Ya, kegiatan ini wajib dihadiri oleh mahasiswa baru teknologi informasi angkatan 2024. Untuk mahasiswa lama yang belum mengikuti pada tahun lalu wajib hadir di pembukaan dan sharing session"
                                     isOpen={openIndex === 1}
                                     onClick={() => handleAccordionClick(1)}
                                 />
@@ -373,7 +373,7 @@ export default function Welcome() {
                             </p>
                             <div className="flex md:flex-row flex-col gap-4 mt-5">
                                 <CardContact
-                                    name="Tri Darma"
+                                    name="Tri Darma (Ilmiah)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6281333486847" target="_blank">WA : 081333486847</a>
                                     }
@@ -382,7 +382,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Candra"
+                                    name="Candra (Ketua)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6282235443630">WA : 082235443630</a>
                                     }
@@ -391,7 +391,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Marsya"
+                                    name="Marsya (Kesekre)"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+62881037397005">WA : 0881037397005</a>
                                     }
@@ -450,7 +450,7 @@ export default function Welcome() {
                                     <div className="">
                                         <div className="flex flex-col justify-center items-center md:items-start">
                                             <p className="text-primary text-[24px] md:text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build-IT 2024</p>
-                                            <p className="font-extrabold text-[24px] tracking-[0.03em] leading-[24px] mt-5">Rp 1.000.000</p>
+                                            <p className="font-extrabold text-[24px] tracking-[0.03em] leading-[24px] mt-5">Rp 100.000</p>
                                         </div>
                                         <div className="hidden md:block divider h-[2px] w-full md:w-[417px] bg-primary mt-5"></div>
                                         <p className="text-[14px] leading-[21px] w-full md:w-[387px] mt-5 text-center md:text-start">
