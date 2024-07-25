@@ -213,7 +213,7 @@ export default function Welcome() {
                                 url="/modul/basisdata"
                             />
                             <CardMatkul 
-                                heading="Jaringan Komputer dan Komunikasi"
+                                heading="Jaringan Komputer"
                                 description="Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
                                 saling terhubung untuk berbagi sumber."
                                 button="Learn More"
