@@ -1,5 +1,5 @@
 import { Head } from "@inertiajs/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from 'primereact/button';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
@@ -7,6 +7,8 @@ import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41
 import { LayerKotak } from "../Components/Icons/login";
 import { Card } from "primereact/card";
 import { ViewPassword, HidePassword } from "../Components/Icons/login";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Login() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -26,6 +28,16 @@ export default function Login() {
             setPasswordVisible(false);
         }, 1000);
     };
+
+    useEffect(() => {
+        AOS.init({
+          duration: 800,
+        });
+      }, []);
+
+      useEffect(() => {
+        document.documentElement.classList.add('smooth-scroll');
+      }, []);
 
     const footerContent = (
         <div className="flex justify-end gap-4">
@@ -52,7 +64,7 @@ export default function Login() {
                     <div className="flex flex-col justify-between mt-20 mb-96">
                         <div className="flex flex-col z-20">
                         <div className="flex justify-center pt-[80px]">
-                            <Card className="flex flex-col gap-3 w-[602px] h-full items-center">
+                            <Card className="flex flex-col gap-3 w-[602px] h-full items-center" data-aos="fade-up">
                                 <div className="flex justify-center w-full">
                                     <img 
                                         src="asset/images/iconic.png" 

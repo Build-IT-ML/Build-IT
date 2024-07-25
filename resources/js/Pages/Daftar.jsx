@@ -1,12 +1,13 @@
 import { Head } from "@inertiajs/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from 'primereact/button';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
 
 import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../Components/Icons/modul";
 import { Card } from "primereact/card";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Daftar() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -18,6 +19,16 @@ export default function Daftar() {
     const hideModal = () => {
         setModalVisible(false);
     };
+
+    useEffect(() => {
+        AOS.init({
+          duration: 800,
+        });
+      }, []);
+
+      useEffect(() => {
+        document.documentElement.classList.add('smooth-scroll');
+      }, []);
 
     const footerContent = (
         <div className="flex justify-end gap-4">
@@ -44,7 +55,7 @@ export default function Daftar() {
                     <div className="flex flex-col justify-between mt-20 mb-36">
                         <div className="flex flex-col z-20">
                         <div className="flex justify-center pt-[80px]">
-                            <Card className="flex flex-col gap-3 w-[602px] h-full items-center">
+                            <Card className="flex flex-col gap-3 w-[602px] h-full items-center" data-aos="fade-up">
                                 <div className="flex justify-center w-full">
                                     <img 
                                         src="asset/images/iconic.png" 
