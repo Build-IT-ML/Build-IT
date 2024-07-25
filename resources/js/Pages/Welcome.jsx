@@ -362,7 +362,7 @@ export default function Welcome() {
                                 />
                                 <AccordionLanding 
                                     heading="Apa yang mahasiswa perlu persiapkan sebelum pelatihan BUILD IT 2024??"
-                                    description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz & tugas mandiri dan melakukan installasi tools yang diperlukan yang akan digunakan dalam pelatihan."
+                                    description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz dan tugas mandiri serta melakukan instalasi tools yang diperlukan yang akan digunakan dalam pelatihan."
                                     isOpen={openIndex === 3}
                                     onClick={() => handleAccordionClick(3)}
                                 />
