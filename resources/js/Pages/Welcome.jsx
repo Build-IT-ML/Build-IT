@@ -355,7 +355,7 @@ export default function Welcome() {
                                     onClick={() => handleAccordionClick(1)}
                                 />
                                 <AccordionLanding
-                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan built it 2024??"
+                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan BUILD-IT 2024??"
                                     description="Selama Pelatihan BUILD-TI 2024, mahasiswa akan dibimbing dalam memahami mata kuliah dasar di perkuliahan seperti alprog, basis data, dan jaringan komputer"
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
