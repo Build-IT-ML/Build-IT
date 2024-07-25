@@ -41,12 +41,12 @@ export default function Login() {
                 <img
                     src="asset/images/modul/banner-modul.png"
                     alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[900px] h-full object-cover"
+                    className="absolute z-0 w-screen object-center rounded-none h-[900px] object-cover"
                 />
                 <img
                     src="asset/images/auth-img/layer-kotak.png"
                     alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[900px] h-full object-cover"
+                    className="absolute z-0 w-screen object-center rounded-none h-[900px] object-cover"
                 />
                 <div className="h-max w-full px-6 md:px-24">
                     <div className="flex flex-col justify-between mt-20 mb-96">
