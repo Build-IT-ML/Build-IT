@@ -117,11 +117,11 @@ export default function Alprog() {
                         </div>
                         <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/gekna.png" alt="" className="max-w-full h-[380px] z-10"/>
+                                <img src="../../../asset/images/modul/wahtu.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Gekna
+                                    Wahtu
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22
@@ -130,11 +130,11 @@ export default function Alprog() {
                         </div>
                         <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/wahtu.png" alt="" className="max-w-full h-[380px] z-10"/>
+                                <img src="../../../asset/images/modul/gekna.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
                             <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
                                 <p className="text-[24px] font-medium leading-[24px]">
-                                    Wahtu
+                                    Gekna
                                 </p>
                                 <p className="mt-5 text-[22px] font-bold">
                                     TI' 22
