@@ -22,6 +22,7 @@
         "primeicons": "^6.0.1",
         "primereact": "^10.7.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "primeflex": "^3.3.0"
     }
 }
