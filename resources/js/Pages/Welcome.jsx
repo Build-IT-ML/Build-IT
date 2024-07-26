@@ -148,7 +148,7 @@ export default function Welcome() {
                                 Sosialisasi Lomba & Penjurusan
                             </p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
-                                Sharing Session ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
+                                Sosialisasi ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
                             </p>
                         </div>
                         <div className="bg-white w-full h-max md:w-[420px] md:h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-left">
