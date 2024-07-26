@@ -24,9 +24,9 @@ createInertiaApp({
         root.render(
             <>
                 <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
-                    <Navbar/>
+                    {/* <Navbar /> */}
                     <App {...props} />
-                    <Footer/>
+                    {/* <Footer /> */}
                 </PrimeReactProvider>
             </>
         );

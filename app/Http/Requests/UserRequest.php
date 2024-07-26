@@ -43,10 +43,26 @@ class UserRequest extends FormRequest
             'password' => 'required|string|min:8',
             'line_id' => 'required|string|max:120',
             'whatsaap_id' => 'required|string|max:120',
+            'tugas_alprog_link' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^(https?:\/\/)?(www\.)?(drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/?|drive\.google\.com\/open\?id=[A-Za-z0-9_-]+)$/',
+            ],
+            'tugas_basis' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^(https?:\/\/)?(www\.)?(drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/?|drive\.google\.com\/open\?id=[A-Za-z0-9_-]+)$/',
+            ],
+            'tugas_jarkom' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^(https?:\/\/)?(www\.)?(drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/?|drive\.google\.com\/open\?id=[A-Za-z0-9_-]+)$/',
+            ],
         ];
     }
-
-
 
     /**
      * Get custom attributes for validator errors.
@@ -62,6 +78,9 @@ class UserRequest extends FormRequest
             'password' => 'Kata Sandi',
             'line_id' => 'ID Line',
             'whatsaap_id' => 'ID WhatsApp',
+            'tugas_alprog_link' => 'Tugas Alprog Link',
+            'tugas_basis' => 'Tugas Basis',
+            'tugas_jarkom' => 'Tugas Jarkom',
         ];
     }
 
@@ -91,7 +110,21 @@ class UserRequest extends FormRequest
             'line_id.string' => 'ID Line harus berupa teks.',
             'line_id.max' => 'ID Line tidak boleh melebihi 120 karakter.',
             'whatsaap_id.required' => 'No WhatsApp harus diisi.',
-            'whatsaap_id.string' => 'No tidak boleh melebihi 120 karakter.',
+            'whatsaap_id.string' => 'No WhatsApp harus berupa teks.',
+            'whatsaap_id.max' => 'No WhatsApp tidak boleh melebihi 120 karakter.',
+            'tugas_alprog_link.required' => 'Tugas Alprog Link harus diisi.',
+            'tugas_alprog_link.string' => 'Tugas Alprog Link harus berupa teks.',
+            'tugas_alprog_link.max' => 'Tugas Alprog Link tidak boleh melebihi 255 karakter.',
+            'tugas_alprog_link.regex' => 'Tugas Alprog Link harus berupa link Google Drive yang valid.',
+            'tugas_basis.required' => 'Tugas Basis harus diisi.',
+            'tugas_basis.string' => 'Tugas Basis harus berupa teks.',
+            'tugas_basis.max' => 'Tugas Basis tidak boleh melebihi 255 karakter.',
+            'tugas_basis.regex' => 'Tugas Basis harus berupa link Google Drive yang valid.',
+            'tugas_jarkom.required' => 'Tugas Jarkom harus diisi.',
+            'tugas_jarkom.string' => 'Tugas Jarkom harus berupa teks.',
+            'tugas_jarkom.max' => 'Tugas Jarkom tidak boleh melebihi 255 karakter.',
+            'tugas_jarkom.regex' => 'Tugas Jarkom harus berupa link Google Drive yang valid.',
         ];
     }
 }
+

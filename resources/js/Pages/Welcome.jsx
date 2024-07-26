@@ -5,13 +5,12 @@ import DisableInspect from '@/Utils/disableInspect';
 import Modal from "@/Libs/ModalsDialog";
 import { Menubar } from 'primereact/menubar';
 import { Accordion, AccordionTab } from 'primereact/accordion';
-import 'primereact/resources/themes/saga-blue/theme.css'; 
+import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
+import UserGuest from "../Components/Layouts/User/UserGuest";
 
-import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq } from "../Components/Icons/LandingPage";
+import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom, IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq } from "../Components/Icons/LandingPage";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -23,7 +22,7 @@ export default function Welcome() {
     // }, []);
 
     const toggleAccordion = () => {
-      setIsOpen(!isOpen);
+        setIsOpen(!isOpen);
     };
 
     const showModal = () => {
@@ -34,16 +33,11 @@ export default function Welcome() {
         setModalVisible(false);
     };
 
-    const footerContent = (
-        <div className="flex justify-end gap-4">
-            <Button label="No" icon="pi pi-times" onClick={() => setModalVisible(false)} className="p-button-text" />
-            <Button label="Yes" icon="pi pi-check" onClick={() => setModalVisible(false)} autoFocus />
-        </div>
-    );
-
     return (
         <>
-            <Head title="Landing Page" />
+            <UserGuest>
+                <Head title="Landing Page" />
+
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
@@ -54,7 +48,7 @@ export default function Welcome() {
                         <div className="flex justify-between mb-5 z-20">
                             <div className="flex flex-col mt-20 mb-5 w-full z-10">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3">Offline Course</p>
-                                    <IconBuiltIT />
+                                <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-[494px] mt-5">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
@@ -67,8 +61,8 @@ export default function Welcome() {
                             <div className="w-full right-side mt-16">
                                 <div className="static">
                                     <div
-                                    className="relative left-[80px] top-[0] animate-bounce-custom"
-                                    alt="gambar"
+                                        className="relative left-[80px] top-[0] animate-bounce-custom"
+                                        alt="gambar"
                                     >
                                         <IconKotakTop />
                                     </div>
@@ -95,7 +89,7 @@ export default function Welcome() {
                                             alt="gambar"
                                             className="max-w-full h-[445px] relative bottom-[80px] left-[380px] animate-bounce-custom"
                                         >
-                                            <IconKotakCenter /> 
+                                            <IconKotakCenter />
                                         </div>
                                     </div>
                                     <div
@@ -129,7 +123,7 @@ export default function Welcome() {
                                 Sharing Session Lomba & Penjurusan
                             </p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
-                                Sharing Session ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
+                                Sharing Session ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi
                             </p>
                         </div>
                         <div className="bg-white w-[420px] h-[288px] rounded-[10px] p-10 flex flex-col">
@@ -137,14 +131,14 @@ export default function Welcome() {
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">Sharing Session Hacktiv8</p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
-                                Akan ada sharing session bersama Hacktiv8 yang merupakan pelatihan coding bootcamp terbaik di Indonesia. 
+                                Akan ada sharing session bersama Hacktiv8 yang merupakan pelatihan coding bootcamp terbaik di Indonesia.
                             </p>
                         </div>
                     </div>
 
                     {/* about built it */}
                     <div className="px-24 mt-20 flex gap-20">
-                        <img src="asset/images/landing-page/icon-build-it.png" alt="" className="mx-12 w-[390px] h-[410px] animate-bounce-custom"/>
+                        <img src="asset/images/landing-page/icon-build-it.png" alt="" className="mx-12 w-[390px] h-[410px] animate-bounce-custom" />
                         <div className="mt-12 flex flex-col">
                             <p className="text-[36px] text-primary font-bold tracking-[0.16em]">
                                 TENTANG BUILD IT
@@ -178,61 +172,61 @@ export default function Welcome() {
                         <div className="mt-10 flex flex-row justify-around">
                             <div className="border-primary rounded-[10px] shadow-md hover:">
                                 <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-alprog.png" alt="" className="w-[213px] h-[213px]"/>
+                                    <img src="asset/images/landing-page/icon-alprog.png" alt="" className="w-[213px] h-[213px]" />
                                 </div>
                                 <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
                                     <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
                                         Algoritma dan Pemrograman
                                     </p>
                                     <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk 
+                                        Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk
                                         menyelesaikan suatu masalah.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
                                         <a href="modul/alprog" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
-                                            <ArrowRight />
+                                        <ArrowRight />
                                     </button>
                                 </div>
                             </div>
                             <div className="border-primary rounded-[10px] shadow-md">
                                 <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-basis-data.png" alt="" className="w-[213px] h-[213px]"/>
+                                    <img src="asset/images/landing-page/icon-basis-data.png" alt="" className="w-[213px] h-[213px]" />
                                 </div>
                                 <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
                                     <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
                                         Basis Data
                                     </p>
                                     <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Basis data adalah kumpulan data yang terorganisir secara sistematis 
+                                        Basis data adalah kumpulan data yang terorganisir secara sistematis
                                         untuk memudahkan akses.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
                                         <a href="modul/basisData" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
-                                            <ArrowRight />
+                                        <ArrowRight />
                                     </button>
                                 </div>
                             </div>
                             <div className="border-primary rounded-[10px] shadow-md">
                                 <div className="border-2 border-primary rounded-t-[10px] w-[348px] h-[250px] p-10 flex justify-center items-center shadow-lg">
-                                    <img src="asset/images/landing-page/icon-jaringan-komputer.png" alt="" className="w-[213px] h-[213px]"/>
+                                    <img src="asset/images/landing-page/icon-jaringan-komputer.png" alt="" className="w-[213px] h-[213px]" />
                                 </div>
                                 <div className="bg-primary w-[348px] h-[250] border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
                                     <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white">
                                         Jaringan Komputer
                                     </p>
                                     <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px]">
-                                        Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
+                                        Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang
                                         saling terhubung untuk berbagi sumber.
                                     </p>
                                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-[147px] h-[44px] hover:bg-primer">
                                         <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                                             Learn More
                                         </a>
-                                            <ArrowRight />
+                                        <ArrowRight />
                                     </button>
                                 </div>
                             </div>
@@ -247,13 +241,13 @@ export default function Welcome() {
                             </h1>
                             <div className="divider h-[2px] w-[692px] bg-primary mt-2"></div>
                         </div>
-                            <div
-                                className="flex relative left-[170px] top-[50px] animate-bounce-custom animate-pulse"
-                                width={40}
-                                height={40}
-                            >
-                                <IconKotakBottom />
-                            </div>
+                        <div
+                            className="flex relative left-[170px] top-[50px] animate-bounce-custom animate-pulse"
+                            width={40}
+                            height={40}
+                        >
+                            <IconKotakBottom />
+                        </div>
                         <div className="flex flex-col z-10 mt-10">
                             <div className="flex flex-col gap-[120px] left-4 items-center pt-12 absolute w-1 bg-primary h-max md:left-1/2 transform md:-translate-x-1/2 z-10">
                                 <div className="w-5 h-5 md:w-9 md:h-9 bg-primary rounded-full relative z-20">
@@ -296,7 +290,7 @@ export default function Welcome() {
                                 <div className="w-[310px] md:w-[466px] mr-10 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[20px] font-bold">Pelatihan Alprog & Basis Data</h3>
                                     <p className="text-[16px] font-medium mb-1">
-                                    Sabtu, 7 September 2024
+                                        Sabtu, 7 September 2024
                                     </p>
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
@@ -314,7 +308,7 @@ export default function Welcome() {
                                 alt="gambar"
                                 className="max-w-[570px] h-[445px] absolute right-0 top-[3200px] animate-pulse"
                             >
-                                <IconKotakTimeLine /> 
+                                <IconKotakTimeLine />
                             </div>
                             <div className="font-sans my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
                                 <div className="w-[310px] md:w-[466px] mr-10 p-4 bg-white border shadow-lg rounded-md">
@@ -342,35 +336,34 @@ export default function Welcome() {
                         <div className="flex justify-between">
                             <div className="w-1/2">
                                 <div className="border-b border-gray-200">
-                                <button
-                                    className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-                                    onClick={toggleAccordion}
-                                >
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-lg font-medium text-gray-900">test</span>
-                                        <svg
-                                            className={`w-6 h-6 transition-transform transform ${
-                                            isOpen ? 'rotate-180' : ''
-                                            }`}
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 9l-7 7-7-7"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
-                                {isOpen && (
-                                    <div className="px-4 py-2 text-gray-700">
-                                    waw
-                                    </div>
-                                )}
+                                    <button
+                                        className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                                        onClick={toggleAccordion}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-lg font-medium text-gray-900">test</span>
+                                            <svg
+                                                className={`w-6 h-6 transition-transform transform ${isOpen ? 'rotate-180' : ''
+                                                    }`}
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M19 9l-7 7-7-7"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    {isOpen && (
+                                        <div className="px-4 py-2 text-gray-700">
+                                            waw
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <div className="w-full flex justify-center">
@@ -379,6 +372,7 @@ export default function Welcome() {
                         </div>
                     </div>
                 </div>
+            </UserGuest>
         </>
     );
 }

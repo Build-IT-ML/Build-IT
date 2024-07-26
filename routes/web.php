@@ -23,15 +23,15 @@ Route::get('/', function () {
 
 Route::get('/modul/alprog', function () {
     return Inertia::render("Modul/Alprog", []);
-})->name('Modul/Alprog');
+})->name('Modul.Alprog');
 
 Route::get('/modul/basisdata', function () {
     return Inertia::render("Modul/BasisData", []);
-})->name('Modul/BasisData');
+})->name('Modul.BasisData');
 
 Route::get('/modul/jarkom', function () {
     return Inertia::render("Modul/Jarkom", []);
-})->name('Modul/Jarkom');
+})->name('Modul.Jarkom');
 
 Route::get('/login', function () {
     return Inertia::render("Login", []);
