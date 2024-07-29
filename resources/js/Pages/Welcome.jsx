@@ -18,7 +18,7 @@ import 'aos/dist/aos.css';
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
     const [openIndex, setOpenIndex] = useState(null);
-    const [imageSrc, setImageSrc] = useState('asset/images/landing-page/merch-front.png');
+    const [imageSrc, setImageSrc] = useState('asset/images/landing-page/merch-black.png');
 
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
@@ -432,25 +432,25 @@ export default function Welcome() {
                         <div className="b-none md:border border-primary rounded-[35px] shadow-lg">
                             <div className="flex flex-col md:flex-row justify-between" data-aos="fade-up">
                                 <div className="flex flex-col w-full justify-center items-center">
-                                    <img src={imageSrc} alt="" className="w-full md:w-[492px] h-[485px] animate-bounce-merch"/>
+                                    <img src={imageSrc} alt="" className="md:w-[492px] h-[485px] animate-bounce-merch"/>
                                     <div className="flex flex-row justify-center gap-5">
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
-                                            onClick={() => setImageSrc('asset/images/landing-page/merch-front.png')}
+                                            onClick={() => setImageSrc('asset/images/landing-page/merch-black.png')}
                                         >
                                         <div className="border border-primary rounded-[15px] p-1">
-                                            <img src="asset/images/landing-page/merch-front.png" alt="" className="w-[82px] h-[82px]"/>
+                                            <img src="asset/images/landing-page/merch-black.png" alt="" className="w-[82px] h-[82px]"/>
                                         </div>
-                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Front</p>
+                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Black</p>
                                         </div>
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
-                                            onClick={() => setImageSrc('asset/images/landing-page/merch-back.png')}
+                                            onClick={() => setImageSrc('asset/images/landing-page/merch-white.png')}
                                             >
                                             <div className="border border-primary rounded-[15px] p-1">
-                                                <img src="asset/images/landing-page/merch-back.png" alt="" className="w-[82px] h-[82px]"/>
+                                                <img src="asset/images/landing-page/merch-white.png" alt="" className="w-[82px] h-[82px]"/>
                                             </div>
-                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Back</p>
+                                            <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">White</p>
                                         </div>
                                     </div>
                                 </div>
