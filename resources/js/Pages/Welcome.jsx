@@ -71,11 +71,6 @@ export default function Welcome() {
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
-
-                                <div className="button mt-4 flex gap-4">
-                                    <Button className="text-white text-[14px] font-bold leading-[22px] tracking-[0.02em] bg-primary w-[163px] h-[52px] rounded-[5px] flex justify-center text-center hover:bg-secondary">Guide Book</Button>
-                                    <Button className="text-primary text-[14px] font-bold leading-[22px] tracking-[0.02em] border-primary border-2 w-[163px] h-[52px] rounded-[5px] flex justify-center text-center hover:bg-secondary"><a href="/register">Register Now</a></Button>
-                                </div>
                             </div>
                             <div className="w-full right-side mt-16 hidden md:block">
                                 <div className="static">
