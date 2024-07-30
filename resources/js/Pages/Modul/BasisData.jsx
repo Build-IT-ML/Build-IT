@@ -101,7 +101,7 @@ export default function BasisData() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/dwita.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>
@@ -114,7 +114,7 @@ export default function BasisData() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-up">
                             <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
                                 <img src="../../../asset/images/modul/nanta.png" alt="" className="max-w-full h-[380px] z-10"/>
                             </div>

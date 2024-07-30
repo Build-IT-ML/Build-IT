@@ -344,7 +344,7 @@ export default function Welcome() {
                             <div className="w-full md:w-1/2 mt-0 flex flex-col justify-center items-center" data-aos="fade-right">
                                 <AccordionLanding 
                                     heading="Apakah kegiatan ini berbayar?"
-                                    description="Tidak, ini merupakan kegiatan yang diselanggarakan oleh Himpunanan Mahasiswa Teknologi Informasi Universitas Udayana untuk memberikan pengetahuan dasar mengenai berbagai hal yang diperlukan sebagai mahasiswa TI."
+                                    description="Tidak, ini merupakan kegiatan yang diselanggarakan oleh Himpunan Mahasiswa Teknologi Informasi Universitas Udayana untuk memberikan pengetahuan dasar mengenai berbagai hal yang diperlukan sebagai mahasiswa TI."
                                     isOpen={openIndex === 0}
                                     onClick={() => handleAccordionClick(0)}
                                 />
