@@ -429,10 +429,10 @@ export default function Welcome() {
                             </p>
                         </div>
                         
-                        <div className="b-none md:border border-primary rounded-[35px] shadow-lg">
+                        <div className="b-none md:border border-primary rounded-[35px] shadow-lg p-3">
                             <div className="flex flex-col md:flex-row justify-between" data-aos="fade-up">
                                 <div className="flex flex-col w-full justify-center items-center">
-                                    <img src={imageSrc} alt="" className="md:w-[492px] h-[485px] animate-bounce-merch"/>
+                                    <img src={imageSrc} alt="" className="w-full h-[300px] md:h-[440px] animate-bounce-merch"/>
                                     <div className="flex flex-row justify-center gap-5">
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
