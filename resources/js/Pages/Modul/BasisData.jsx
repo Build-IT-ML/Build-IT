@@ -55,7 +55,7 @@ export default function BasisData() {
                                 Mata kuliah Basis Data merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas tentang konsep, desain, implementasi, dan manajemen basis data. Mata kuliah ini juga mencakup penggunaan SQL (Structured Query Language) untuk manipulasi data, serta pemahaman tentang manajemen basis data yang aman dan andal.
                             </p>
                             <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">
-                                Lihat Modul
+                                <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">Lihat Modul</a>
                             </button>
                             <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                 <KotakModulPx102 />
