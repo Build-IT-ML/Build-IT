@@ -439,7 +439,7 @@ export default function Welcome() {
                                             onClick={() => setImageSrc('asset/images/landing-page/merch-black.png')}
                                         >
                                         <div className="border border-primary rounded-[15px] p-1">
-                                            <img src="asset/images/landing-page/merch-black.png" alt="" className="w-[82px] h-[82px]"/>
+                                            <img src="asset/images/landing-page/merch-black.png" alt="" className="w-[80px] h-[60px]"/>
                                         </div>
                                             <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Black</p>
                                         </div>
@@ -448,7 +448,7 @@ export default function Welcome() {
                                             onClick={() => setImageSrc('asset/images/landing-page/merch-white.png')}
                                             >
                                             <div className="border border-primary rounded-[15px] p-1">
-                                                <img src="asset/images/landing-page/merch-white.png" alt="" className="w-[82px] h-[82px]"/>
+                                                <img src="asset/images/landing-page/merch-white.png" alt="" className="w-[80px] h-[60px]"/>
                                             </div>
                                             <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">White</p>
                                         </div>
