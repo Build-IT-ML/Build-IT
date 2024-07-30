@@ -66,16 +66,11 @@ export default function Welcome() {
                     <div className="h-max w-full px-6 md:px-24 z-20">
                         <div className="flex justify-between mb-5   ">
                             <div className="flex flex-col mt-20 mb-5 w-full items-center md:items-start" data-aos="fade-up">
-                                <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >PELATIHAN BUILD-IT 2024</p>
+                                <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >PELATIHAN BUILD IT 2024</p>
                                     <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
-
-                                <div className="button mt-4 flex gap-4">
-                                    <Button className="text-white text-[14px] font-bold leading-[22px] tracking-[0.02em] bg-primary w-[163px] h-[52px] rounded-[5px] flex justify-center text-center hover:bg-secondary">Guide Book</Button>
-                                    <Button className="text-primary text-[14px] font-bold leading-[22px] tracking-[0.02em] border-primary border-2 w-[163px] h-[52px] rounded-[5px] flex justify-center text-center hover:bg-secondary"><a href="/register">Register Now</a></Button>
-                                </div>
                             </div>
                             <div className="w-full right-side mt-16 hidden md:block">
                                 <div className="static">
@@ -170,7 +165,7 @@ export default function Welcome() {
                             </p>
                             <div className="divider h-[2px] w-full md:w-[420px] bg-primary mt-2"></div>
                             <p className="mt-3 text-[18px] md:text-[24px] leading-[28px] tracking-[0.2px]" data-aos="fade-right">
-                                Apa itu Build-IT 2024?
+                                Apa itu BUILD IT 2024?
                             </p>
                             <p className="mt-10 font-normal text-[14px] md:text-[20px] w-full md:w-[724px] text-center md:text-justify" data-aos="fade-up">
                                 <span className="font-extrabold">Basic Understanding in Learning and Developing Information Technology</span> atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Workshop Gemastik.
@@ -201,14 +196,14 @@ export default function Welcome() {
                             <CardMatkul
                                 heading="Algoritma dan Pemrograman"
                                 description="Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk menyelesaikan suatu masalah."
-                                button="Learn More"
+                                button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-alprog.png"
                                 url="/modul/alprog"
                             />
                             <CardMatkul
                                 heading="Basis Data"
                                 description="Basis data adalah kumpulan data yang terorganisir secara sistematis untuk memudahkan akses."
-                                button="Learn More"
+                                button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-basis-data.png"
                                 url="/modul/basisdata"
                             />
@@ -216,7 +211,7 @@ export default function Welcome() {
                                 heading="Jaringan Komputer"
                                 description="Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
                                 saling terhubung untuk berbagi sumber."
-                                button="Learn More"
+                                button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-jaringan-komputer.png"
                                 url="/modul/jarkom"
                             />
@@ -224,14 +219,14 @@ export default function Welcome() {
                     </div>
 
                     {/* Timeline Build IT */}
-                    <div className="px-6 md:px-24 mt-36">
+                    <div className="px-6 md:px-24 mt-36" id="Timeline">
                         <div className="flex flex-col justify-center items-center z-10">
                             <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-left">
                                 TIMELINE BUILD-IT 2024
                             </h1>
                             <div className="divider h-[2px] w-full md:w-[692px] bg-primary mt-2"></div>
                             <p className="w-full md:w-[700px] text-center mt-3 text-[18px] md:text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-right">
-                                Setiap detik adalah kesempatan untuk belajar, berbagi, dan terhubung dengan komunitas kreatif. Catat tanggalnya dan pastikan Anda tidak melewatkan momen di Pelatihan Build-IT 2024.
+                                Setiap detik adalah kesempatan untuk belajar, berbagi, dan terhubung dengan komunitas kreatif. Catat tanggalnya dan pastikan Anda tidak melewatkan momen di BUILD-IT 2024.
                             </p>
                         </div>
                             <div
@@ -244,6 +239,9 @@ export default function Welcome() {
                             </div>
                         <div className="flex flex-col z-10 mt-3 md:mt-10">
                             <div className="flex flex-col gap-[120px] left-4 items-center pt-12 absolute w-1 bg-primary h-max md:left-1/2 transform md:-translate-x-1/2 z-10">
+                                <div className="w-5 h-5 md:w-9 md:h-9 bg-primary rounded-full relative z-20">
+                                    <div className="items-center w-full h-full bg-primary rounded-full animate-ping"></div>
+                                </div>
                                 <div className="w-5 h-5 md:w-9 md:h-9 bg-primary rounded-full relative z-20">
                                     <div className="items-center w-full h-full bg-primary rounded-full animate-ping"></div>
                                 </div>
@@ -282,18 +280,18 @@ export default function Welcome() {
                             </div>
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
-                                    <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Alprog & Basis Data</h3>
+                                    <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Algoritma & Pemrograman</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
-                                    Sabtu, 7 September 2024
+                                    Senin, 9 September 2024
                                     </p>
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
                             </div>
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
-                                    <h3 className="text-[16px] md:text-[20px] font-bold">Sharing Session Lomba + Penjurusan</h3>
+                                    <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Basis Data</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
-                                        Minggu, 8 September 2024
+                                        Selasa, 10 September 2024
                                     </p>
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
@@ -316,9 +314,18 @@ export default function Welcome() {
                             </div>
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
-                                    <h3 className="text-[16px] md:text-[20px] font-bold">Sharing Session Hactiv8</h3>
+                                    <h3 className="text-[16px] md:text-[20px] font-bold">Sosialisasi Penjurusan & Lomba-lomba</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
                                         Jumat, 13 September 2024
+                                    </p>
+                                    <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
+                                </div>
+                            </div>
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
+                                <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
+                                    <h3 className="text-[16px] md:text-[20px] font-bold">Sharing Session Hacktiv8</h3>
+                                    <p className="text-[14px] md:text-[16px] font-medium mb-1">
+                                        Senin, 16 September 2024
                                     </p>
                                     <p className="text-[14px]">On Webex https://webex</p>
                                 </div>
@@ -334,7 +341,7 @@ export default function Welcome() {
                             </h1>
                             <div className="divider h-[2px] w-1/2 md:w-[300px] bg-primary mt-2"></div>
                             <p className="w-full md:w-[700px] text-center mt-3 md:text-[20px] leading-[28px] tracking-[0.2px] text-gray-500" data-aos="fade-right">
-                                Pertanyaan umum yang sering ditanyakan terkait Build-IT 2024. Jika masih ada yang ingin ditanyakan lebih lanjut, kalian bisa hubungi narahubung dibawah ini.
+                                Pertanyaan umum yang sering ditanyakan terkait BUILD IT 2024. Jika masih ada yang ingin ditanyakan lebih lanjut, kalian bisa hubungi narahubung dibawah ini.
                             </p>
                         </div>
                         <div className="flex flex-col md:flex-row justify-around md:justify-between">
@@ -355,7 +362,7 @@ export default function Welcome() {
                                     onClick={() => handleAccordionClick(1)}
                                 />
                                 <AccordionLanding
-                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan BUILD-IT 2024??"
+                                    heading="Apa yang akan dilakukan mahasiswa selama pelatihan BUILD IT 2024??"
                                     description="Selama Pelatihan BUILD-TI 2024, mahasiswa akan dibimbing dalam memahami mata kuliah dasar di perkuliahan seperti alprog, basis data, dan jaringan komputer"
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
@@ -424,8 +431,8 @@ export default function Welcome() {
                             </h1>
                             <div className="divider h-[2px] w-full md:w-[450px] bg-primary mt-2"></div>
                             <p className="w-full md:w-[700px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px] text-gray-500" data-aos="fade-left">
-                                Mewadahi mahasiswa baru untuk menerima pemahaman lebih
-                                tentang cara membuat baju dan menjual baju
+                                Merchandise BUILD IT 2024 merupakan T-shirt yang diharapkan
+                                dapat mendukung terlaksananya kegiatan ini.
                             </p>
                         </div>
                         
@@ -463,7 +470,7 @@ export default function Welcome() {
                                         </div>
                                         <div className="hidden md:block divider h-[2px] w-full md:w-[417px] bg-primary mt-5"></div>
                                         <p className="text-[14px] leading-[21px] w-full md:w-[387px] mt-5 text-center md:text-start">
-                                            Baju limited edition Build-IT 2024. Dengan bahan yang adem dan desain yang kece, cocok digunakan kemana saja.
+                                            Baju limited edition BUILD IT 2024. Dengan bahan yang adem dan desain yang kece, cocok digunakan kemana saja.
                                         </p>
                                         <div className="bg-primary rounded-[10px] d-block max-w-[417px] h-[50px] p-5 text-white text-[20px] leading-[26px] tracking-[0.03em] flex justify-center items-center mt-3 hover:bg-secondary cursor-pointer shadow-lg">
                                             Order Now
