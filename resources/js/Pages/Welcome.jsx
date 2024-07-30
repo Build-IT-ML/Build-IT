@@ -534,7 +534,7 @@ const AccordionLanding = ({heading, description, isOpen, onClick}) => {
     );
 }
 
-const CardMatkul = ({heading, description, button, image}) => {
+const CardMatkul = ({heading, description, button, image, url}) => {
     return(
         <div className="border-primary rounded-[10px] shadow-lg transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-up">
             <div className="border-2 border-primary rounded-t-[10px] w-full md:w-[348px] h-full md:h-[250px] p-10 flex justify-center items-center shadow-lg">
@@ -548,7 +548,7 @@ const CardMatkul = ({heading, description, button, image}) => {
                     {description}
                 </p>
                 <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-full md:w-[147px] h-full md:h-[44px] hover:bg-primer md:p-0 p-3">
-                    <a href="modul/jarkom" className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                    <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                         {button}
                     </a>
                         <ArrowRight />
