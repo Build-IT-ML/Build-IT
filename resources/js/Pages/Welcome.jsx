@@ -477,7 +477,7 @@ export default function Welcome() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col w-full justify-center items-center mt-12 md:mt-20 md:gap-10 gap-10">
+                                <div className="flex flex-col w-full justify-center items-center md:gap-10 gap-10">
                                     <div className="">
                                         <div className="flex flex-col justify-center items-center md:items-start">
                                             <p className="text-primary text-[24px] md:text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build-IT 2024</p>
