@@ -57,6 +57,17 @@ export default {
           '50%': { transform: 'translateY(40px)' },
         },
       },
+      transitionProperty: {
+        'opacity': 'opacity',
+      },
+      transitionDuration: {
+        '1s': '1000ms',
+        '2s': '2000ms',
+        '3s': '3000ms',
+      },
+      transitionTimingFunction: {
+        'ease-in-out': 'ease-in-out',
+      },
     },
   },
   plugins: [
@@ -70,4 +81,3 @@ export default {
     },
   ],
 }
-

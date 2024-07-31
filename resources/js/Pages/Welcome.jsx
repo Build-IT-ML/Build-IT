@@ -2,14 +2,9 @@ import { Head, Link } from "@inertiajs/react";
 import React, { useEffect, useState } from "react";
 import { Button } from 'primereact/button';
 import DisableInspect from '@/Utils/disableInspect';
-import Modal from "@/Libs/ModalsDialog";
-import { Menubar } from 'primereact/menubar';
-import { Accordion, AccordionTab } from 'primereact/accordion';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import AOS from 'aos';
@@ -17,21 +12,37 @@ import 'aos/dist/aos.css';
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
+    // accordion faq
     const [openIndex, setOpenIndex] = useState(null);
+    // usestate change merch
     const [imageSrc, setImageSrc] = useState('asset/images/landing-page/merch-black.png');
+    // usestate modal pop up
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
-    // useEffect(() => {
-    //     const cleanup = DisableInspect();
-    //     return () => cleanup();
-    // }, []);
     useEffect(() => {
         AOS.init({
           duration: 800,
         });
       }, []);
+
+    // modal pop up merch
+      useEffect(() => {
+        setIsPopupOpen(true);
+
+        const timer = setTimeout(() => {
+            setIsPopupOpen(false);
+        }, 10000); 
+
+    }, []);
+
+
+    // useEffect(() => {
+    //     const cleanup = DisableInspect();
+    //     return () => cleanup();
+    // }, []);
 
       useEffect(() => {
         document.documentElement.classList.add('smooth-scroll');
@@ -64,6 +75,7 @@ export default function Welcome() {
 
                     {/* Content Awal */}
                     <div className="h-max w-full px-6 md:px-24 z-20">
+                        <MerchPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
                         <div className="flex justify-between mb-5   ">
                             <div className="flex flex-col mt-20 mb-5 w-full items-center md:items-start" data-aos="fade-up">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >PELATIHAN BUILD IT 2024</p>
@@ -71,6 +83,9 @@ export default function Welcome() {
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
+                                <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-bold rounded-[10px]">
+                                    <a href="/register">Daftar Sekarang</a>
+                                </button>
                             </div>
                             <div className="w-full right-side mt-16 hidden md:block">
                                 <div className="static">
@@ -462,7 +477,7 @@ export default function Welcome() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col w-full justify-center items-center mt-12 md:mt-20 md:gap-16 gap-10">
+                                <div className="flex flex-col w-full justify-center items-center mt-12 md:mt-20 md:gap-10 gap-10">
                                     <div className="">
                                         <div className="flex flex-col justify-center items-center md:items-start">
                                             <p className="text-primary text-[24px] md:text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build-IT 2024</p>
@@ -577,3 +592,68 @@ const CardContact = ({name, wa, line}) => {
         </div>
     );
 }
+
+const MerchPopup = ({ isOpen, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [fadeOut, setFadeOut] = useState(false);
+
+    const images = [
+        'asset/images/landing-page/merch-black.png',
+        'asset/images/landing-page/merch-white.png'
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFadeOut(true);
+            setTimeout(() => {
+                setFadeOut(false);
+                nextImage();
+            }, 700); 
+        }, 3000); 
+
+        return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+    }, []);
+
+    const nextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="absolute md:fixed inset-0 bg-none md:bg-gray-800 bg-opacity-20 md:bg-opacity-75 flex justify-center items-center z-50">
+            <div className="bg-gray-300 md:bg-white rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
+                <div className="flex justify-between">
+                    <h2 className="text-xl font-bold mb-4">Merchandise BUILD IT 2024</h2>
+                    <button
+                        className="text-gray-500 rounded hover:text-gray-900"
+                        onClick={onClose}
+                    >
+                        <i className="pi pi-times" style={{ fontSize: '1.5rem' }}></i>
+                    </button>
+                </div>
+                <div className="relative">
+                    <img 
+                        src={images[currentImageIndex]} 
+                        alt="Merchandise" 
+                        className={`w-full h-auto md:h-[350px] mb-4 animate-bounce-merch transition-opacity duration-3s ease-in-out ${fadeOut ? 'opacity-0' : 'opacity-300'}`} 
+                    />
+                    <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❮</button>
+                    <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❯</button>
+                </div>
+                <p className="text-gray-700 mb-4 text-center">
+                    T-shirt BUILD IT 2024. Dapatkan baju limited edition ini dengan bahan yang adem dan desain yang kece.
+                </p>
+                <div className="flex justify-between">
+                    <p className="text-lg font-bold mb-4">Rp 100.000</p>
+                    <div className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary cursor-pointer">Order Now</div>
+                </div>
+            </div>
+        </div>
+    );
+};
+

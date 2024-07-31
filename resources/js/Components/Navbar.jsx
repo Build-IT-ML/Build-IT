@@ -46,7 +46,7 @@ export default function Navbar() {
             </span>
             <ul className={` ${!showNav ? "hidden" : "flex"} flex-col justify-center md:w-max-content rounded bg-white top-20 left-12 right-12 border-[1px] border-gray-300 py-6 px-4 md:px-12 space-y-3 absolute shadow text-primary z-10 md:flex md:relative md:flex-row md:items-center md:top-0 md:space-y-0 md:space-x-6 md:left-0 md:right-0 md:py-0 md:border-none md:shadow-none`}>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
-                    <a href="#Home">Home</a>
+                    <a href="/#Home">Home</a>
                 </li>
                 <li className="space-x-1 relative" ref={dropdownRef}>
                     <div className="flex flex-row gap-1 cursor-pointer transition-all duration-300 hover:bg-gray-200 rounded-[10px] w-max p-3" onClick={showDropDown}>
@@ -60,16 +60,16 @@ export default function Navbar() {
                     </li>
                 </li>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
-                    <a href="#About">About</a>
+                    <a href="/#About">About</a>
                 </li>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
-                    <a href="#Faq">FAQ</a>
+                    <a href="/#Faq">FAQ</a>
                 </li>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
-                    <a href="#Contact">Contact Person</a>
+                    <a href="/#Contact">Contact Person</a>
                 </li>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
-                    <a href="#Merch">Merchandise</a>
+                    <a href="/#Merch">Merchandise</a>
                 </li>
                 <li>
                     <Link href="/login" rel="noopener noreferrer" className="w-fit h-[52px] block md:hidden py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
