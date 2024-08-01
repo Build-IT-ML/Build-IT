@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+use illuminate\support\Str;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, UuidTrait;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +27,10 @@ class User extends Authenticatable
         'email',
         'password',
         'line_id',
-        'whatsaap_id',
+        'whatsapp_id',
+        'tugas_jarkom',
+        'tugas_alprog',
+        'tugas_basis'
     ];
 
     /**
@@ -46,4 +52,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->{$model->getKeyName()} = (string) Str::uuid();
+        });
+    }
+
+    /**
+     * Get the value indicating whether the IDs are incrementing.
+     *
+     * @return bool
+     */
+    public function getIncrementing()
+    {
+        return false;
+    }
+
+    /**
+     * Get the data type of the primary key.
+     *
+     * @return string
+     */
+    public function getKeyType()
+    {
+        return 'string';
+    }
 }

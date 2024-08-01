@@ -55,13 +55,13 @@ export default function Navbar() {
                     <a href="#">Merchandise</a>
                 </li>
                 <li>
-                    <Link href={route('Login')} rel="noopener noreferrer" className="w-fit h-[52px] block md:hidden py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
+                    <Link href={route('login')} rel="noopener noreferrer" className="w-fit h-[52px] block md:hidden py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
                         Login
                     </Link>
                 </li>
             </ul>
             <div className="btn-cta">
-                <Link href={route('Login')} rel="noopener noreferrer" className="hidden md:block py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
+                <Link href={route('login')} rel="noopener noreferrer" className="hidden md:block py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
                     Login
                 </Link>
 

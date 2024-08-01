@@ -1,21 +1,135 @@
-import { Head } from "@inertiajs/react";
-import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
+import { Head, useForm, Link } from "@inertiajs/react";
+import React, { useState, useEffect } from "react";
+import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../../Components/Icons/modul";
+import { ViewPassword, HidePassword } from "@/Components/Icons/login";
+import UserGuest from "@/Components/Layouts/User/UserGuest";
 
-export default function Login() {
-    return(
+
+export default function Daftar() {
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const { data, setData, post, processing, errors, reset } = useForm({
+        nim: '',
+        password: ''
+    });
+
+    useEffect(() => {
+        return () => {
+            reset('password');
+        };
+    }, []);
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route('login'));
+    };
+
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(true);
+        setTimeout(() => {
+            setPasswordVisible(false);
+        }, 1000);
+    };
+
+    return (
         <>
-        <Head title="Login"></Head>
-        <Navbar/>
-        <div className="content min-h-screen bg-[url('asset/images/bg-waves-pattern.png')] bg-no-repeat bg-cover bg-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="absolute   bottom-0 -z-0"><path fill="#ffffff" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,197.3C320,192,400,160,480,122.7C560,85,640,43,720,26.7C800,11,880,21,960,37.3C1040,53,1120,75,1200,69.3C1280,64,1360,32,1400,16L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+            <Head title="Login" />
+            <UserGuest>
+                <div className="w-full overflow-hidden bg-[url('asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
+                    <div className="h-max w-full px-6 md:px-24">
+                        <div className="flex flex-col justify-between mt-20 mb-36">
+                            <div className="flex flex-col z-20">
+                            <div className="flex justify-center">
+                                <div className="flex flex-col space-y-4 p-10 rounded-xl h-full items-center bg-white border border-primary/50 shadow-lg z-10">
+                                    <div className="flex justify-center w-full">
+                                        <img 
+                                            src="asset/images/iconic.png" 
+                                            alt="Logo BUILD IT 2024" 
+                                            className="flex justify-center"
+                                            width={158}
+                                            height={166}
+                                        />
+                                    </div>
+                                    <h1 className="w-full text-center text-lg text-black pt-3 mt-2">Login BUILD IT</h1>
+                                    <form onSubmit={submit} className="space-y-5">
+                                        <div className="flex flex-col gap-2 w-full">
+                                            <label htmlFor='nim' className="font-semibold text-black text-base">NIM</label>
+                                            <input 
+                                                type="text" 
+                                                name="nim"
+                                                id="nim" 
+                                                value={data.nim}
+                                                onChange={(e) => setData('nim', e.target.value)}
+                                                className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                                                required   
+                                                autoFocus
+                                            />
+                                            <small className="text-red-500">
+                                                {errors.nim }
+                                            </small>
+                                        </div>
+                
+                                        <div className="flex flex-col gap-2 w-full">
+                                            <label htmlFor="password" className="font-semibold text-black text-base">Password</label>
+                                            <div className="flex relative items-center w-full">
+                                                <input 
+                                                    type={passwordVisible ? "text" : "password"} 
+                                                    name="password" 
+                                                    id="password" 
+                                                    onChange={(e) => setData('password', e.target.value)} 
+                                                    className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                                                    required
+                                                />
+                                                <button 
+                                                    type="button" 
+                                                    className="absolute w-10 h-6 right-1 bg-white"
+                                                    onClick={togglePasswordVisibility}
+                                                >
+                                                    {passwordVisible ? (
+                                                        <ViewPassword />
+                                                    ) : (
+                                                        <HidePassword />
+                                                    )}
+                                                </button>
+                                            </div>
+                                            <small className="text-red-500">
+                                                {errors.password}
+                                            </small>
+                                        </div>
+                                        
+                                        <div className="btn-cta mt-5 flex justify-center items-center w-full">
+                                            <button type="submit" className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center w-[470px]">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </form>
 
-            <div className="flex bg-white border">
-                <img src="asset/images/iconic.png" alt="Build-IT 2024" className="w-40" />
-                <form action=""></form>
-            </div>
-        </div>
-        <Footer/>
+                                    <p>Belom punya akun?
+                                        <Link href={route('register')} className="text-primary"> Daftar</Link>
+                                    </p>
+                                </div>
+                            </div>
+                
+                                <div className="absolute top-[400px] left-[80px] animate-bounce-custom">
+                                    <KotakModulPx102 />
+                                </div>     
+                                <div className="absolute top-[700px] left-[400px] animate-bounce-custom">
+                                    <KotakModulPx41 />
+                                </div>     
+                            </div>
+                            <div className="absolute right-0 animate-bounce-custom">
+                                <KotakModulPrimary />
+                            </div>
+                            <div className="absolute right-[200px] top-[280px] animate-bounce-custom">
+                                <KotakModulSecondary />
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </UserGuest>
         </>
-    )
+    );
 }

@@ -38,12 +38,12 @@ class UserRequest extends FormRequest
                 'email',
                 'max:120',
                 'unique:users,email,' . $userId,
-                'regex:/^.*@(?:unud\.ac\.id|\.com)$/',
+                // 'regex:/^.*@(?:unud\.ac\.id|\gmail\.com)$/',
             ],
             'password' => 'required|string|min:8',
             'line_id' => 'required|string|max:120',
-            'whatsaap_id' => 'required|string|max:120',
-            'tugas_alprog_link' => [
+            'whatsapp_id' => 'required|string|max:120',
+            'tugas_alprog' => [
                 'required',
                 'string',
                 'max:255',
@@ -77,8 +77,8 @@ class UserRequest extends FormRequest
             'email' => 'Email',
             'password' => 'Kata Sandi',
             'line_id' => 'ID Line',
-            'whatsaap_id' => 'ID WhatsApp',
-            'tugas_alprog_link' => 'Tugas Alprog Link',
+            'whatsapp_id' => 'ID WhatsApp',
+            'tugas_alprog' => 'Tugas Alprog Link',
             'tugas_basis' => 'Tugas Basis',
             'tugas_jarkom' => 'Tugas Jarkom',
         ];
@@ -109,13 +109,13 @@ class UserRequest extends FormRequest
             'line_id.required' => 'ID Line harus diisi.',
             'line_id.string' => 'ID Line harus berupa teks.',
             'line_id.max' => 'ID Line tidak boleh melebihi 120 karakter.',
-            'whatsaap_id.required' => 'No WhatsApp harus diisi.',
-            'whatsaap_id.string' => 'No WhatsApp harus berupa teks.',
-            'whatsaap_id.max' => 'No WhatsApp tidak boleh melebihi 120 karakter.',
-            'tugas_alprog_link.required' => 'Tugas Alprog Link harus diisi.',
-            'tugas_alprog_link.string' => 'Tugas Alprog Link harus berupa teks.',
-            'tugas_alprog_link.max' => 'Tugas Alprog Link tidak boleh melebihi 255 karakter.',
-            'tugas_alprog_link.regex' => 'Tugas Alprog Link harus berupa link Google Drive yang valid.',
+            'whatsapp_id.required' => 'No WhatsApp harus diisi.',
+            'whatsapp_id.string' => 'No WhatsApp harus berupa teks.',
+            'whatsapp_id.max' => 'No WhatsApp tidak boleh melebihi 120 karakter.',
+            'tugas_alprog.required' => 'Tugas Alprog Link harus diisi.',
+            'tugas_alprog.string' => 'Tugas Alprog Link harus berupa teks.',
+            'tugas_alprog.max' => 'Tugas Alprog Link tidak boleh melebihi 255 karakter.',
+            'tugas_alprog.regex' => 'Tugas Alprog Link harus berupa link Google Drive yang valid.',
             'tugas_basis.required' => 'Tugas Basis harus diisi.',
             'tugas_basis.string' => 'Tugas Basis harus berupa teks.',
             'tugas_basis.max' => 'Tugas Basis tidak boleh melebihi 255 karakter.',
@@ -127,4 +127,3 @@ class UserRequest extends FormRequest
         ];
     }
 }
-

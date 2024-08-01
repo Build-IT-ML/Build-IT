@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Validation\Rule;
 
 class LoginRequest extends FormRequest
 {
-
+    /**
+     * Determine if the user is authorized to make this request.
+     */
     public function authorize(): bool
     {
         return true;
@@ -26,30 +27,16 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nim' => [
-                'required',
-                'string',
-                'size:10',
-            ],
-            'password' => 'required|string|min:8',
+            'nim' => ['required', 'string'],
+            'password' => ['required', 'string'],
         ];
     }
 
-    public function messages(): array
-    {
-        return [
-            'nim.required' => 'NIM harus diisi.',
-            'nim.size' => 'NIM harus terdiri dari tepat 10 karakter.',
-            'email.required' => 'Email harus diisi.',
-            'email.email' => 'Format email tidak valid.',
-            'email.max' => 'Email tidak boleh melebihi 120 karakter.',
-            'email.regex' => 'Email harus berakhiran dengan .com atau unud.ac.id.',
-            'password.required' => 'Kata Sandi harus diisi.',
-            'password.string' => 'Kata Sandi harus berupa teks.',
-            'password.min' => 'Kata Sandi harus memiliki minimal 8 karakter.',
-        ];
-    }
-
+    /**
+     * Attempt to authenticate the request's credentials.
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
@@ -83,7 +70,7 @@ class LoginRequest extends FormRequest
         throw ValidationException::withMessages([
             'nim' => trans('auth.throttle', [
                 'seconds' => $seconds,
-                'minutes' => ceil($seconds / 120),
+                'minutes' => ceil($seconds / 60),
             ]),
         ]);
     }
