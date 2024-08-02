@@ -88,62 +88,44 @@ export default function Alprog() {
                         </p>
                     </div>
                     <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
-                        <div data-aos="fade-up">
-                            <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/devta.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Devta
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/liangga.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Liangga
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/wahtu.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Wahtu
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/gekna.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Gekna
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
+                        <CardPembicara imageSrc="../../../asset/images/modul/devta.png" name="Devta" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/liangga.png" name="Liangga" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/wahtu.png" name="Wahtu" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/gekna.png" name="Gekna" batch="TI' 22" />
                     </div>
                 </div>
             </div>
         </>
     );
 }
+
+function CardPembicara({ imageSrc, name, batch }) {
+    return (
+      <div data-aos="fade-up" className="flex justify-center items-center">
+        <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
+          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
+            <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end shadow-lg z-20 backface-hidden">
+              <img src={imageSrc} alt={name} className="max-w-full h-[380px] z-10 backface-hidden" />
+            </div>
+            <div className="bg-white w-full h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden">
+              <p className="text-[24px] font-medium leading-[24px]">
+                {name}
+              </p>
+              <p className="mt-5 text-[22px] font-bold">
+                {batch}
+              </p>
+            </div>
+          </div>
+          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-center items-center rotate-y-180 p-5 gap-5">
+                <h1 className="text-2xl font-bold">Tentang Saya</h1>
+                <p className="text-sm text-gray-600 text-center">
+                    Ini adalah deskripsi tentang {name} dari angkatan {batch}.
+                </p>
+                <a href="" className="text-primary">
+                    <i className="pi pi-linkedin" style={{ fontSize: '1.5rem' }}></i>
+                </a>
+          </div>
+        </div>
+      </div>
+    );
+  }

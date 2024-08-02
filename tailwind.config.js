@@ -12,7 +12,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // sans: ["Inter", ...defaultTheme.fontFamily.sans],
         sans: ["Poppins", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       colors: {
@@ -75,6 +74,18 @@ export default {
       const newUtilities = {
         '.smooth-scroll': {
           'scroll-behavior': 'smooth',
+        },
+        '.transform-style-preserve-3d': {
+          transformStyle: 'preserve-3d',
+        },
+        '.rotate-y-180': {
+          transform: 'rotateY(180deg)',
+        },
+        '.backface-hidden': {
+          backfaceVisibility: 'hidden',
+        },
+        '.hover-rotate-y-180:hover': {
+          transform: 'rotateY(180deg)',
         },
       };
       addUtilities(newUtilities);

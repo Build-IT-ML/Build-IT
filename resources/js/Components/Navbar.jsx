@@ -53,11 +53,13 @@ export default function Navbar() {
                         <a href="#">Modul Pelatihan</a>
                         <i className={`pi ${!show ? "pi-angle-down" : "pi-angle-up"} mt-1`}></i>
                     </div>
-                    <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
-                        <Link href="/modul/alprog" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Algoritma & Pemrograman</Link>
-                        <Link href="/modul/basisdata" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Basis Data</Link>
-                        <Link href="/modul/jarkom" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Jaringan Komputer & Komunikasi</Link>
-                    </li>
+                    <ul>
+                        <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
+                            <Link href="/modul/alprog" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Algoritma & Pemrograman</Link>
+                            <Link href="/modul/basisdata" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Basis Data</Link>
+                            <Link href="/modul/jarkom" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Jaringan Komputer & Komunikasi</Link>
+                        </li>
+                    </ul>
                 </li>
                 <li className="hover:bg-gray-200 rounded-[10px] w-max p-2">
                     <a href="/#About">About</a>
