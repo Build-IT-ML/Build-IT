@@ -14,6 +14,7 @@ import Footer from "../Components/Footer";
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Loading from "./Loading";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -55,6 +56,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Landing Page" />
+            <Loading/>
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
