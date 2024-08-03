@@ -2,14 +2,10 @@ import { Head, Link } from "@inertiajs/react";
 import React, { useEffect, useState } from "react";
 import { Button } from 'primereact/button';
 import DisableInspect from '@/Utils/disableInspect';
-import Modal from "@/Libs/ModalsDialog";
-import { Menubar } from 'primereact/menubar';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+import { Dialog } from 'primereact/dialog';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import AOS from 'aos';
@@ -18,21 +14,39 @@ import Loading from "./Loading";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
+    // accordion faq
     const [openIndex, setOpenIndex] = useState(null);
+    // usestate change merch
     const [imageSrc, setImageSrc] = useState('asset/images/landing-page/merch-black.png');
+    // usestate modal pop up
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const [visible, setVisible] = useState(false);
 
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
-    // useEffect(() => {
-    //     const cleanup = DisableInspect();
-    //     return () => cleanup();
-    // }, []);
     useEffect(() => {
         AOS.init({
           duration: 800,
         });
       }, []);
+
+    // modal pop up merch
+      useEffect(() => {
+        setIsPopupOpen(true);
+
+        const timer = setTimeout(() => {
+            setIsPopupOpen(false);
+        }, 10000); 
+
+    }, []);
+
+
+    // useEffect(() => {
+    //     const cleanup = DisableInspect();
+    //     return () => cleanup();
+    // }, []);
 
       useEffect(() => {
         document.documentElement.classList.add('smooth-scroll');
@@ -66,6 +80,7 @@ export default function Welcome() {
 
                     {/* Content Awal */}
                     <div className="h-max w-full px-6 md:px-24 z-20">
+                        <MerchPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
                         <div className="flex justify-between mb-5   ">
                             <div className="flex flex-col mt-20 mb-5 w-full items-center md:items-start" data-aos="fade-up">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >PELATIHAN BUILD IT 2024</p>
@@ -73,6 +88,36 @@ export default function Welcome() {
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
+                                <div className="md:w-[494px] w-auto flex flex-row gap-16 items-center">
+                                    <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-bold rounded-[10px]">
+                                        <a href="/register">Daftar Sekarang</a>
+                                    </button>
+                                    <div className="flex flex-row gap-5">
+                                        <div className="bg-primary w-[60px] h-[60px] rounded-full mt-4 flex justify-center items-center hover:bg-secondary cursor-pointer shadow-lg" onClick={() => setVisible(true)}>
+                                            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.5342 7.0735L1.21875 0.106835C1.08988 0.0286161 0.946941 -0.00786758 0.803431 0.000832147C0.65992 0.00953187 0.520581 0.0631276 0.398585 0.156554C0.276588 0.249981 0.175963 0.380152 0.10622 0.534765C0.0364761 0.689378 -8.21365e-05 0.863326 1.38564e-07 1.04017V14.9602C-8.21365e-05 15.137 0.0364761 15.311 0.10622 15.4656C0.175963 15.6202 0.276588 15.7504 0.398585 15.8438C0.520581 15.9372 0.65992 15.9908 0.803431 15.9995C0.946941 16.0082 1.08988 15.9717 1.21875 15.8935L12.5342 8.92684C12.6747 8.84151 12.793 8.7095 12.8757 8.54574C12.9584 8.38198 13.0022 8.193 13.0022 8.00017C13.0022 7.80734 12.9584 7.61836 12.8757 7.4546C12.793 7.29084 12.6747 7.15883 12.5342 7.0735Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <Dialog   
+                                        header="How to join" 
+                                        variant="ghost"
+                                        visible={visible} modal={false} 
+                                        onHide={() => {if (!visible) return; setVisible(false); }}
+                                        className="w-auto md:w-9/12 h-[564px] h-auto rounded-[10px] !px-0 py-0">
+                                            <div className="w-full h-full max-[580px]">
+                                                <iframe
+                                                    width="100%"
+                                                    height="100%"
+                                                    src="https://www.youtube.com/embed/4nxZfBvYG3I?si=xID1y4LLk2uhT6Sv"
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            </div>
+                                        </Dialog>
+                                        <p className="text-primary text-[16px] font-medium flex justify-center items-center mt-4">How to Join</p>
+                                    </div>
+                                </div>
                             </div>
                             <div className="w-full right-side mt-16 hidden md:block">
                                 <div className="static">
@@ -263,7 +308,7 @@ export default function Welcome() {
                                     <div className="items-center w-full h-full bg-primary rounded-full animate-ping"></div>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 md:pl-20">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md ">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Open Registration Peserta</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">14 Agustus - 19 Agustus 2024
@@ -271,7 +316,7 @@ export default function Welcome() {
                                     <p className="text-[14px] md:text-[16px]">Melalui website resmi BUILD IT https://buildit.hmtiudayana.id/</p>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Pembukaan & Pelatihan Jarkom</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -280,7 +325,7 @@ export default function Welcome() {
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Algoritma & Pemrograman</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -289,7 +334,7 @@ export default function Welcome() {
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Basis Data</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -305,7 +350,7 @@ export default function Welcome() {
                             >
                                 <IconKotakTimeLine /> 
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Deadline Pengumpulan Tugas</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -314,7 +359,7 @@ export default function Welcome() {
                                     <p className="text-[14px]">Melalui website resmi BUILD IT https://buildit.hmtiudayana.id/</p>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Sosialisasi Penjurusan & Lomba-lomba</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -323,7 +368,7 @@ export default function Welcome() {
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
                             </div>
-                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20">
+                            <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Sharing Session Hacktiv8</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
@@ -441,7 +486,7 @@ export default function Welcome() {
                         <div className="b-none md:border border-primary rounded-[35px] shadow-lg p-3">
                             <div className="flex flex-col md:flex-row justify-between" data-aos="fade-up">
                                 <div className="flex flex-col w-full justify-center items-center">
-                                    <img src={imageSrc} alt="" className="w-full h-[300px] md:h-[440px] animate-bounce-merch"/>
+                                    <img src={imageSrc} alt="" className="w-auto h-auto md:h-[440px] animate-bounce-merch"/>
                                     <div className="flex flex-row justify-center gap-5">
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
@@ -464,7 +509,7 @@ export default function Welcome() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col w-full justify-center items-center mt-12 md:mt-20 md:gap-16 gap-10">
+                                <div className="flex flex-col w-full justify-center items-center md:gap-10 gap-10">
                                     <div className="">
                                         <div className="flex flex-col justify-center items-center md:items-start">
                                             <p className="text-primary text-[24px] md:text-[33px] font-medium leading-[24px] tracking-[0.03em]">Baju Build-IT 2024</p>
@@ -579,3 +624,67 @@ const CardContact = ({name, wa, line}) => {
         </div>
     );
 }
+
+const MerchPopup = ({ isOpen, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [fadeOut, setFadeOut] = useState(false);
+
+    const images = [
+        'asset/images/landing-page/merch-black.png',
+        'asset/images/landing-page/merch-white.png'
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFadeOut(true);
+            setTimeout(() => {
+                setFadeOut(false);
+                nextImage();
+            }, 700); 
+        }, 3000); 
+
+        return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+    }, []);
+
+    const nextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="absolute md:fixed inset-0 bg-none md:bg-gray-800 bg-opacity-20 md:bg-opacity-75 flex justify-center items-center z-50">
+            <div className="bg-gray-300 md:bg-white rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
+                <div className="flex justify-between">
+                    <h2 className="text-xl font-bold mb-4">Merchandise BUILD IT 2024</h2>
+                    <button
+                        className="text-gray-500 rounded hover:text-gray-900"
+                        onClick={onClose}
+                    >
+                        <i className="pi pi-times" style={{ fontSize: '1.5rem' }}></i>
+                    </button>
+                </div>
+                <div className="relative">
+                    <img 
+                        src={images[currentImageIndex]} 
+                        alt="Merchandise" 
+                        className={`w-full h-auto md:h-[350px] mb-4 animate-bounce-merch transition-opacity duration-3s ease-in-out ${fadeOut ? 'opacity-0' : 'opacity-300'}`} 
+                    />
+                    <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❮</button>
+                    <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❯</button>
+                </div>
+                <p className="text-gray-700 mb-4 text-center">
+                    T-shirt BUILD IT 2024. Dapatkan baju limited edition ini dengan bahan yang adem dan desain yang kece.
+                </p>
+                <div className="flex justify-between">
+                    <p className="text-lg font-bold mb-4">Rp 100.000</p>
+                    <div className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary cursor-pointer">Order Now</div>
+                </div>
+            </div>
+        </div>
+    );
+};

@@ -38,10 +38,10 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="p-12 px-24 space-y-10 md:space-y-0 text-white bg-primary flex flex-wrap justify-between">
+      <footer className="px-12 py-12 md:px-24 space-y-10 md:space-y-0 text-white bg-primary flex flex-wrap justify-between">
         <aside className="w-full md:w-2/4">
           <img src="../asset/images/footer-logo.png" className="" alt="Build-IT 2024" />
-          <p className="capitalize mt-5 w-[450px] my-4">
+          <p className="capitalize mt-5 w-auto md:w-[450px] my-4 ">
             empowering students to shape the next generation of information technology
           </p>
           <div className="social-media mt-10 flex items-center space-x-3 relative bottom-0">
@@ -96,8 +96,8 @@ export default function Footer() {
           </a>
         </nav>
       </footer>
-      <footer className="px-24 bg-primary text-white">
-        <div className="divider h-[1px] w-full bg-white mb-4"></div>
+      <footer className="px-12 md:px-24 bg-primary text-white">
+        <div className="divider h-[1px] w-auto md:w-full bg-white mb-4"></div>
         <div className="flex justify-between">
           <p className="my-4">Copyright © 2024 All rights reserved. </p>
           <Button

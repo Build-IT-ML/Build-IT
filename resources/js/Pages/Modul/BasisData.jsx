@@ -55,7 +55,7 @@ export default function BasisData() {
                                 Mata kuliah Basis Data merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas tentang konsep, desain, implementasi, dan manajemen basis data. Mata kuliah ini juga mencakup penggunaan SQL (Structured Query Language) untuk manipulasi data, serta pemahaman tentang manajemen basis data yang aman dan andal.
                             </p>
                             <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">
-                                Lihat Modul
+                                <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">Lihat Modul</a>
                             </button>
                             <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                 <KotakModulPx102 />
@@ -87,62 +87,45 @@ export default function BasisData() {
                         </p>
                     </div>
                     <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
-                        <div data-aos="fade-up">
-                            <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/bayu_riz.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Bayu Rizki
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/dwita.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Dwita
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/nanta.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Rapriananta
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up">
-                            <div className="mt- bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-[285px] h-[310px] flex justify-center items-end shadow-lg z-20">
-                                <img src="../../../asset/images/modul/ekaputra.png" alt="" className="max-w-full h-[380px] z-10"/>
-                            </div>
-                            <div className="bg-white w-[285px] h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center">
-                                <p className="text-[24px] font-medium leading-[24px]">
-                                    Eka Putra
-                                </p>
-                                <p className="mt-5 text-[22px] font-bold">
-                                    TI' 22
-                                </p>
-                            </div>
-                        </div>
+                        <CardPembicara imageSrc="../../../asset/images/modul/bayu_riz.png" name="Bayu Rizki" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/dwita.png" name="Dwita" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/nanta.png" name="Rapriananta" batch="TI' 22" />
+                        <CardPembicara imageSrc="../../../asset/images/modul/ekaputra.png" name="Eka Putra" batch="TI' 22" />
                     </div>
                 </div>
             </div>
         </>
     );
 }
+
+function CardPembicara({ imageSrc, name, batch }) {
+    return (
+      <div data-aos="fade-up" className="flex justify-center items-center">
+        <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
+          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
+            <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end shadow-lg z-20 backface-hidden">
+              <img src={imageSrc} alt={name} className="max-w-full h-[380px] z-10 backface-hidden" />
+            </div>
+            <div className="bg-white w-full h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden">
+              <p className="text-[24px] font-medium leading-[24px]">
+                {name}
+              </p>
+              <p className="mt-5 text-[22px] font-bold">
+                {batch}
+              </p>
+            </div>
+          </div>
+          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-center items-center rotate-y-180 p-5 gap-5">
+                <h1 className="text-2xl font-bold">Tentang Saya</h1>
+                <p className="text-sm text-gray-600 text-center">
+                    Ini adalah deskripsi tentang {name} dari angkatan {batch}.
+                </p>
+                <a href="" className="text-primary">
+                    <i className="pi pi-linkedin" style={{ fontSize: '1.5rem' }}></i>
+                </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
