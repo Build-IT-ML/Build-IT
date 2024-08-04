@@ -123,7 +123,7 @@ function CardPembicara({ imageSrc, name, batch }) {
                     Ini adalah deskripsi tentang {name} dari angkatan {batch}.
                 </p>
                 <a href="" className="text-primary">
-                    <i className="pi pi-linkedin" style={{ fontSize: '1.5rem' }}></i>
+                    <i className="pi pi-instagram" style={{ fontSize: '1.5rem' }}></i>
                 </a>
           </div>
         </div>
