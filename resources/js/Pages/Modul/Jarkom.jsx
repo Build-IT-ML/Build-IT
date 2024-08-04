@@ -55,9 +55,10 @@ export default function JaringanKomputer() {
                             <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full" data-aos="fade-up">
                                 Mata kuliah Jaringan Komputer dan Komunikasi merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas prinsip-prinsip dasar, arsitektur, dan teknologi yang digunakan dalam jaringan komputer serta komunikasi data. Mahasiswa akan mempelajari berbagai topik seperti model OSI (Open Systems Interconnection), protokol jaringan, pengalamatan IP, subnetting, routing, switching, dan keamanan jaringan.
                             </p>
-                            <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">
-                                <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">Lihat Modul</a>
-                            </button>
+                            <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">                            
+                                <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
+                                </button>
+                            </a>
                             <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                 <KotakModulPx102 />
                             </div>     
