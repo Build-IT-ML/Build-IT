@@ -1,8 +1,8 @@
 import './bootstrap';
 import '../css/app.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createInertiaApp } from '@inertiajs/react';
+import { createInertiaApp, router } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { PrimeReactProvider } from "primereact/api";
@@ -13,8 +13,37 @@ import 'primereact/resources/primereact.min.css';
 import '@fontsource/poppins';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Loading from './Pages/Loading'; 
 
+const AppWrapper = ({ App, props }) => {
+    const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        const start = () => setLoading(true);
+        const end = () => setLoading(false);
+
+        router.on('start', start);
+        router.on('finish', end);
+        router.on('cancel', end);
+
+        return () => {
+            router.off('start', start);
+            router.off('finish', end);
+            router.off('cancel', end);
+        };
+    }, []);
+
+    return (
+        <>
+            {loading && <Loading />}
+            <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
+                <Navbar />
+                <App {...props} />
+                <Footer />
+            </PrimeReactProvider>
+        </>
+    );
+};
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -22,13 +51,7 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(
-            <>
-                <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
-                    <Navbar/>
-                    <App {...props} />
-                    <Footer/>
-                </PrimeReactProvider>
-            </>
+            <AppWrapper App={App} props={props} />
         );
     },
     progress: {

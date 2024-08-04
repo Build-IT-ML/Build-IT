@@ -70,7 +70,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Landing Page" />
-            <Loading/>
+            {/* <Loading/> */}
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
@@ -103,7 +103,7 @@ export default function Welcome() {
                                         variant="ghost"
                                         visible={visible} modal={false} 
                                         onHide={() => {if (!visible) return; setVisible(false); }}
-                                        className="w-auto md:w-9/12 h-[564px] h-auto rounded-[10px] !px-0 py-0">
+                                        className="w-auto md:w-9/12 md:h-[564px] h-auto rounded-[10px] !px-0 py-0">
                                             <div className="w-full h-full max-[580px]">
                                                 <iframe
                                                     width="100%"

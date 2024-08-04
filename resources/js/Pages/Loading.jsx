@@ -2,6 +2,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import animationData from './LoadingAnimation.json';
+
 const Loading = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-40 z-50">
