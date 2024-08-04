@@ -117,7 +117,6 @@ function CardPembicara({ imageSrc, name, batch }) {
             </div>
           </div>
           <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-center items-center rotate-y-180 p-5 gap-5">
-                <h1 className="text-2xl font-bold">Tentang Saya</h1>
                 <p className="text-sm text-gray-600 text-center">
                     Ini adalah deskripsi tentang {name} dari angkatan {batch}.
                 </p>
