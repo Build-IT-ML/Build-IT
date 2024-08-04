@@ -89,9 +89,11 @@ export default function Welcome() {
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
                                 <div className="md:w-[494px] w-auto flex flex-row gap-16 items-center">
-                                    <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-bold rounded-[10px]">
-                                        <a href="/register">Daftar Sekarang</a>
-                                    </button>
+                                    <a href="/register">
+                                        <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-bold rounded-[10px]">
+                                            Daftar Sekarang
+                                        </button>
+                                    </a>
                                     <div className="flex flex-row gap-5">
                                         <div className="bg-primary w-[60px] h-[60px] rounded-full mt-4 flex justify-center items-center hover:bg-secondary cursor-pointer shadow-lg" onClick={() => setVisible(true)}>
                                             <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -601,12 +603,12 @@ const CardMatkul = ({heading, description, button, image, url}) => {
                 <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center">
                     {description}
                 </p>
-                <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-full md:w-[147px] h-full md:h-[44px] hover:bg-primer md:p-0 p-3">
-                    <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
+                    <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-full md:w-[147px] h-full md:h-[44px] hover:bg-primer md:p-0 p-3">
                         {button}
-                    </a>
                         <ArrowRight />
-                </button>
+                    </button>
+                </a>
             </div>
         </div>
     );
