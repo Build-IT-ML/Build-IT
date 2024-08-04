@@ -83,7 +83,7 @@ export default function Welcome() {
                         <MerchPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
                         <div className="flex justify-between mb-5   ">
                             <div className="flex flex-col mt-20 mb-5 w-full items-center md:items-start" data-aos="fade-up">
-                                <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >PELATIHAN BUILD IT 2024</p>
+                                <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >TEKNOLOGI INFORMASI</p>
                                     <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
