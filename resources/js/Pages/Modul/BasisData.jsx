@@ -104,7 +104,7 @@ function CardPembicara({ imageSrc, name, batch }) {
         <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
           <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
             <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end shadow-lg z-20 backface-hidden">
-              <img src={imageSrc} alt={name} className="w-auto h-auto  z-10 backface-hidden" />
+              <img src={imageSrc} alt={name} className="w-auto h-[400px] z-10 backface-hidden" />
             </div>
             <div className="bg-white w-full h-[93px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden">
               <p className="text-[24px] font-medium leading-[24px]">
