@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password', 100);
             $table->string('line_id', 120);
             $table->string('whatsapp_id', 120);
-            $table->enum('status', ['Terverifikasi', 'Belum Terverifikasi'])->default('Belum Terverifikasi');
+            $table->enum('status', ['Terverifikasi', 'Belum Terverifikasi', 'Ditolak'])->default('Belum Terverifikasi');
             $table->string('kelompok')->nullable();
             $table->string('tugas_alprog')->nullable();
             $table->string('tugas_basis')->nullable();
