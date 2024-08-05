@@ -99,7 +99,7 @@ export default function JaringanKomputer() {
                         imageSrc="../../../asset/images/modul/bayu_lobi.png"
                         name="Bayu Lobi" 
                         batch="Angkatan 2022"
-                        quotation=""
+                        quotation="gaada kata terlambat buat belajar kalau kita punya kemauan"
                         userInstagram="https://instagram.com/komang.bayu.399" />
                         <CardPembicara
                         imageSrc="../../../asset/images/modul/andri.png"
