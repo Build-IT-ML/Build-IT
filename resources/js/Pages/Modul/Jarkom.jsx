@@ -8,6 +8,7 @@ import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import UserGuest from "@/Components/Layouts/User/UserGuest";
 
 export default function JaringanKomputer() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -22,13 +23,13 @@ export default function JaringanKomputer() {
 
     useEffect(() => {
         AOS.init({
-          duration: 1000, 
-        });
-      }, []);
+            duration: 1000, 
+            });
+        }, []);
 
-      useEffect(() => {
-        document.documentElement.classList.add('smooth-scroll');
-      }, []);
+        useEffect(() => {
+            document.documentElement.classList.add('smooth-scroll');
+        }, []);
 
     const footerContent = (
         <div className="flex justify-end gap-4">
@@ -40,107 +41,109 @@ export default function JaringanKomputer() {
     return (
         <>
             <Head title="Jaringan Komputer" />
-            <div className="w-full overflow-hidden">
-                <img
-                    src="../../../asset/images/modul/banner-modul.png"
-                    alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
-                />
-                <div className="h-max w-full px-6 md:px-24">
-                    <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
-                        <div className="flex flex-col z-20">
-                            <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
-                                JARINGAN DAN KOMPUTER
+            <UserGuest>
+                <div className="w-full overflow-hidden">
+                    <img
+                        src="../../../asset/images/modul/banner-modul.png"
+                        alt="banner"    
+                        className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
+                    />
+                    <div className="h-max w-full px-6 md:px-24">
+                        <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
+                            <div className="flex flex-col z-20">
+                                <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
+                                    JARINGAN DAN KOMPUTER
+                                </p>
+                                <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
+                                    Mata kuliah Jaringan Komputer dan Komunikasi merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas prinsip-prinsip dasar, arsitektur, dan teknologi yang digunakan dalam jaringan komputer serta komunikasi data. Mahasiswa akan mempelajari berbagai topik seperti model OSI (Open Systems Interconnection), protokol jaringan, pengalamatan IP, subnetting, routing, switching, dan keamanan jaringan.
+                                </p>
+                                <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">                            
+                                    <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
+                                    </button>
+                                </a>
+                                <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
+                                    <KotakModulPx102 />
+                                </div>     
+                                <div className="absolute top-[1000px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
+                                    <KotakModulPx41 />
+                                </div>     
+                            </div>
+                            <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
+                                <KotakModulPrimary />
+                            </div>
+                            <div className="absolute right-0 md:right-[200px] top-[650px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
+                                <KotakModulSecondary />
+                            </div>
+                            <div className="w-full mt-20 flex justify-center mb-36">
+                                <img src="../../../asset/images/modul/jarkom.JPG" alt="test" 
+                                className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="px-6 md:px-24 mt-10 md:mt-36 mb-36">
+                        <div className="flex flex-col justify-center items-center z-10">
+                            <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-up">
+                                PENGISI MATERI
+                            </h1>
+                            <div className="divider h-[2px] w-full md:w-[706px] bg-primary mt-2"></div>
+                            <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-up">
+                                Pengisi materi untuk matakuliah Jaringan Komputer dan Komunikasi pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Jaringan Komputer dan Komunikasi.
                             </p>
-                            <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
-                                Mata kuliah Jaringan Komputer dan Komunikasi merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas prinsip-prinsip dasar, arsitektur, dan teknologi yang digunakan dalam jaringan komputer serta komunikasi data. Mahasiswa akan mempelajari berbagai topik seperti model OSI (Open Systems Interconnection), protokol jaringan, pengalamatan IP, subnetting, routing, switching, dan keamanan jaringan.
-                            </p>
-                            <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">                            
-                                <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
-                                </button>
-                            </a>
-                            <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
-                                <KotakModulPx102 />
-                            </div>     
-                            <div className="absolute top-[1000px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
-                                <KotakModulPx41 />
-                            </div>     
                         </div>
-                        <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
-                            <KotakModulPrimary />
-                        </div>
-                        <div className="absolute right-0 md:right-[200px] top-[650px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
-                            <KotakModulSecondary />
-                        </div>
-                        <div className="w-full mt-20 flex justify-center mb-36">
-                            <img src="../../../asset/images/modul/jarkom.JPG" alt="test" 
-                            className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
+                        <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
+                            <CardPembicara
+                            imageSrc="../../../asset/images/modul/teja.png"
+                            name="Teja" 
+                            batch="Angkatan 2022" 
+                            quotation="mata kuliah jaringan computer semester 1 menarik. untuk melewati mata kuliahnya kita harus dapat mengerti konsep konsep dasarnya. Jadi santai saja mengikuti mata kuliah ini dan dibawa enjoy aja"
+                            userInstagram="https://instagram.com/baskarateja"/>
+                            <CardPembicara
+                            imageSrc="../../../asset/images/modul/bayu_lobi.png"
+                            name="Bayu Lobi" 
+                            batch="Angkatan 2022"
+                            quotation="gaada kata terlambat buat belajar kalau kita punya kemauan"
+                            userInstagram="https://instagram.com/komang.bayu.399" />
+                            <CardPembicara
+                            imageSrc="../../../asset/images/modul/andri.png"
+                            name="Andri" 
+                            batch="Angkatan 2022"
+                            quotation=""
+                            userInstagram="" />
+                            <CardPembicara
+                            imageSrc="../../../asset/images/modul/dudek.png"
+                            name="Dudek" 
+                            batch="Angkatan 2022"
+                            quotation=""
+                            userInstagram="https://instagram.com/dudek.dudekk" />
                         </div>
                     </div>
                 </div>
-                <div className="px-6 md:px-24 mt-10 md:mt-36 mb-36">
-                    <div className="flex flex-col justify-center items-center z-10">
-                        <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-up">
-                            PENGISI MATERI
-                        </h1>
-                        <div className="divider h-[2px] w-full md:w-[706px] bg-primary mt-2"></div>
-                        <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-up">
-                            Pengisi materi untuk matakuliah Jaringan Komputer dan Komunikasi pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Jaringan Komputer dan Komunikasi.
-                        </p>
-                    </div>
-                    <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
-                        <CardPembicara
-                        imageSrc="../../../asset/images/modul/teja.png"
-                        name="Teja" 
-                        batch="Angkatan 2022" 
-                        quotation="mata kuliah jaringan computer semester 1 menarik. untuk melewati mata kuliahnya kita harus dapat mengerti konsep konsep dasarnya. Jadi santai saja mengikuti mata kuliah ini dan dibawa enjoy aja"
-                        userInstagram="https://instagram.com/baskarateja"/>
-                        <CardPembicara
-                        imageSrc="../../../asset/images/modul/bayu_lobi.png"
-                        name="Bayu Lobi" 
-                        batch="Angkatan 2022"
-                        quotation="gaada kata terlambat buat belajar kalau kita punya kemauan"
-                        userInstagram="https://instagram.com/komang.bayu.399" />
-                        <CardPembicara
-                        imageSrc="../../../asset/images/modul/andri.png"
-                        name="Andri" 
-                        batch="Angkatan 2022"
-                        quotation=""
-                        userInstagram="" />
-                        <CardPembicara
-                        imageSrc="../../../asset/images/modul/dudek.png"
-                        name="Dudek" 
-                        batch="Angkatan 2022"
-                        quotation=""
-                        userInstagram="https://instagram.com/dudek.dudekk" />
-                    </div>
-                </div>
-            </div>
+            </UserGuest>
         </>
     );
 }
 
 function CardPembicara({ imageSrc, name, batch, quotation, userInstagram }) {
     return (
-      <div data-aos="fade-up" className="flex justify-center items-center">
-        <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
-          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
-            <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end z-20 backface-hidden">
-              <img src={imageSrc} alt={name} className="w-auto h-auto z-10 backface-hidden" />
+        <div data-aos="fade-up" className="flex justify-center items-center">
+            <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
+            <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
+                <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end z-20 backface-hidden">
+                <img src={imageSrc} alt={name} className="w-auto h-auto z-10 backface-hidden" />
+                </div>
+                <div className="bg-white w-full h-[130px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden gap-3">
+                <p className="text-[24px] font-medium leading-[24px] text-primary">
+                    {name}
+                </p>
+                <p className="text-[20px] font-bold text-gray-700">
+                    {batch}
+                </p>
+                <p className="text-[14px] font-medium text-gray-500">
+                    Teknologi Informasi
+                </p>
+                </div>
             </div>
-            <div className="bg-white w-full h-[130px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden gap-3">
-              <p className="text-[24px] font-medium leading-[24px] text-primary">
-                {name}
-              </p>
-              <p className="text-[20px] font-bold text-gray-700">
-                {batch}
-              </p>
-              <p className="text-[14px] font-medium text-gray-500">
-                Teknologi Informasi
-              </p>
-            </div>
-          </div>
-          <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-between items-center rotate-y-180 p-3 gap-5">
+            <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-between items-center rotate-y-180 p-3 gap-5">
             <div className="flex justify-start items-start w-full">
             {/* icon petik */}
                 <svg width="30" height="30" viewBox="0 0 455 489" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,8 +162,8 @@ function CardPembicara({ imageSrc, name, batch, quotation, userInstagram }) {
                 <i className="pi pi-instagram" style={{ fontSize: '1.5rem' }}></i>
                 <p className="text-[20px]">Instagram</p>
             </a>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
     );
-  }
+}

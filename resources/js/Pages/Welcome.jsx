@@ -12,6 +12,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Loading from "./Loading";
 
+import UserGuest from "@/Components/Layouts/User/UserGuest";
+
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
     // accordion faq
@@ -64,6 +66,7 @@ export default function Welcome() {
         <>
             <Head title="Landing Page" />
             {/* <Loading/> */}
+            <UserGuest>
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
@@ -544,6 +547,7 @@ export default function Welcome() {
                         </div>
                     </div>
                 </div>
+            </UserGuest>
         </>
     );
 }

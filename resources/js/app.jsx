@@ -36,9 +36,7 @@ const AppWrapper = ({ App, props }) => {
         <>
             {loading && <Loading />}
             <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
-                <Navbar />
                 <App {...props} />
-                <Footer />
             </PrimeReactProvider>
         </>
     );
