@@ -13,6 +13,7 @@ import '@fontsource/poppins';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Loading from './Pages/Loading'; 
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 const AppWrapper = ({ App, props }) => {
     const [loading, setLoading] = useState(false);
@@ -36,15 +37,12 @@ const AppWrapper = ({ App, props }) => {
         <>
             {loading && <Loading />}
             <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
-                <Navbar />
                 <App {...props} />
-                <Footer />
             </PrimeReactProvider>
         </>
     );
 };
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

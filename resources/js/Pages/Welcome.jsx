@@ -10,7 +10,7 @@ import 'primeicons/primeicons.css';
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Loading from "./Loading";
+import UserGuest from "@/Components/Layouts/User/UserGuest";
 
 export default function Welcome() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -63,7 +63,7 @@ export default function Welcome() {
     return (
         <>
             <Head title="Landing Page" />
-            {/* <Loading/> */}
+                <UserGuest>
                 <div className="w-full overflow-hidden">
                     <img
                         src="asset/images/banner-landing.png"
@@ -544,6 +544,7 @@ export default function Welcome() {
                         </div>
                     </div>
                 </div>
+            </UserGuest>
         </>
     );
 }

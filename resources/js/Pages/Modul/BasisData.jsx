@@ -7,6 +7,7 @@ import { Menubar } from 'primereact/menubar';
 import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../../Components/Icons/modul";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import UserGuest from "@/Components/Layouts/User/UserGuest";
 
 export default function BasisData() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -38,83 +39,85 @@ export default function BasisData() {
 
     return (
         <>
-            <Head title="Basis Data" />
-            <div className="w-full overflow-hidden">
-                <img
-                    src="../../../asset/images/modul/banner-modul.png"
-                    alt="banner"    
-                    className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
-                />
-                <div className="h-max w-full px-6 md:px-24">
-                    <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
-                        <div className="flex flex-col z-20">
-                            <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
-                                BASIS DATA
+            <UserGuest>
+                <Head title="Basis Data" />
+                <div className="w-full overflow-hidden">
+                    <img
+                        src="../../../asset/images/modul/banner-modul.png"
+                        alt="banner"    
+                        className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
+                    />
+                    <div className="h-max w-full px-6 md:px-24">
+                        <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
+                            <div className="flex flex-col z-20">
+                                <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
+                                    BASIS DATA
+                                </p>
+                                <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
+                                    Mata kuliah Basis Data merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas tentang konsep, desain, implementasi, dan manajemen basis data. Mata kuliah ini juga mencakup penggunaan SQL (Structured Query Language) untuk manipulasi data, serta pemahaman tentang manajemen basis data yang aman dan andal.
+                                </p>
+                                <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">                            
+                                    <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
+                                    </button>
+                                </a>
+                                <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
+                                    <KotakModulPx102 />
+                                </div>     
+                                <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
+                                    <KotakModulPx41 />
+                                </div>     
+                            </div>
+                            <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
+                                <KotakModulPrimary />
+                            </div>
+                            <div className="absolute right-0 md:right-[200px] top-[650px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
+                                <KotakModulSecondary />
+                            </div>
+                            <div className="w-full mt-20 flex justify-center mb-36">
+                                <img src="../../../asset/images/modul/basis-image.JPG" alt="test" 
+                                className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="px-6 md:px-24 mt-10 md:mt-36 mb-36">
+                        <div className="flex flex-col justify-center items-center z-10">
+                            <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-up">
+                                PENGISI MATERI
+                            </h1>
+                            <div className="divider h-[2px] w-full md:w-[706px] bg-primary mt-2"></div>
+                            <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-up">
+                                Pengisi materi untuk matakuliah Basis Data pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Basis Data.
                             </p>
-                            <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
-                                Mata kuliah Basis Data merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas tentang konsep, desain, implementasi, dan manajemen basis data. Mata kuliah ini juga mencakup penggunaan SQL (Structured Query Language) untuk manipulasi data, serta pemahaman tentang manajemen basis data yang aman dan andal.
-                            </p>
-                            <a href="https://drive.google.com/file/d/1KpEzEqiPZcyfoP2cxeLdPdsgyTy81IMO/view?usp=drive_link" target="_blank" className="">                            
-                                <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
-                                </button>
-                            </a>
-                            <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
-                                <KotakModulPx102 />
-                            </div>     
-                            <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
-                                <KotakModulPx41 />
-                            </div>     
                         </div>
-                        <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
-                            <KotakModulPrimary />
-                        </div>
-                        <div className="absolute right-0 md:right-[200px] top-[650px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
-                            <KotakModulSecondary />
-                        </div>
-                        <div className="w-full mt-20 flex justify-center mb-36">
-                            <img src="../../../asset/images/modul/basis-image.JPG" alt="test" 
-                            className="w-[441px] h-[248px] rounded-[10px] relative right-0 object-cover z-20"/>
+                        <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
+                            <CardPembicara 
+                            imageSrc="../../../asset/images/modul/bayu_riz.png" 
+                            name="Bayu Rizki" 
+                            batch="Angkatan 2022"
+                            quotation=""
+                            userInstagram="https://instagram.com/bayurkp" />
+                            <CardPembicara 
+                            imageSrc="../../../asset/images/modul/dwita.png" 
+                            name="Dwita" 
+                            batch="Angkatan 2022"
+                            quotation="Harus punya logika dasarnya, kalau enggak terlalu bagus masih bisa dilatih. Perbanyak cari tahu, latihan studi kasus juga, dan kalau untuk mata kuliah perbanyak aktif di kelas dan maksimalkan tiap ujian atau tugas"
+                            userInstagram="https://instagram.com/subawhu" />
+                            <CardPembicara 
+                            imageSrc="../../../asset/images/modul/nanta.png" 
+                            name="Rapriananta" 
+                            batch="Angkatan 2022"
+                            quotation="" 
+                            userInstagram="https://instagram.com/raprianantapande"/>
+                            <CardPembicara 
+                            imageSrc="../../../asset/images/modul/ekaputra.png" 
+                            name="Eka Putra" 
+                            batch="Angkatan 2022"
+                            quotation="Mungkin bisa dari penentuan entitas sama atribut dulu, terus lanjut kasi contoh yang udah normalisasi. karena kebanyakan yang baru belajar kbd itu bingung nya di normalisasi, udah khatam disana aman dah selanjutnya. relasi sama foreign key juga banyakin contohnya biar engga salah naruh foreign key, yang simple-simple aja tapi masuk konsepnya" 
+                            userInstagram="https://instagram.com/ptekaptra"/>
                         </div>
                     </div>
                 </div>
-                <div className="px-6 md:px-24 mt-10 md:mt-36 mb-36">
-                    <div className="flex flex-col justify-center items-center z-10">
-                        <h1 className="font-sans text-center font-bold text-primary text-[24px] md:text-[36px] tracking-widest" data-aos="fade-up">
-                            PENGISI MATERI
-                        </h1>
-                        <div className="divider h-[2px] w-full md:w-[706px] bg-primary mt-2"></div>
-                        <p className="w-full md:w-[935px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-up">
-                            Pengisi materi untuk matakuliah Basis Data pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Basis Data.
-                        </p>
-                    </div>
-                    <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
-                        <CardPembicara 
-                        imageSrc="../../../asset/images/modul/bayu_riz.png" 
-                        name="Bayu Rizki" 
-                        batch="Angkatan 2022"
-                        quotation=""
-                        userInstagram="https://instagram.com/bayurkp" />
-                        <CardPembicara 
-                        imageSrc="../../../asset/images/modul/dwita.png" 
-                        name="Dwita" 
-                        batch="Angkatan 2022"
-                        quotation="Harus punya logika dasarnya, kalau enggak terlalu bagus masih bisa dilatih. Perbanyak cari tahu, latihan studi kasus juga, dan kalau untuk mata kuliah perbanyak aktif di kelas dan maksimalkan tiap ujian atau tugas"
-                        userInstagram="https://instagram.com/subawhu" />
-                        <CardPembicara 
-                        imageSrc="../../../asset/images/modul/nanta.png" 
-                        name="Rapriananta" 
-                        batch="Angkatan 2022"
-                        quotation="" 
-                        userInstagram="https://instagram.com/raprianantapande"/>
-                        <CardPembicara 
-                        imageSrc="../../../asset/images/modul/ekaputra.png" 
-                        name="Eka Putra" 
-                        batch="Angkatan 2022"
-                        quotation="Mungkin bisa dari penentuan entitas sama atribut dulu, terus lanjut kasi contoh yang udah normalisasi. karena kebanyakan yang baru belajar kbd itu bingung nya di normalisasi, udah khatam disana aman dah selanjutnya. relasi sama foreign key juga banyakin contohnya biar engga salah naruh foreign key, yang simple-simple aja tapi masuk konsepnya" 
-                        userInstagram="https://instagram.com/ptekaptra"/>
-                    </div>
-                </div>
-            </div>
+            </UserGuest>
         </>
     );
 }

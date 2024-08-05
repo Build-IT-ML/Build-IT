@@ -7,6 +7,7 @@ import { Menubar } from 'primereact/menubar';
 import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../../Components/Icons/modul";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import UserGuest from "@/Components/Layouts/User/UserGuest";
 
 
 export default function JaringanKomputer() {
@@ -39,6 +40,7 @@ export default function JaringanKomputer() {
 
     return (
         <>
+        <UserGuest>
             <Head title="Jaringan Komputer" />
             <div className="w-full overflow-hidden">
                 <img
@@ -116,6 +118,7 @@ export default function JaringanKomputer() {
                     </div>
                 </div>
             </div>
+        </UserGuest>
         </>
     );
 }
