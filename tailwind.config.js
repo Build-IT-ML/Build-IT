@@ -12,7 +12,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // sans: ["Inter", ...defaultTheme.fontFamily.sans],
         sans: ["Poppins", "sans-serif", ...defaultTheme.fontFamily.sans],
       },
       colors: {
@@ -48,15 +47,51 @@ export default {
       },
       animation: {
         "bounce-custom": 'bounce-custom 4s ease-in-out infinite',
+        "bounce-merch": 'bounce-custom 2s ease-in-out infinite',
       },
       keyframes: {
         "bounce-custom": {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(15px)' },
         },
+        "bounce-merch": {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(40px)' },
+        },
+      },
+      transitionProperty: {
+        'opacity': 'opacity',
+      },
+      transitionDuration: {
+        '1s': '1000ms',
+        '2s': '2000ms',
+        '3s': '3000ms',
+      },
+      transitionTimingFunction: {
+        'ease-in-out': 'ease-in-out',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.smooth-scroll': {
+          'scroll-behavior': 'smooth',
+        },
+        '.transform-style-preserve-3d': {
+          transformStyle: 'preserve-3d',
+        },
+        '.rotate-y-180': {
+          transform: 'rotateY(180deg)',
+        },
+        '.backface-hidden': {
+          backfaceVisibility: 'hidden',
+        },
+        '.hover-rotate-y-180:hover': {
+          transform: 'rotateY(180deg)',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 }
-

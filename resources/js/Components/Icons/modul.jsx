@@ -5,12 +5,12 @@ export const BannerModul = () => {
         <path fill-rule="evenodd" clip-rule="evenodd" d="M-3 -13H1437V402H-3V-13ZM-3 726L36.6 714C77.4 702 156.6 678 237 684C317.4 690 396.6 726 477 690C557.4 654 636.6 546 717 510C797.4 474 876.6 510 957 516C1037.4 522 1116.6 498 1197 486C1277.4 474 1356.6 474 1397.4 474H1437V402H1397.4C1356.6 402 1277.4 402 1197 402C1116.6 402 1037.4 402 957 402C876.6 402 797.4 402 717 402C636.6 402 557.4 402 477 402C396.6 402 317.4 402 237 402C156.6 402 77.4 402 36.6 402H-3V726ZM-3 -13H1437V402H-3V-13ZM-3 726L36.6 714C77.4 702 156.6 678 237 684C317.4 690 396.6 726 477 690C557.4 654 636.6 546 717 510C797.4 474 876.6 510 957 516C1037.4 522 1116.6 498 1197 486C1277.4 474 1356.6 474 1397.4 474H1437V402H1397.4C1356.6 402 1277.4 402 1197 402C1116.6 402 1037.4 402 957 402C876.6 402 797.4 402 717 402C636.6 402 557.4 402 477 402C396.6 402 317.4 402 237 402C156.6 402 77.4 402 36.6 402H-3V726Z" fill="url(#paint1_linear_320_232)"/>
         <defs>
         <linearGradient id="paint0_linear_320_232" x1="717" y1="-13" x2="717" y2="726" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#257F80"/>
-        <stop offset="1" stop-color="#75C9BF"/>
+        <stop stopColor="#257F80"/>
+        <stop offset="1" stopColor="#75C9BF"/>
         </linearGradient>
         <linearGradient id="paint1_linear_320_232" x1="717" y1="-13" x2="717" y2="726" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#257F80"/>
-        <stop offset="1" stop-color="#75C9BF"/>
+        <stop stopColor="#257F80"/>
+        <stop offset="1" stopColor="#75C9BF"/>
         </linearGradient>
         </defs>
     </svg>
@@ -47,8 +47,8 @@ export const KotakModulPx41 = () => {
             <path d="M3.90057 11.308C6.01792 3.40588 14.1403 -1.28355 22.0423 0.833807L33.4887 3.90085C41.3908 6.01821 46.0802 14.1406 43.9629 22.0426L40.8958 33.489C38.7785 41.3911 30.6561 46.0805 22.754 43.9631L11.3077 40.8961C3.4056 38.7787 -1.28383 30.6564 0.833524 22.7543L3.90057 11.308Z" fill="url(#paint0_linear_320_237)"/>
             <defs>
             <linearGradient id="paint0_linear_320_237" x1="27.7655" y1="2.36733" x2="17.0309" y2="42.4296" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#257F80"/>
-            <stop offset="1" stop-color="#75C9BF"/>
+            <stop stopColor="#257F80"/>
+            <stop offset="1" stopColor="#75C9BF"/>
             </linearGradient>
             </defs>
         </svg>

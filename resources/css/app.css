@@ -1,6 +1,24 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
+
+.transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .hover-rotate-y-180:hover {
+    transform: rotateY(180deg);
+  }
+  
+@tailwind utilities;
 
 @layer tailwind-base, primereact, tailwind-utilities;
 
