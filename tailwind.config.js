@@ -19,8 +19,11 @@ export default {
         'secondary': "#75C9BF",
         'primer': '#B3ECEC',
         'black': "#000000",
-        'white': '#FFFFFF',
+        'white': '#FFFFFF'
+      },
+      backgroundImage: {
         'gradient-background': 'linear-gradient(to top, #257F80, #75C9BF)',
+        'gradient-background-lighten': 'linear-gradient(to top, #75C9BF, #B3ECEC)'
       },
       fontSize: {
         '3xl': '1.953rem',

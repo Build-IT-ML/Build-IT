@@ -60,13 +60,6 @@ export default function Welcome() {
         setModalVisible(false);
     };
 
-    const footerContent = (
-        <div className="flex justify-end gap-4">
-            <Button label="No" icon="pi pi-times" onClick={() => setModalVisible(false)} className="p-button-text" />
-            <Button label="Yes" icon="pi pi-check" onClick={() => setModalVisible(false)} autoFocus />
-        </div>
-    );
-
     return (
         <>
             <Head title="Landing Page" />
@@ -157,7 +150,7 @@ export default function Welcome() {
                                             className="max-w-full h-[445px] relative bottom-[80px] left-[380px] animate-bounce-custom"
                                             data-aos="fade-up"
                                         >
-                                            <IconKotakCenter /> 
+                                            <IconKotakCenter />
                                         </div>
                                     </div>
                                     <div
@@ -200,7 +193,7 @@ export default function Welcome() {
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">Sharing Session Hacktiv8</p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
-                                Akan ada sharing session bersama Hacktiv8 yang merupakan pelatihan coding bootcamp terbaik di Indonesia. 
+                                Akan ada sharing session bersama Hacktiv8 yang merupakan pelatihan coding bootcamp terbaik di Indonesia.
                             </p>
                         </div>
                     </div>
@@ -350,7 +343,7 @@ export default function Welcome() {
                                 className="max-w-[570px] h-[445px] absolute right-0 top-[5000px] md:top-[3200px] animate-bounce-custom"
                                 data-aos="fade-up"
                             >
-                                <IconKotakTimeLine /> 
+                                <IconKotakTimeLine />
                             </div>
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 pl-0 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">

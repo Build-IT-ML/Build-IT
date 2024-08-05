@@ -18,3 +18,15 @@
     transform: rotateY(180deg);
   }
   
+@tailwind utilities;
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
