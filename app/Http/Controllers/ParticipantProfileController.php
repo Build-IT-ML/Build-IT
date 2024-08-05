@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Session;
 
 class ParticipantProfileController extends Controller
 {
@@ -16,5 +18,40 @@ class ParticipantProfileController extends Controller
             'user' => $user,
             'role' => $role
         ]);
+    }
+
+    public function edit()
+    {
+        $user = auth()->user();
+
+        return Inertia::render('Participant/EditProfile', [
+            'user' => $user
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $user = User::findOrFail(auth()->user()->id);
+
+        $request->validate([
+            'nim' => 'required|max:255|',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|',
+            'line' => 'required|max:255',
+            'whatsapp' => 'required|max:255',
+        ]);
+
+
+        $user->update([
+            'nim' => $request->nim,
+            'name' => $request->name,
+            'email' => $request->email,
+            'line_id' => $request->line,
+            'whatsapp_id' => $request->whatsapp,
+        ]);
+
+        Session::flash('success', 'Kamu Berhasil Registrasi Akun, Sekaligus Build IT 😃.');
+
+        return to_route('participant.profile');
     }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Head,usePage } from "@inertiajs/react";
+import { Head,Link,usePage } from "@inertiajs/react";
 import AdminAuthentication from "@/Components/Layouts/AdminAuthentication";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Profile() {
    const {user} = usePage().props;
@@ -15,15 +16,13 @@ export default function Profile() {
       }
    );
 
-   console.log(data);
-
    return(
       <AdminAuthentication user={user} headerTitle="Profile Peserta">
          <Head title="Participant Profile"/>
-         <div className="space-y-12">
+         <div className="space-y-8">
             <div>
                <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>
-               <p className="text-primary/80 mt-2 mb-4">* Informasi akan ditampilkan secara publik</p>
+               <p className="text-primary/80 mt-2 mb-4">* Pastikan identitas sudah terisi dengan benar</p>
                <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2 col-span-2">
                      <span className="font-semibold text-primary capitalize">nama</span>
@@ -43,7 +42,7 @@ export default function Profile() {
             </div>
             <div>
                <h3 className="text-primary font-bold text-xl">Kontak</h3>
-               <p className="text-primary/80 mt-2 mb-4">* Informasi akan ditampilkan secara publik</p>
+               <p className="text-primary/80 mt-2 mb-4">* Mohon mengisi dengan kontak yang masih aktif dan dapat dihubungi</p>
                <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2">
                      <span className="font-semibold text-primary capitalize">email</span>
@@ -58,6 +57,12 @@ export default function Profile() {
                      <p className="p-2 bg-secondary/30 text-primary rounded-lg">{data.line}</p>
                   </div>
                </div>
+            </div>
+
+            <div>
+               <Link href={route('participant.editprofile')} className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
+                  Edit Profile
+               </Link>
             </div>
 
             <div className="w-full bg-primary h-[1px] rounded-full"></div>
