@@ -39,6 +39,10 @@ export default function Navbar() {
         };
     }, []);
 
+    const handleDropdownItemClick = () => {
+        setIsShow(false);
+    };
+
     return (
         <nav className={`bg-white w-full flex justify-between items-center px-5 md:px-24 py-4 sticky z-50 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
             <span>
@@ -55,9 +59,9 @@ export default function Navbar() {
                     </div>
                     <ul>
                         <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
-                            <Link href="/modul/alprog" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Algoritma & Pemrograman</Link>
-                            <Link href="/modul/basisdata" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Basis Data</Link>
-                            <Link href="/modul/jarkom" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5">Jaringan Komputer & Komunikasi</Link>
+                            <Link href="/modul/alprog" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Algoritma & Pemrograman</Link>
+                            <Link href="/modul/basisdata" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Basis Data</Link>
+                            <Link href="/modul/jarkom" className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Jaringan Komputer & Komunikasi</Link>
                         </li>
                     </ul>
                 </li>

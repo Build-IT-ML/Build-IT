@@ -90,7 +90,7 @@ export default function Welcome() {
                                 </p>
                                 <div className="md:w-[494px] w-auto flex flex-row gap-16 items-center">
                                     <a href="/register">
-                                        <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-bold rounded-[10px]">
+                                        <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-medium rounded-[10px] tracking-[0.05em]">
                                             Daftar Sekarang
                                         </button>
                                     </a>
@@ -521,9 +521,11 @@ export default function Welcome() {
                                         <p className="text-[14px] leading-[21px] w-full md:w-[387px] mt-5 text-center md:text-start">
                                             Baju limited edition BUILD IT 2024. Dengan bahan yang adem dan desain yang kece, cocok digunakan kemana saja.
                                         </p>
-                                        <div className="bg-primary rounded-[10px] d-block max-w-[417px] h-[50px] p-5 text-white text-[20px] leading-[26px] tracking-[0.03em] flex justify-center items-center mt-3 hover:bg-secondary cursor-pointer shadow-lg">
-                                            Order Now
-                                        </div>
+                                        <a href="https://bit.ly/POMerchandiseBuildIT2024" target="_blank">
+                                            <div className="bg-primary rounded-[10px] d-block max-w-[417px] h-[50px] p-5 text-white text-[20px] leading-[26px] tracking-[0.03em] flex justify-center items-center mt-3 hover:bg-secondary cursor-pointer shadow-lg">
+                                                Order Now
+                                            </div>
+                                        </a>
                                     </div>
 
                                     <div className="flex flex-col border border-primary rounded-[10px] w-full md:w-[417px]">
@@ -645,7 +647,7 @@ const MerchPopup = ({ isOpen, onClose }) => {
             }, 700); 
         }, 3000); 
 
-        return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+        return () => clearInterval(interval);
     }, []);
 
     const nextImage = () => {
@@ -684,7 +686,11 @@ const MerchPopup = ({ isOpen, onClose }) => {
                 </p>
                 <div className="flex justify-between">
                     <p className="text-lg font-bold mb-4">Rp 100.000</p>
-                    <div className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary cursor-pointer">Order Now</div>
+                    <a href="https://bit.ly/POMerchandiseBuildIT2024" target="_blank">
+                        <div className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary cursor-pointer">
+                            Order Now
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
