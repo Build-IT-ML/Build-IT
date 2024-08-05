@@ -21,7 +21,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'line_id' => $this->line_id,
-            'whatsaap_id' => $this->whatsaap_id,
+            'whatsapp_id' => $this->whatsapp_id,
             'email_verified_at' => $this->email_verified_at,
         ];
     }

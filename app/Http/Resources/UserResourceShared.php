@@ -16,11 +16,14 @@ class UserResourceShared extends JsonResource
     {
         // return parent::toArray($request);
         return [
+            'id' => $this->id,
             'nim' => $this->nim,
             'name' => $this->name,
             'email' => $this->email,
             'line_id' => $this->line_id,
-            'whatsaap_id' => $this->whatsaap_id,
+            'whatsapp_id' => $this->whatsapp_id,
+            'status' => $this->status,
+            'kelompok' => $this->kelompok
         ];
     }
 }
