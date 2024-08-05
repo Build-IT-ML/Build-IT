@@ -14,14 +14,15 @@ export default function Dashboard() {
       success: 'Anda sudah berhasil mengumpulkan penugasan pelatihan ',
       warn: 'Anda belum mengumpulkan penugasan pelatihan ',
       successVerif: 'Anda sudah terverifikasi menjadi anggota Build IT 2024 dan tergabung pada kelompok ' + user.kelompok,
-      warnVerif: 'Anda belum terverifikasi menjadi anggota Build IT 2024'
+      warnVerif: 'Anda belum terverifikasi menjadi anggota Build IT 2024',
+      rejectedVerif: 'Pendaftaran menjadi peserta Build IT 2024 DITOLAK, anda akan dihubungi lebih lanjut oleh pihak panitia'
    }
 
    const messages = {
       verif : {
-         'msgSeverity' : user.kelompok ? 'success' : 'error',
+         'msgSeverity' : user.status === 'Terverifikasi' ? 'success' : user.status === "Ditolak" ? 'error' : 'warn',
          'msgSummary' : 'Status Peserta',
-         'msgDetail' : (user.kelompok ? messagesTemplates.successVerif : messagesTemplates.warnVerif)
+         'msgDetail' : (user.status === 'Terverifikasi' ? messagesTemplates.successVerif : user.status === "Ditolak" ? messagesTemplates.rejectedVerif : messagesTemplates.warnVerif)
       },
       jarkom : {
          'msgSeverity' : user.tugas_jarkom ? 'success' : 'error',
@@ -43,12 +44,19 @@ export default function Dashboard() {
    useMountEffect(() => {
       if (msgs.current) {
          msgs.current.clear();
-         msgs.current.show([
-               { sticky: true, severity: messages.verif.msgSeverity, summary: messages.verif.msgSummary, detail: messages.verif.msgDetail, closable: false },
-               { sticky: true, severity: messages.alprog.msgSeverity, summary: messages.alprog.msgSummary, detail: messages.alprog.msgDetail, closable: false },
-               { sticky: true, severity: messages.basisdata.msgSeverity, summary: messages.basisdata.msgSummary, detail: messages.basisdata.msgDetail, closable: false },
-               { sticky: true, severity: messages.jarkom.msgSeverity, summary: messages.jarkom.msgSummary, detail: messages.jarkom.msgDetail, closable: false },
-         ]);
+
+         if (user.status !== 'Terverifikasi') {
+            msgs.current.show([
+               { sticky: true, severity: messages.verif.msgSeverity, summary: messages.verif.msgSummary, detail: messages.verif.msgDetail, closable: false }
+            ]);
+         } else {
+            msgs.current.show([
+                  { sticky: true, severity: messages.verif.msgSeverity, summary: messages.verif.msgSummary, detail: messages.verif.msgDetail, closable: false },
+                  { sticky: true, severity: messages.alprog.msgSeverity, summary: messages.alprog.msgSummary, detail: messages.alprog.msgDetail, closable: false },
+                  { sticky: true, severity: messages.basisdata.msgSeverity, summary: messages.basisdata.msgSummary, detail: messages.basisdata.msgDetail, closable: false },
+                  { sticky: true, severity: messages.jarkom.msgSeverity, summary: messages.jarkom.msgSummary, detail: messages.jarkom.msgDetail, closable: false },
+            ]);
+         }
       }
    });
 
