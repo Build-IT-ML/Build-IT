@@ -30,7 +30,9 @@ class User extends Authenticatable
         'whatsapp_id',
         'tugas_jarkom',
         'tugas_alprog',
-        'tugas_basis'
+        'tugas_basis',
+        'status',
+        'kelompok'
     ];
 
     /**
