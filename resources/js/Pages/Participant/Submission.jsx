@@ -32,7 +32,7 @@ export default function Submission() {
       <AdminAuthentication user={user} headerTitle="Pengumpulan Tugas Peserta">
          <Head title="Participant Submission"/>
          <Toast ref={toast} />
-            {user.status === 'Belum Terverifikasi' || user.status === 'Ditolak' && (
+            {(user.status === 'Belum Terverifikasi'  || user.status === 'Ditolak') && (
                <div className="flex flex-col justify-center items-center space-y-10 min-h-screen">
                   <h1 className="font-bold text-red-500 text-xl">Halaman pengumpulan tugas tersedia jika status peserta sudah terverifikasi</h1>
                   <span><i className="pi pi-exclamation-circle text-[10rem] text-red-500"></i></span>
