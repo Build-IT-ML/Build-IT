@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef} from "react";
 import { Head,usePage, useForm } from "@inertiajs/react";
 import AdminAuthentication from "@/Components/Layouts/AdminAuthentication";
+import { Toast } from 'primereact/toast';
 
 export default function Submission() {
    const {user} = usePage().props;
@@ -12,15 +13,25 @@ export default function Submission() {
       }
    );
 
+   const toast = useRef(null);
+
    function submit(e){
       e.preventDefault();
 
-      put(route('participant.addsubmissions'))
+      put(route('participant.addsubmissions'), {
+         onSuccess: () => {
+            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan', life: 3000 })
+         }, 
+         onError: (error) => {
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan', life: 3000 })
+         }  
+      })
    }
 
    return(
       <AdminAuthentication user={user} headerTitle="Pengumpulan Tugas Peserta">
          <Head title="Participant Submission"/>
+         <Toast ref={toast} />
             {user.status === 'Belum Terverifikasi' || user.status === 'Ditolak' && (
                <div className="flex flex-col justify-center items-center space-y-10 min-h-screen">
                   <h1 className="font-bold text-red-500 text-xl">Halaman pengumpulan tugas tersedia jika status peserta sudah terverifikasi</h1>
