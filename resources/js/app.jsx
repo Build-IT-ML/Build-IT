@@ -1,19 +1,48 @@
 import './bootstrap';
 import '../css/app.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createInertiaApp } from '@inertiajs/react';
+import { createInertiaApp, router } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import { PrimeReactProvider } from "primereact/api";
 import 'primeicons/primeicons.css';
-import Tailwind from 'primereact/passthrough/tailwind';
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import { PrimeReactProvider } from "primereact/api";
+import Tailwind from 'primereact/passthrough/tailwind';
 import '@fontsource/poppins';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import Loading from './Pages/Loading'; 
 
+const AppWrapper = ({ App, props }) => {
+    const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        const start = () => setLoading(true);
+        const end = () => setLoading(false);
+
+        router.on('start', start);
+        router.on('finish', end);
+        router.on('cancel', end);
+
+        return () => {
+            router.off('start', start);
+            router.off('finish', end);
+            router.off('cancel', end);
+        };
+    }, []);
+
+    return (
+        <>
+            {loading && <Loading />}
+            <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
+                <App {...props} />
+            </PrimeReactProvider>
+        </>
+    );
+};
+
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -21,14 +50,10 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(
-            <>
-                <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
-                    <App {...props} />
-                </PrimeReactProvider>
-            </>
+            <AppWrapper App={App} props={props} />
         );
     },
     progress: {
-        color: '#4B5563',
+        color: '#55aca6',
     },
 });
