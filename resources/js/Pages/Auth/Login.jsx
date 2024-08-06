@@ -38,11 +38,11 @@ export default function Daftar() {
             <Head title="Login" />
             <UserGuest>
                 <div className="w-full overflow-hidden bg-[url('asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
-                    <div className="h-max w-full px-6 md:px-24">
+                    <div className="h-max w-full px-3 md:px-24">
                         <div className="flex flex-col justify-between mt-20 mb-36">
                             <div className="flex flex-col z-20">
                             <div className="flex justify-center">
-                                <div className="flex flex-col space-y-4 p-10 rounded-xl h-full items-center bg-white border border-primary/50 shadow-lg z-10">
+                                <div className="flex flex-col space-y-4 p-10 rounded-xl h-full items-center bg-white border border-primary/50 shadow-lg z-10 w-full md:w-max">
                                     <div className="flex justify-center w-full">
                                         <img 
                                             src="asset/images/iconic.png" 
@@ -53,7 +53,7 @@ export default function Daftar() {
                                         />
                                     </div>
                                     <h1 className="w-full text-center text-lg text-black pt-3 mt-2">Login BUILD IT</h1>
-                                    <form onSubmit={submit} className="space-y-5">
+                                    <form onSubmit={submit} className="space-y-5 w-full">
                                         <div className="flex flex-col gap-2 w-full">
                                             <label htmlFor='nim' className="font-semibold text-black text-base">NIM</label>
                                             <input 

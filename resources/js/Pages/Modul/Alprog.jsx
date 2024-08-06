@@ -65,7 +65,7 @@ export default function Alprog() {
                                 <div className="absolute top-[900px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                     <KotakModulPx102 />
                                 </div>     
-                                <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
+                                <div className="absolute top-[1000px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
                                     <KotakModulPx41 />
                                 </div>     
                             </div>
