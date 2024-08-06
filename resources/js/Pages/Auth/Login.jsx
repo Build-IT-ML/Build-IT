@@ -84,7 +84,7 @@ export default function Daftar() {
                                                 />
                                                 <button 
                                                     type="button" 
-                                                    className="absolute w-10 h-6 right-1 bg-white"
+                                                    className="absolute w-10 h-6 right-1"
                                                     onClick={togglePasswordVisibility}
                                                 >
                                                     {passwordVisible ? (
