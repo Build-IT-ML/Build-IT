@@ -38,10 +38,10 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                         </Link>
                     </div>
 
-                    <div className="mt-8 text-center flex flex-col justify-center items-center">
-                        <img src={`https://api.dicebear.com/9.x/bottts-neutral/png?seed=${user.name}`} alt="" className="hidden md:block w-10 h-10 m-auto rounded-full object-cover lg:w-20 lg:h-20 outline outline-offset-2 outline-4 outline-secondary" />
-                        <h5 className="hidden mt-4 text-xl font-semibold text-gray-800 lg:block">{user.name}</h5>
-                        <span className="hidden text-primary font-semibold lg:block pt-4 capitalize">{user.roles[0].name}</span>
+                    <div className="w-full md:w-auto mt-8 text-center flex flex-col justify-center items-center">
+                        <img src={`https://api.dicebear.com/9.x/bottts-neutral/png?seed=${user.name}`} alt="" className="md:block w-10 h-10 m-auto rounded-full object-cover lg:w-20 lg:h-20 outline outline-offset-2 outline-4 outline-secondary" />
+                        <h5 className="mt-4 text-xl font-semibold text-gray-800 lg:block">{user.name}</h5>
+                        <span className="text-primary font-semibold lg:block pt-4 capitalize">{user.roles[0].name}</span>
                     </div>
 
                      <div className="px-12 md:px-0 md:block hidden">
