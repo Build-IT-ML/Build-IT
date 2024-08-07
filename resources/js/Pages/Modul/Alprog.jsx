@@ -97,7 +97,7 @@ export default function Alprog() {
                             name="Devta" 
                             batch="Angkatan 2022"
                             quotation=""
-                            userInstagram="" />
+                            userInstagram="https://instagram.com/devtadanarsa" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/liangga.png" 
                             name="Liangga" 

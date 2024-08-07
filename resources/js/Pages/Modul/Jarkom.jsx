@@ -108,7 +108,7 @@ export default function JaringanKomputer() {
                             name="Andri" 
                             batch="Angkatan 2022"
                             quotation=""
-                            userInstagram="" />
+                            userInstagram="https://instagram.com/andriiwhy" />
                             <CardPembicara
                             imageSrc="../../../asset/images/modul/dudek.png"
                             name="Dudek" 
