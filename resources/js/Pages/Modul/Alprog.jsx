@@ -96,19 +96,19 @@ export default function Alprog() {
                             imageSrc="../../../asset/images/modul/devta.png" 
                             name="Devta" 
                             batch="Angkatan 2022"
-                            quotation=""
+                            quotation="Kuasi konsep dasar dengan baik, tetap konsisten berlatih, dan jangan ragu untuk mencoba hal baru. Ingat, pemrograman seperti matematika—praktik dan pemahaman mendalam akan memperkuat kemampuan analitis dan logika kalian, semangat"
                             userInstagram="https://instagram.com/devtadanarsa" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/liangga.png" 
                             name="Liangga" 
                             batch="Angkatan 2022"
-                            quotation="Lupakan harga diri, mari menggunakan ChaGPT"
+                            quotation="Mulai bekerja dengan AI karena akan sangat membantu. Contohnya motivasi yang diberikan kakak kakak disamping ini dibuat dengan AI"
                             userInstagram="https://instagram.com/lianggaa_" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/wahtu.png" 
                             name="Wahtu" 
                             batch="Angkatan 2022"
-                            quotation=""
+                            quotation="Buat program/solusi dengan maksimal, jangan cepat puas. Kalau masih ada waktu coba tambahkan fitur tambahan atau coba improvisasi kode agar performanya lebih cepat dan effisien"
                             userInstagram="https://instagram.com/wahtu.astrawan" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/gekna.png" 

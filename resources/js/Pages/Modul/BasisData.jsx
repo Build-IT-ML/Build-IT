@@ -95,7 +95,7 @@ export default function BasisData() {
                             imageSrc="../../../asset/images/modul/bayu_riz.png" 
                             name="Bay" 
                             batch="Angkatan 2022"
-                            quotation="Bumi akan tetap berputar mau itu user_id atau userId"
+                            quotation="Bumi akan tetap berputar mau itu user_id atau userId"
                             userInstagram="https://instagram.com/bayurkp" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/dwita.png" 
