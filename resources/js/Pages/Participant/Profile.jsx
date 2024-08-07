@@ -23,7 +23,7 @@ export default function Profile() {
             <div>
                <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>
                <p className="text-primary/80 mt-2 mb-4">* Pastikan identitas sudah terisi dengan benar</p>
-               <div className="grid grid-cols-3 gap-4">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2 col-span-2">
                      <span className="font-semibold text-primary capitalize">nama</span>
                      <p className="p-2 bg-secondary/30 text-primary rounded-lg">{data.name}</p>
@@ -43,7 +43,7 @@ export default function Profile() {
             <div>
                <h3 className="text-primary font-bold text-xl">Kontak</h3>
                <p className="text-primary/80 mt-2 mb-4">* Mohon mengisi dengan kontak yang masih aktif dan dapat dihubungi</p>
-               <div className="grid grid-cols-3 gap-4">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2">
                      <span className="font-semibold text-primary capitalize">email</span>
                      <p className="p-2 bg-secondary/30 text-primary rounded-lg">{data.email}</p>
@@ -70,7 +70,7 @@ export default function Profile() {
             <div>
                <h3 className="text-primary font-bold text-xl">Grup Line BUILD IT 2024</h3>
                <p className="text-primary/80 mt-2 mb-4">Silahkan bergabung dengan grup dibawah ini untuk informasi lebih lanjut</p>
-               <div className="flex gap-4">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2 flex flex-col">
                      <span className="font-semibold text-primary capitalize">grup besar</span>
                      <a href="https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c</a>

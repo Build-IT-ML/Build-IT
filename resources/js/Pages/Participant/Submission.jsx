@@ -45,14 +45,14 @@ export default function Submission() {
                      <div className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Algoritma & Pemrograman</h3>
                         <label htmlFor='alprog' className="text-primary/80 text-base">Link Google Drive</label>
-                        <div className="space-x-4">
+                        <div className="space-y-4 md:space-x-4">
                            <input 
                               type="text" 
                               name="alprog"
                               id="alprog" 
                               value={data.alprog}
                               onChange={(e) => setData('alprog', e.target.value)}
-                              className={`bg-secondary/20 w-1/2 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                              className={`bg-secondary/20 w-full md:w-7/12 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
                            />
                            <button type="submit" className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
                               Submit
@@ -65,14 +65,14 @@ export default function Submission() {
                      <div className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Basis Data</h3>
                         <label htmlFor='basisdata' className="text-primary/80 text-base">Link Google Drive</label>
-                        <div className="space-x-4">
+                        <div className="space-y-4 md:space-x-4">
                            <input 
                               type="text" 
                               name="basisdata"
                               id="basisdata" 
                               value={data.basisdata}
                               onChange={(e) => setData('basisdata', e.target.value)}
-                              className={`bg-secondary/20 w-1/2 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                              className={`bg-secondary/20 w-full md:w-7/12 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
                            />
                            <button type="submit" className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
                               Submit
@@ -85,14 +85,14 @@ export default function Submission() {
                      <div className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Jaringan dan Komputer</h3>
                         <label htmlFor='jarkom' className="text-primary/80 text-base">Link Google Drive</label>
-                        <div className="space-x-4">
+                        <div className="space-y-4 md:space-x-4">
                            <input 
                               type="text" 
                               name="jarkom"
                               id="jarkom" 
                               value={data.jarkom}
                               onChange={(e) => setData('jarkom', e.target.value)}
-                              className={`bg-secondary/20 w-1/2 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                              className={`bg-secondary/20 w-full md:w-7/12 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
                            />
                            <button type="submit" className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
                               Submit

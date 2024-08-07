@@ -25,7 +25,7 @@ export default function EditProfile() {
                <div>
                   <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>
                   <p className="text-primary/80 mt-2 mb-4">* Pastikan identitas sudah terisi dengan benar</p>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                      <div className="flex flex-col w-full space-y-2">
                         <span className="font-semibold text-primary capitalize">nama</span>
                         <input 
@@ -59,7 +59,7 @@ export default function EditProfile() {
                <div>
                   <h3 className="text-primary font-bold text-xl">Kontak</h3>
                   <p className="text-primary/80 mt-2 mb-4">* Mohon mengisi dengan kontak yang masih aktif dan dapat dihubungi</p>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                      <div className="space-y-2">
                         <span className="font-semibold text-primary capitalize">email</span>
                         <input 
