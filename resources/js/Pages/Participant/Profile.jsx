@@ -12,7 +12,8 @@ export default function Profile() {
          email: user.email,
          line: user.line_id,
          whatsapp: user.whatsapp_id,
-         angkatan: '20' + user.nim.substring(0,2)
+         angkatan: '20' + user.nim.substring(0,2),
+         kelompok: user.kelompok,
       }
    );
 
@@ -36,6 +37,10 @@ export default function Profile() {
                      <div className="space-y-2">
                         <span className="font-semibold text-primary capitalize">angkatan</span>
                         <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.angkatan}</p>
+                     </div>
+                     <div className="space-y-2">
+                        <span className="font-semibold text-primary capitalize">kelompok</span>
+                        <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.kelompok}</p>
                      </div>
                   </div>
                </div>
