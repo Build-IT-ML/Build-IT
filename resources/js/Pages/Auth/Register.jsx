@@ -42,17 +42,7 @@ export default function Register() {
         <>
             <Head title="Pendaftaran" />
             <UserGuest>
-                <div className="w-full overflow-hidden bg-[url('asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
-                    {/* <img
-                        src="asset/images/modul/banner-modul.png"
-                        alt="banner"    
-                        className="absolute z-0 w-screen object-center rounded-none h-full object-cover"
-                    /> */}
-                    {/* <img
-                        src="asset/images/auth-img/layer-kotak.png"
-                        alt="banner"    
-                        className="absolute z-0 w-screen object-center rounded-none h-full object-cover"
-                    /> */}
+                <div className="w-full overflow-hidden bg-[url('/asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
                     <div className="h-max w-full px-6 md:px-24">
                         <div className="flex flex-col justify-between mt-20 mb-36">
                             <div className="flex flex-col z-20">

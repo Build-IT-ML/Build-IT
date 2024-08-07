@@ -37,7 +37,7 @@ export default function Daftar() {
         <>
             <Head title="Login" />
             <UserGuest>
-                <div className="w-full overflow-hidden bg-[url('asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
+                <div className="w-full overflow-hidden bg-[url('/asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
                     <div className="h-max w-full px-6 md:px-24">
                         <div className="flex flex-col justify-between mt-20 mb-36">
                             <div className="flex flex-col z-20">
