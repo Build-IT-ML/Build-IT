@@ -47,7 +47,7 @@ export default function Register() {
                         <div className="flex flex-col justify-between mt-20 mb-36">
                             <div className="flex flex-col z-20">
                             <div className="flex justify-center">
-                                <div className="flex flex-col space-y-4 p-10 rounded-xl h-full items-center bg-white border border-primary/50 shadow-lg z-10">
+                                <div className="flex flex-col space-y-4 p-10 rounded-xl h-full items-center bg-white border border-primary/50 shadow-lg z-10 w-full md:w-max">
                                     <div className="flex justify-center w-full">
                                         <img 
                                             src="asset/images/iconic.png" 
@@ -58,7 +58,7 @@ export default function Register() {
                                         />
                                     </div>
                                     <h1 className="w-full text-center text-lg text-black pt-3 mt-2">Pendaftaran BUILD IT</h1>
-                                    <form onSubmit={submit} className="space-y-5">
+                                    <form onSubmit={submit} className="space-y-5 w-full">
                                         <div className="flex flex-col gap-2 w-full">
                                             <label htmlFor='nim' className="font-semibold text-black text-base">NIM</label>
                                             <input 
@@ -67,7 +67,7 @@ export default function Register() {
                                                 id="nim" 
                                                 value={data.nim}
                                                 onChange={(e) => setData('nim', e.target.value)}
-                                                className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                                                className={`border-2 rounded-lg focus:outline-none focus:ring-1 text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
                                                 required   
                                                 autoFocus
                                             />

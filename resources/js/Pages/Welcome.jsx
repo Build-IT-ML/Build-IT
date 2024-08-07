@@ -84,9 +84,9 @@ export default function Welcome() {
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
                                 </p>
-                                <div className="md:w-[494px] w-auto flex flex-row gap-16 items-center">
-                                    <a href="/register">
-                                        <button className="mt-4 bg-primary hover:bg-secondary md:w-max w-full p-4 text-white font-medium rounded-[10px] tracking-[0.05em]">
+                                <div className="w-full md:w-auto flex flex-col md:flex-row gap-2 md:gap-12 items-center">
+                                    <a href="/register" className="w-full md:w-auto">
+                                        <button className="mt-4 bg-primary hover:bg-secondary w-full p-4 text-white font-medium rounded-[10px] tracking-0 md:tracking-[0.05em]">
                                             Daftar Sekarang
                                         </button>
                                     </a>
@@ -537,7 +537,7 @@ export default function Welcome() {
                                             <img src="asset/images/landing-page/pickup.png" alt="" className="w-[44px] h-[45px]"/>
                                             <div className="flex flex-col">
                                                 <p className="text-[16px] font-medium leading-[24px]">Pick-up Offline</p>
-                                                <p className="font-medium text-[12px] leading-[18px] w-[292px]">Gedung Teknologi Informasi, Universitas Udayana, 
+                                                <p className="font-medium text-[12px] leading-[18px] w-[200px] md:w-[292px]">Gedung Teknologi Informasi, Universitas Udayana, 
                                                 Jimbaran, Bali</p>
                                             </div>
                                         </div>

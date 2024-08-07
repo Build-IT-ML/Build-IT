@@ -64,7 +64,7 @@ export default function BasisData() {
                                 <div className="absolute top-[800px] md:top-[600px] left-[80px] animate-bounce-custom z-0" data-aos="fade-up">
                                     <KotakModulPx102 />
                                 </div>     
-                                <div className="absolute top-[700px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
+                                <div className="absolute top-[1000px] md:top-[800px] left-[200px] md:left-[400px] animate-bounce-custom" data-aos="fade-up">
                                     <KotakModulPx41 />
                                 </div>     
                             </div>
@@ -128,9 +128,9 @@ function CardPembicara({ imageSrc, name, batch, quotation, userInstagram }) {
     return (
         <div data-aos="fade-up" className="flex justify-center items-center">
             <div className="relative w-[285px] h-[403px] cursor-pointer transform-style-preserve-3d transition-transform duration-700 hover-rotate-y-180">
-                <div className="absolute w-full h-full bg-white backface-hidden border-2 border-gray-300 rounded-lg shadow-lg flex flex-col justify-end items-center">
-                <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end z-20 backface-hidden">
-                    <img src={imageSrc} alt={name} className="w-auto h-[385px] z-10 backface-hidden" />
+                <div className="absolute w-full h-full bg-white backface-hidden border-gray-300 rounded-lg flex flex-col justify-end items-center">
+                <div className="bg-gradient-to-t from-secondary to-white rounded-t-[10px] w-full h-[310px] flex justify-center items-end z-20 backface-hidden overflow-hidden">
+                    <img src={imageSrc} alt={name} className="absolute w-auto h-[385px] z-10 backface-hidden" />
                 </div>
                 <div className="bg-white w-full h-[130px] border-2 rounded-b-[10px] p-5 shadow-lg flex flex-col justify-center items-center backface-hidden gap-3">
                     <p className="text-[24px] font-medium leading-[24px] text-primary">
