@@ -52,7 +52,7 @@ export default function JaringanKomputer() {
                         <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
                             <div className="flex flex-col z-20">
                                 <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">
-                                    JARINGAN DAN KOMPUTER
+                                    JARINGAN KOMPUTER DAN KOMUNIKASI
                                 </p>
                                 <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
                                     Mata kuliah Jaringan Komputer dan Komunikasi merupakan salah satu mata kuliah penting dalam bidang teknologi informasi yang membahas prinsip-prinsip dasar, arsitektur, dan teknologi yang digunakan dalam jaringan komputer serta komunikasi data. Mahasiswa akan mempelajari berbagai topik seperti model OSI (Open Systems Interconnection), protokol jaringan, pengalamatan IP, subnetting, routing, switching, dan keamanan jaringan.
@@ -107,7 +107,7 @@ export default function JaringanKomputer() {
                             imageSrc="../../../asset/images/modul/andri.png"
                             name="Andri" 
                             batch="Angkatan 2022"
-                            quotation=""
+                            quotation="Di jarkom, teori & praktek sama pentingnya. Praktek penting supaya mahir, teori penting supaya tau apa yang dipraktekin"
                             userInstagram="https://instagram.com/andriiwhy" />
                             <CardPembicara
                             imageSrc="../../../asset/images/modul/dudek.png"
