@@ -107,7 +107,7 @@ export default function BasisData() {
                             imageSrc="../../../asset/images/modul/nanta.png" 
                             name="Rapriananta" 
                             batch="Angkatan 2022"
-                            quotation="" 
+                            quotation="Basis ya? Intinya kamu ngerti dlu sama relasi, relasi tu penting buat flow suatu data nantinya. Salah satu relasi aja, bisa ganti semua" 
                             userInstagram="https://instagram.com/raprianantapande"/>
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/ekaputra.png" 
