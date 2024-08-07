@@ -93,9 +93,9 @@ export default function BasisData() {
                         <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/bayu_riz.png" 
-                            name="Bayu Rizki" 
+                            name="Bay" 
                             batch="Angkatan 2022"
-                            quotation=""
+                            quotation="Bumi akan tetap berputar mau itu user_id atau userId"
                             userInstagram="https://instagram.com/bayurkp" />
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/dwita.png" 
