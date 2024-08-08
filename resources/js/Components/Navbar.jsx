@@ -64,7 +64,7 @@ export default function Navbar() {
                         <li className={`md:absolute bg-white mt-3 p-3 min-w-max shadow-none md:shadow-md border-none md:border-[1px] border-gray-200 rounded flex-col space-y-2 transition-all duration-300 ${!show ? "hidden" : "flex"}`}>
                             <Link href={route('Modul.Alprog')} className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Algoritma & Pemrograman</Link>
                             <Link href={route('Modul.BasisData')} className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Basis Data</Link>
-                            <Link href={route('Modul.Jarkom')} className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Jaringan Komputer & Komunikasi</Link>
+                            <Link href={route('Modul.Jarkom')} className="hover:bg-gray-200 rounded-[10px] w-full p-1.5" onClick={handleDropdownItemClick}>Jaringan Komputer</Link>
                         </li>
                     </ul>
                 </li>
@@ -86,8 +86,8 @@ export default function Navbar() {
                             Login
                         </Link>
                     ) : (
-                        <Link href={route('dashboard')} className="w-fit h-[52px] block md:hidden py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-md transition-all duration-300">
-                            <img src="/path/to/user-logo.png" alt="User" className="w-6 h-6 inline-block" />
+                        <Link href={route('dashboard')} className="flex justify-start items-center gap-3 px-2 py-2 md:hidden block">
+                            <IconUser />
                         </Link>
                     )}
                 </li>
@@ -98,7 +98,7 @@ export default function Navbar() {
                         Login
                     </Link>
                 ) : (
-                    <Link href={route('dashboard')} className="">
+                    <Link href={route('dashboard')} className="hidden md:block">
                         <IconUser />
                     </Link>
                 )}
