@@ -34,7 +34,7 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                 <div>
                     <div className="px-6 py-4">
                         <Link href={route('Welcome')} title="home">
-                            <ApplicationLogo />
+                            <img src="../asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
                         </Link>
                     </div>
 
@@ -44,7 +44,7 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                         <span className="text-primary font-semibold lg:block pt-4 capitalize">{user.roles[0].name}</span>
                     </div>
 
-                     <div className="px-12 md:px-0 md:block hidden">
+                     <div className="px-12 md:px-0 md:block">
                         <Divider />
                      </div>
 
