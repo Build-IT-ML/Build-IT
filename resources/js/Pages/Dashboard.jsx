@@ -70,7 +70,7 @@ export default function Dashboard() {
             <h1 className="text-3xl text-gray-800 mb-8">Hallo, {user.name} 😁👋</h1>
             {/* dashboard admin */}
             {user.roles[0].name == 'admin' && (
-               <div className="grid grid-cols-2 gap-6">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* card */}
                   <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
                      <div className="flex gap-6 h-full">
