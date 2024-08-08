@@ -53,7 +53,7 @@ export default function Participants() {
 
                   // ngebug datanya double aku kasi reload aja ngab
                   setTimeout(() => {
-                     window.location.reload();
+                     // window.location.reload();
                   }, 200);
                   toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengedit data peserta', life: 3000 });
                   
