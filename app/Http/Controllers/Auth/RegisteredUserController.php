@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
     {
         try {
             $request->validate([
-                'nim' => 'required|max:255|unique:' . User::class,
+                'nim' => 'required|max:10|unique:' . User::class,
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:' . User::class,
                 'line' => 'required|max:255',
