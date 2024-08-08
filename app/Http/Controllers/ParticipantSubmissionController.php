@@ -29,7 +29,7 @@ class ParticipantSubmissionController extends Controller
         $request->validate([
             'jarkom' => 'string|max:255|url|nullable',
             'alprog' => 'string|max:255|url|nullable',
-            'basisdata' => 'string|max:255|url|nullable',
+            'basis' => 'string|max:255|url|nullable',
         ]);
 
 
