@@ -434,7 +434,7 @@ export default function Welcome() {
                             </p>
                             <div className="flex md:flex-row flex-col gap-4 mt-5">
                                 <CardContact
-                                    name="Tri Darma (Ilmiah)"
+                                    name="Tri Darma"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6281333486847" target="_blank">WA : 081333486847</a>
                                     }
@@ -443,7 +443,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Candra (Ketua)"
+                                    name="Candra"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+6282235443630">WA : 082235443630</a>
                                     }
@@ -452,7 +452,7 @@ export default function Welcome() {
                                     }
                                 />
                                 <CardContact
-                                    name="Marsya (Kesekre)"
+                                    name="Marsya"
                                     wa={
                                         <a className="hover:underline" href="https://wa.me/+62881037397005">WA : 0881037397005</a>
                                     }

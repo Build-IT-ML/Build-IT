@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ApplicationLogo from '../AplicationLogo';
-import { Link, useForm} from "@inertiajs/react"
-
+import { Link, useForm } from "@inertiajs/react";
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Divider } from 'primereact/divider';
 
@@ -34,7 +33,7 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                 <div>
                     <div className="px-6 py-4">
                         <Link href={route('Welcome')} title="home">
-                            <ApplicationLogo />
+                            <img src="../asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="w-36"/>
                         </Link>
                     </div>
 
@@ -44,9 +43,9 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                         <span className="text-primary font-semibold lg:block pt-4 capitalize">{user.roles[0].name}</span>
                     </div>
 
-                     <div className="px-12 md:px-0 md:block hidden">
+                    <div className="px-12 md:px-0 hidden md:block">
                         <Divider />
-                     </div>
+                    </div>
 
                     {/* menu admin */}
                     {user.roles[0].name === 'admin' && (
@@ -112,18 +111,21 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
 
             {/* header component */}
             <div className="ml-auto lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-                <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
+                <div className="sticky z-10 top-0 border-b bg-white lg:py-2.5">
                     <div className="px-6 py-2 flex items-center justify-between space-x-4 2xl:container">
-                        <h5 hidden className="text-2xl text-gray-800 font-medium lg:block capitalize">{headerTitle}</h5>
+                        <h5 className="text-2xl text-gray-800 font-medium md:block hidden capitalize">{headerTitle}</h5>
+                        <Link href={route('Welcome')} title="home" className="lg:hidden">
+                            <img src="../asset/images/navbar-logo.png" alt="logo Build-IT 2024" className="md:w-12 nd:h-12 w-auto h-auto"/>
+                        </Link>
                         <button 
                             className="w-12 h-16 -mr-2 lg:hidden"
                             onClick={() => setMenuOpen(!menuOpen)}
                         >
-                           { !menuOpen ?
+                            { !menuOpen ?
                               <i className='pi pi-bars'></i>
                               :
                               <i className='pi pi-times'></i>
-                           }
+                            }
                         </button>
                     </div>
                 </div>
