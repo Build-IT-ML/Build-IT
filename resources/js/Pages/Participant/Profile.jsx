@@ -85,7 +85,7 @@ export default function Profile() {
                   <div className="space-y-2 flex flex-col">
                      <span className="font-semibold text-primary capitalize">grup besar</span>
                      {data.kelompok == null || data.kelompok < 1 || data.kelompok > 4? (
-                        <a href="" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum terverifikasi</a>
+                        <p className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum terverifikasi</p>
 
                      ) : (
                         <a href="https://line.me/R/ti/g/3z1tavzQyU" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/3z1tavzQyU</a>
@@ -107,7 +107,7 @@ export default function Profile() {
                         <a href="https://line.me/R/ti/g/toFKURNWzX" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/toFKURNWzX</a>
                         
                      ) : (
-                        <a href="" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum tergabung dalam grup</a>
+                        <p className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum tergabung dalam grup</p>
                         
                      )}
                   </div>
