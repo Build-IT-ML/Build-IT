@@ -36,7 +36,7 @@ class ParticipantSubmissionController extends Controller
         $user->update([
             'tugas_jarkom' => $request->jarkom,
             'tugas_alprog' => $request->alprog,
-            'tugas_basis' => $request->basisdata,
+            'tugas_basis' => $request->basis,
         ]);
 
         Session::flash('success', 'Kamu Berhasil Registrasi Akun, Sekaligus Build IT 😃.');
