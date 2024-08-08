@@ -73,6 +73,7 @@ export default function Register() {
                                                 type="text" 
                                                 name="nim"
                                                 id="nim" 
+                                                maxLength={10}
                                                 value={data.nim}
                                                 onChange={(e) => setData('nim', e.target.value)}
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1 text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
@@ -89,6 +90,7 @@ export default function Register() {
                                                 type="text" 
                                                 name="name" 
                                                 id="name"
+                                                maxLength={120}
                                                 value={data.name}
                                                 onChange={(e) => setData('name', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
@@ -104,6 +106,7 @@ export default function Register() {
                                                 type="email" 
                                                 name="email" 
                                                 id="email"
+                                                maxLength={120}
                                                 value={data.email}
                                                 onChange={(e) => setData('email', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
@@ -119,6 +122,7 @@ export default function Register() {
                                                 type="text" 
                                                 name="line" 
                                                 id="line"
+                                                maxLength={120}
                                                 value={data.line}
                                                 onChange={(e) => setData('line', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.line ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
@@ -134,6 +138,7 @@ export default function Register() {
                                                 type="text" 
                                                 name="whatsapp" 
                                                 id="whatsapp"
+                                                maxLength={120}
                                                 onChange={(e) => setData('whatsapp', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.whatsapp ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
                                                 required
