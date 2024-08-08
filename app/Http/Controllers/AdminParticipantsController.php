@@ -28,7 +28,7 @@ class AdminParticipantsController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'nim' => 'required|string|max:255',
+            'nim' => 'required|string|max:10',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'whatsapp_id' => 'required|string|max:255',
