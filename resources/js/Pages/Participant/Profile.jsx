@@ -40,7 +40,13 @@ export default function Profile() {
                      </div>
                      <div className="space-y-2">
                         <span className="font-semibold text-primary capitalize">kelompok</span>
-                        <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.kelompok}</p>
+                        {data.kelompok == null? (
+
+                           <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">-</p>
+                        ) : (
+
+                           <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.kelompok}</p>
+                        )}
                      </div>
                   </div>
                </div>
@@ -78,11 +84,32 @@ export default function Profile() {
                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2 flex flex-col">
                      <span className="font-semibold text-primary capitalize">grup besar</span>
-                     <a href="https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c</a>
+                     {data.kelompok == null || data.kelompok < 1 || data.kelompok > 4? (
+                        <a href="" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum terverifikasi</a>
+
+                     ) : (
+                        <a href="https://line.me/R/ti/g/3z1tavzQyU" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/3z1tavzQyU</a>
+                        
+                     )}
                   </div>
                   <div className="space-y-2 flex flex-col">
                      <span className="font-semibold text-primary capitalize">grup kelompok</span>
-                     <a href="https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://youtu.be/K7gyclhWo1Y?si=2DooctyYWJalhc3c</a>
+                     {data.kelompok == 1? (
+                        <a href="https://line.me/R/ti/g/X-uupccmfW" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/X-uupccmfW</a>
+                        
+                     ) : data.kelompok == 2? (
+                        <a href="https://line.me/R/ti/g/StqqnC-lJB" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/StqqnC-lJB</a>
+                        
+                     ) : data.kelompok == 3? (
+                        <a href="https://line.me/R/ti/g/GV6cb3Zter" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/GV6cb3Zter</a>
+                        
+                     ) : data.kelompok == 4? (
+                        <a href="https://line.me/R/ti/g/toFKURNWzX" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">https://line.me/R/ti/g/toFKURNWzX</a>
+                        
+                     ) : (
+                        <a href="" target="_blank" className="p-2 bg-secondary/30 text-cyan-700 rounded-lg">Anda belum tergabung dalam grup</a>
+                        
+                     )}
                   </div>
                </div>
             </div>
