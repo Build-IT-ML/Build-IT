@@ -7,6 +7,7 @@ import UserGuest from "@/Components/Layouts/User/UserGuest";
 
 export default function Register() {
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [passwordConfirmVisible, setPasswordConfirmVisible] = useState(false);
 
     const { data, setData, post, processing, errors, reset } = useForm({
         nim: '',
@@ -35,6 +36,13 @@ export default function Register() {
         setPasswordVisible(true);
         setTimeout(() => {
             setPasswordVisible(false);
+        }, 1000);
+    };
+
+    const togglePasswordConfirmVisibility = () => {
+        setPasswordConfirmVisible(true);
+        setTimeout(() => {
+            setPasswordConfirmVisible(false);
         }, 1000);
     };
 
@@ -164,14 +172,27 @@ export default function Register() {
                                         </div>
                                         <div className="flex flex-col gap-2 w-full">
                                             <label htmlFor="password_confirmation" className="font-semibold text-black text-base">Konfirmasi Password</label>
-                                            <input 
-                                                type="password" 
-                                                name="password_confirmation" 
-                                                id="password_confirmation" 
-                                                onChange={(e) => setData('password_confirmation', e.target.value)} 
-                                                className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password_confirmation ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required
-                                            />
+                                            <div className="flex relative items-center w-full">
+                                                <input 
+                                                    type={passwordConfirmVisible ? "text" : "password"}  
+                                                    name="password_confirmation" 
+                                                    id="password_confirmation" 
+                                                    onChange={(e) => setData('password_confirmation', e.target.value)} 
+                                                    className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password_confirmation ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
+                                                    required
+                                                />
+                                                <button 
+                                                    type="button" 
+                                                    className="absolute w-10 h-10 right-1"
+                                                    onClick={togglePasswordConfirmVisibility}
+                                                >
+                                                    {passwordConfirmVisible ? (
+                                                        <ViewPassword />
+                                                    ) : (
+                                                        <HidePassword />
+                                                    )}
+                                                </button>
+                                            </div>
                                             <small className="text-red-500">
                                                 {errors.password_confirmation}
                                             </small>
