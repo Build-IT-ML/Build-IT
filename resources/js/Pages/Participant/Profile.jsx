@@ -40,7 +40,13 @@ export default function Profile() {
                      </div>
                      <div className="space-y-2">
                         <span className="font-semibold text-primary capitalize">kelompok</span>
-                        <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.kelompok}</p>
+                        {data.kelompok == null? (
+
+                           <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">-</p>
+                        ) : (
+
+                           <p className="p-2 bg-secondary/30 text-primary rounded-lg text-center">{data.kelompok}</p>
+                        )}
                      </div>
                   </div>
                </div>
