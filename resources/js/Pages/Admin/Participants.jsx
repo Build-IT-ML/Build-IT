@@ -50,7 +50,13 @@ export default function Participants() {
          put(route('participants.update', { participant: editedRow.id }), {
                onSuccess: () => {
                   reset();
+
+                  // ngebug datanya double aku kasi reload aja ngab
+                  setTimeout(() => {
+                     window.location.reload();
+                  }, 200);
                   toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengedit data peserta', life: 3000 });
+                  
                },
                onError: () => {
                   toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengedit data peserta', life: 3000 });
