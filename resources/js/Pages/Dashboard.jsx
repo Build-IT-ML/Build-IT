@@ -5,9 +5,12 @@ import { useMountEffect } from 'primereact/hooks';
 import { Messages } from 'primereact/messages';
 
 export default function Dashboard() {
-   const {user} = usePage().props;
+   const {user, akt21, akt22, akt23, akt24} = usePage().props;
    const title = 'Dashboard ' + user.roles[0].name;
 
+   console.log(akt21);
+   
+   
    const msgs = useRef(null);
 
    const messagesTemplates = {
@@ -76,7 +79,7 @@ export default function Dashboard() {
                         </div>
                         <div class="w-1/2">
                            <p className="text-xl text-primary font-bold">Jumlah Angkatan 2021</p>
-                           <p className="text-6xl text-gray-800 font-bold">20</p>
+                           <p className="text-6xl text-gray-800 font-bold">{akt21}</p>
                         </div>
                      </div>
                   </div>
@@ -88,7 +91,7 @@ export default function Dashboard() {
                         </div>
                         <div class="w-1/2">
                            <p className="text-xl text-primary font-bold">Jumlah Angkatan 2022</p>
-                           <p className="text-6xl text-gray-800 font-bold">20</p>
+                           <p className="text-6xl text-gray-800 font-bold">{akt22}</p>
                         </div>
                      </div>
                   </div>
@@ -100,7 +103,7 @@ export default function Dashboard() {
                         </div>
                         <div class="w-1/2">
                            <p className="text-xl text-primary font-bold">Jumlah Angkatan 2023</p> 
-                           <p className="text-6xl text-gray-800 font-bold">20</p>
+                           <p className="text-6xl text-gray-800 font-bold">{akt23}</p>
                         </div>
                      </div>
                   </div>
@@ -112,7 +115,7 @@ export default function Dashboard() {
                         </div>
                         <div class="w-1/2">
                            <p className="text-xl text-primary font-bold">Jumlah Angkatan 2024</p>
-                           <p className="text-6xl text-gray-800 font-bold">20</p>
+                           <p className="text-6xl text-gray-800 font-bold">{akt24}</p>
                         </div>
                      </div>
                   </div>
