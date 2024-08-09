@@ -629,6 +629,28 @@ const CardContact = ({name, wa, line}) => {
     );
 }
 
+const NextArrow = ({ onClick }) => {
+    return (
+        <div
+            className="absolute top-1/2 right-0 font-bold transform -translate-y-1/2 z-10 cursor-pointer bg-secondary text-white p-2 rounded-full"
+            onClick={onClick}
+        >
+            &gt;
+        </div>
+    );
+};
+
+const PrevArrow = ({ onClick }) => {
+    return (
+        <div
+            className="absolute top-1/2 left-0 font-bold transform -translate-y-1/2 z-10 cursor-pointer bg-secondary text-white p-2 rounded-full"
+            onClick={onClick}
+        >
+            &lt;
+        </div>
+    );
+};
+
 const MerchPopup = ({ isOpen, onClose }) => {
     const images = [
         'asset/images/landing-page/merch-black.png',
@@ -645,11 +667,13 @@ const MerchPopup = ({ isOpen, onClose }) => {
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: true,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
     };
 
     return (
         <div className="fixed inset-0 bg-none md:bg-gray-800 bg-opacity-20 md:bg-opacity-75 flex justify-center items-center z-50">
-            <div className="bg-gray-300 rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
+            <div className="bg-gray-300 md:bg-white rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
                 <div className="flex justify-between">
                     <h2 className="text-md md:text-xl font-bold mb-4">Merchandise BUILD IT 2024</h2>
                     <button
