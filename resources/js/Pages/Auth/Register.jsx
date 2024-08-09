@@ -30,6 +30,11 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
+    if (!data.nim || !data.name || !data.email || !data.line || !data.whatsapp || !data.password || !data.password_confirmation) {
+        toast.current.show({ severity: 'warn', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
+        return;
+    }
+
     post(route('register.store'), {
         onSuccess: () => {
             toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil melakukan pendaftaran', life: 3000 })
@@ -86,8 +91,7 @@ export default function Register() {
                                                 maxLength={10}
                                                 value={data.nim}
                                                 onChange={(e) => setData('nim', e.target.value)}
-                                                className={`border-2 rounded-lg focus:outline-none focus:ring-1 text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required   
+                                                className={`border-2 rounded-lg focus:outline-none focus:ring-1 text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}                                               
                                                 autoFocus
                                             />
                                             <small className="text-red-500">
@@ -104,7 +108,7 @@ export default function Register() {
                                                 value={data.name}
                                                 onChange={(e) => setData('name', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required
+                                                
                                             />
                                             <small className="text-red-500">
                                                 {errors.name}
@@ -120,7 +124,7 @@ export default function Register() {
                                                 value={data.email}
                                                 onChange={(e) => setData('email', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required
+                                                
                                             />
                                             <small className="text-red-500">
                                                 {errors.email}
@@ -136,7 +140,7 @@ export default function Register() {
                                                 value={data.line}
                                                 onChange={(e) => setData('line', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.line ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required
+                                                
                                             />
                                             <small className="text-red-500">
                                                 {errors.line}
@@ -151,7 +155,7 @@ export default function Register() {
                                                 maxLength={120}
                                                 onChange={(e) => setData('whatsapp', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.whatsapp ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required
+                                                
                                             />
                                             <small className="text-red-500">
                                                 {errors.whatsapp}
@@ -167,7 +171,7 @@ export default function Register() {
                                                     id="password" 
                                                     onChange={(e) => setData('password', e.target.value)} 
                                                     className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                    required
+                                                    
                                                 />
                                                 <button 
                                                     type="button" 
@@ -194,7 +198,7 @@ export default function Register() {
                                                     id="password_confirmation" 
                                                     onChange={(e) => setData('password_confirmation', e.target.value)} 
                                                     className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password_confirmation ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                    required
+                                                    
                                                 />
                                                 <button 
                                                     type="button" 

@@ -24,6 +24,10 @@ export default function Daftar() {
     const submit = (e) => {
         e.preventDefault();
 
+        if (!data.nim || !data.password) {
+            toast.current.show({ severity: 'warn', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
+            return;
+        }
         post(route('login'), {
             onSuccess: () => {
                 toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil melakukan Login', life: 3000 })
@@ -73,7 +77,6 @@ export default function Daftar() {
                                                 value={data.nim}
                                                 onChange={(e) => setData('nim', e.target.value)}
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.nim ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                required   
                                                 autoFocus
                                             />
                                             <small className="text-red-500">
@@ -90,7 +93,7 @@ export default function Daftar() {
                                                     id="password" 
                                                     onChange={(e) => setData('password', e.target.value)} 
                                                     className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                    required
+                                                    autoFocus
                                                 />
                                                 <button 
                                                     type="button" 
