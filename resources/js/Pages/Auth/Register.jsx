@@ -1,8 +1,9 @@
 import { Head, useForm, Link } from "@inertiajs/react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41 } from "../../Components/Icons/modul";
 import { ViewPassword, HidePassword } from "@/Components/Icons/login";
 import UserGuest from "@/Components/Layouts/User/UserGuest";
+import { Toast } from 'primereact/toast';
 
 
 export default function Register() {
@@ -25,10 +26,18 @@ export default function Register() {
         };
     }, []);
 
+    const toast = useRef(null);
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register.store'));
+    post(route('register.store'), {
+        onSuccess: () => {
+            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil melakukan pendaftaran', life: 3000 })
+            }, 
+            onError: (error) => {
+            toast.current.show({ severity: 'error', summary: 'Gagal melakukan pendaftaran', detail: 'Periksa kembali formulir pendaftaran', life: 3000 })
+            }  
+        });
     };
 
 
@@ -50,6 +59,7 @@ export default function Register() {
         <>
             <Head title="Pendaftaran" />
             <UserGuest>
+            <Toast ref={toast} />
                 <div className="w-full overflow-hidden bg-[url('/asset/images/auth-img/bg-image.png')] bg-cover bg-fixed bg-center bg-no-repeat">
                     <div className="h-max w-full px-6 md:px-24">
                         <div className="flex flex-col justify-between mt-20 mb-36">
