@@ -30,8 +30,8 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailPattern.test(data.email)) {
+    const formatEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!formatEmail.test(data.email)) {
         toast.current.show({ severity: 'error', summary: 'Format Email Salah', detail: 'Mohon masukkan email yang valid', life: 3000 });
         return;
     }
