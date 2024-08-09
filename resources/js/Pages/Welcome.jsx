@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Button } from 'primereact/button';
 import DisableInspect from '@/Utils/disableInspect';
 import { Dialog } from 'primereact/dialog';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -627,41 +630,28 @@ const CardContact = ({name, wa, line}) => {
 }
 
 const MerchPopup = ({ isOpen, onClose }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [fadeOut, setFadeOut] = useState(false);
-
     const images = [
         'asset/images/landing-page/merch-black.png',
         'asset/images/landing-page/merch-white.png'
     ];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFadeOut(true);
-            setTimeout(() => {
-                setFadeOut(false);
-                nextImage();
-            }, 700); 
-        }, 3000); 
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-
     if (!isOpen) return null;
 
+    const settings = {
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+    };
+
     return (
-        <div className="absolute md:fixed inset-0 bg-none md:bg-gray-800 bg-opacity-20 md:bg-opacity-75 flex justify-center items-center z-50">
-            <div className="bg-gray-300 md:bg-white rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
+        <div className="fixed inset-0 bg-none md:bg-gray-800 bg-opacity-20 md:bg-opacity-75 flex justify-center items-center z-50">
+            <div className="bg-gray-300 rounded-[10px] p-8 h-max w-11/12 md:w-2/5">
                 <div className="flex justify-between">
-                    <h2 className="text-xl font-bold mb-4">Merchandise BUILD IT 2024</h2>
+                    <h2 className="text-md md:text-xl font-bold mb-4">Merchandise BUILD IT 2024</h2>
                     <button
                         className="text-gray-500 rounded hover:text-gray-900"
                         onClick={onClose}
@@ -670,13 +660,13 @@ const MerchPopup = ({ isOpen, onClose }) => {
                     </button>
                 </div>
                 <div className="relative">
-                    <img 
-                        src={images[currentImageIndex]} 
-                        alt="Merchandise" 
-                        className={`w-full h-auto md:h-[350px] mb-4 animate-bounce-merch transition-opacity duration-3s ease-in-out ${fadeOut ? 'opacity-0' : 'opacity-300'}`} 
-                    />
-                    <button onClick={prevImage} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❮</button>
-                    <button onClick={nextImage} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-secondary hover:bg-primary rounded-full px-2 py-1 text-white">❯</button>
+                    <Slider {...settings}>
+                        {images.map((image, index) => (
+                            <div key={index}>
+                                <img src={image} alt={`Merchandise ${index + 1}`} className="w-full h-auto md:h-[350px] mb-4 animate-bounce-merch" />
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
                 <p className="text-gray-700 mb-4 text-center">
                     T-shirt BUILD IT 2024. Dapatkan baju limited edition ini dengan bahan yang adem dan desain yang kece.
