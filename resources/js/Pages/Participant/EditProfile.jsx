@@ -18,6 +18,16 @@ export default function EditProfile() {
 
       put(route('participant.updateprofile'))
    }
+
+   function checkInput(){
+      if(data.name == user.name && data.nim == user.nim && data.email == user.email && data.whatsapp == user.whatsapp_id && data.line == user.line_id){
+         return true;
+      } else{
+         
+      }
+      return false;
+   }
+
    return(
       <AdminAuthentication user={user} headerTitle="Edit Profile">
          <Head title="Participant Profile"/>
@@ -111,7 +121,10 @@ export default function EditProfile() {
                </div>
                
                <div>
-                  <button type="submit" className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
+                  <button
+                  disabled={checkInput()}
+                  type="submit" 
+                  className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
                      Simpan
                   </button>
                </div>

@@ -13,10 +13,12 @@ class ParticipantProfileController extends Controller
     {
         $user = auth()->user();
         $role = auth()->user()->getRoleNames();
+        $flash = Session::get('success');
 
         return Inertia::render('Participant/Profile', [
             'user' => $user,
-            'role' => $role
+            'role' => $role,
+            'flash' => $flash
         ]);
     }
 
@@ -50,7 +52,7 @@ class ParticipantProfileController extends Controller
             'whatsapp_id' => $request->whatsapp,
         ]);
 
-        Session::flash('success', 'Kamu Berhasil Registrasi Akun, Sekaligus Build IT 😃.');
+        Session::flash('success', 'Data berhasil diperbarui');
 
         return to_route('participant.profile');
     }

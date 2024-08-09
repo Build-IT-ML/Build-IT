@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Head,Link,usePage } from "@inertiajs/react";
 import AdminAuthentication from "@/Components/Layouts/AdminAuthentication";
 import { Inertia } from "@inertiajs/inertia";
+import { Toast } from 'primereact/toast';
 
 export default function Profile() {
-   const {user} = usePage().props;
+   const {user, flash} = usePage().props;
    const [data] = useState(
       {
          nim: user.nim,
@@ -16,10 +17,19 @@ export default function Profile() {
          kelompok: user.kelompok,
       }
    );
+   
+   const toast = useRef(null);
+   useEffect(()=>{
+      if (flash) {
+         toast.current.show({ severity: 'success', summary: 'Berhasil', detail: flash });
+      }
+   }, [flash]);
+
 
    return(
       <AdminAuthentication user={user} headerTitle="Profile Peserta">
          <Head title="Participant Profile"/>
+         <Toast ref={toast} />
          <div className="space-y-8">
             <div>
                <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>
