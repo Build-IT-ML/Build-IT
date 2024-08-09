@@ -30,8 +30,14 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(data.email)) {
+        toast.current.show({ severity: 'error', summary: 'Format Email Salah', detail: 'Mohon masukkan email yang valid', life: 3000 });
+        return;
+    }
+
     if (!data.nim || !data.name || !data.email || !data.line || !data.whatsapp || !data.password || !data.password_confirmation) {
-        toast.current.show({ severity: 'warn', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
+        toast.current.show({ severity: 'error', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
         return;
     }
 
@@ -108,7 +114,7 @@ export default function Register() {
                                                 value={data.name}
                                                 onChange={(e) => setData('name', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.name ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                
+                                                autoFocus
                                             />
                                             <small className="text-red-500">
                                                 {errors.name}
@@ -116,15 +122,14 @@ export default function Register() {
                                         </div>
                                         <div className="flex flex-col gap-2 w-full">
                                             <label htmlFor="email" className="font-semibold text-black text-base">Email</label>
-                                            <input 
-                                                type="email" 
+                                            <input  
                                                 name="email" 
                                                 id="email"
                                                 maxLength={120}
                                                 value={data.email}
                                                 onChange={(e) => setData('email', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.email ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                
+                                                autoFocus
                                             />
                                             <small className="text-red-500">
                                                 {errors.email}
@@ -140,7 +145,7 @@ export default function Register() {
                                                 value={data.line}
                                                 onChange={(e) => setData('line', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.line ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                
+                                                autoFocus
                                             />
                                             <small className="text-red-500">
                                                 {errors.line}
@@ -155,7 +160,7 @@ export default function Register() {
                                                 maxLength={120}
                                                 onChange={(e) => setData('whatsapp', e.target.value)} 
                                                 className={`border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.whatsapp ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                
+                                                autoFocus
                                             />
                                             <small className="text-red-500">
                                                 {errors.whatsapp}
@@ -171,7 +176,7 @@ export default function Register() {
                                                     id="password" 
                                                     onChange={(e) => setData('password', e.target.value)} 
                                                     className={`w-full border-2 rounded-lg focus:outline-none focus:ring-1  text-black p-2 ${errors.password ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                                                    
+                                                    autoFocus
                                                 />
                                                 <button 
                                                     type="button" 

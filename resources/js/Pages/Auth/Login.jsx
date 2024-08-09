@@ -25,7 +25,7 @@ export default function Daftar() {
         e.preventDefault();
 
         if (!data.nim || !data.password) {
-            toast.current.show({ severity: 'warn', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
+            toast.current.show({ severity: 'error', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
             return;
         }
         post(route('login'), {
