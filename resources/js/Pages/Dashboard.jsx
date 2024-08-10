@@ -7,10 +7,6 @@ import { Messages } from 'primereact/messages';
 export default function Dashboard() {
    const {user, akt21, akt22, akt23, akt24} = usePage().props;
    const title = 'Dashboard ' + user.roles[0].name;
-
-   console.log(akt21);
-   
-   
    const msgs = useRef(null);
 
    const messagesTemplates = {
@@ -125,7 +121,7 @@ export default function Dashboard() {
             {/* dashboard participant */}
             {user.roles[0].name == 'participant' && (
                <div className="flex flex-col">
-                  <Messages ref={msgs} />
+                  <Messages ref={msgs} className="custom-messages" />
                </div>
             )}
          </div>
