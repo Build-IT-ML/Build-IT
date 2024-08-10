@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ApplicationLogo from '../AplicationLogo';
 import { Link, useForm } from "@inertiajs/react";
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Divider } from 'primereact/divider';
@@ -7,6 +6,8 @@ import { Divider } from 'primereact/divider';
 export default function AdminAuthentication({ user, headerTitle, children }) {
     const { post } = useForm();
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const currentRoute = route().current();
 
     const accept = () => {
         post(route('logout'));
@@ -52,19 +53,31 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                     {user.roles[0].name === 'admin' && (
                         <ul className="space-y-2 h-48 2xl:h-full overflow-auto tracking-wide mt-8">
                             <li>
-                                <Link href={route('dashboard')} aria-label="dashboard" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('dashboard')} 
+                                    aria-label="dashboard" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'dashboard' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-th-large"></i>
                                     <span className="-mr-1 font-medium">Dashboard</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={route('participants.index')} aria-label="peserta" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('participants.index')} 
+                                    aria-label="peserta" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participants.index' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-users"></i>
                                     <span className="-mr-1 font-medium">Peserta</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={route('submissions.index')} aria-label="pengumpulan tugas" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('submissions.index')} 
+                                    aria-label="pengumpulan tugas" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'submissions.index' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-folder-open"></i>
                                     <span className="-mr-1 font-medium">Pengumpulan Tugas</span>
                                 </Link>
@@ -76,19 +89,31 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                     {user.roles[0].name === 'participant' && (
                         <ul className="space-y-2 h-48 2xl:h-full overflow-auto tracking-wide mt-8">
                             <li>
-                                <Link href={route('dashboard')} aria-label="dashboard" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('dashboard')} 
+                                    aria-label="dashboard" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'dashboard' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-th-large"></i>
                                     <span className="-mr-1 font-medium">Dashboard</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={route('participant.profile')} aria-label="profile" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('participant.profile')} 
+                                    aria-label="profile" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participant.profile' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-cog"></i>
                                     <span className="-mr-1 font-medium">Profile</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href={route('participant.submissions')} aria-label="pengumpulan tugas" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 hover:text-primary hover:bg-gradient-background-lighten transition-all duration-300">
+                                <Link 
+                                    href={route('participant.submissions')} 
+                                    aria-label="pengumpulan tugas" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participant.submissions' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
                                     <i className="pi pi-folder-open"></i>
                                     <span className="-mr-1 font-medium">Pengumpulan Tugas</span>
                                 </Link>
@@ -110,7 +135,6 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                 </div>
             </aside>
 
-            {/* header component */}
             <div className="ml-auto lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
                 <div className="sticky z-10 top-0 border-b bg-white lg:py-2.5">
                     <div className="px-6 py-2 flex items-center justify-between space-x-4 2xl:container">
@@ -131,7 +155,6 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                     </div>
                 </div>
                 
-                {/* content component */}
                 <div className="px-6 pt-6 2xl:container bg-slate-50 min-h-screen">
                     {children}
                 </div>
