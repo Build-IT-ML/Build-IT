@@ -113,7 +113,7 @@ export default function JaringanKomputer() {
                             imageSrc="../../../asset/images/modul/dudek.png"
                             name="Dudek" 
                             batch="Angkatan 2022"
-                            quotation=""
+                            quotation="Sudah banyak ada platform penunjang kita dalam belajar jaringan. Akan ada baiknya gunakan semua platform itu secara maksimal. Jangan takut untuk mencoba dan gagal, lakukan terus, trial and error, sampai bisa."
                             userInstagram="https://instagram.com/dudek.dudekk" />
                         </div>
                     </div>
