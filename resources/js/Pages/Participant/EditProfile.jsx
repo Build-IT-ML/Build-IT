@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Head,useForm,usePage } from "@inertiajs/react";
+import { Head,useForm,usePage, Link } from "@inertiajs/react";
 import AdminAuthentication from "@/Components/Layouts/AdminAuthentication";
 
 export default function EditProfile() {
@@ -22,9 +22,7 @@ export default function EditProfile() {
    function checkInput(){
       if(data.name == user.name && data.nim == user.nim && data.email == user.email && data.whatsapp == user.whatsapp_id && data.line == user.line_id){
          return true;
-      } else{
-         
-      }
+      } 
       return false;
    }
 
@@ -33,6 +31,10 @@ export default function EditProfile() {
          <Head title="Participant Profile"/>
             <form onSubmit={handleUpdate} className="space-y-8">
                <div>
+                  <Link href={route('participant.profile')} className="text-pr text-primary text-lg">
+                     <i className="pi pi-arrow-left font-bold text-lg mr-4 mb-4"></i>
+                     Kembali
+                  </Link>
                   <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>
                   <p className="text-primary/80 mt-2 mb-4">* Pastikan identitas sudah terisi dengan benar</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -124,7 +126,7 @@ export default function EditProfile() {
                   <button
                   disabled={checkInput()}
                   type="submit" 
-                  className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center">
+                  className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center disabled:bg-primary/80">
                      Simpan
                   </button>
                </div>
