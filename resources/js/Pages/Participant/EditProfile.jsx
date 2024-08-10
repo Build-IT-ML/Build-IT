@@ -32,7 +32,7 @@ export default function EditProfile() {
             <form onSubmit={handleUpdate} className="space-y-8">
                <div>
                   <Link href={route('participant.profile')} className="text-pr text-primary text-lg">
-                     <i className="pi pi-arrow-left font-bold text-lg mr-4 mb-4"></i>
+                     <i className="pi pi-arrow-left font-bold text-lg mr-4 mb-4 bg-primary/20 p-2 rounded-full"></i>
                      Kembali
                   </Link>
                   <h3 className="text-primary font-bold text-xl">Profile Lengkap</h3>

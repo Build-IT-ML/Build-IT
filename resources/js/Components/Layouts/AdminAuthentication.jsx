@@ -102,7 +102,7 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                                 <Link 
                                     href={route('participant.profile')} 
                                     aria-label="profile" 
-                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participant.profile' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participant.profile' || currentRoute === 'participant.editprofile' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
                                 >
                                     <i className="pi pi-cog"></i>
                                     <span className="-mr-1 font-medium">Profile</span>
