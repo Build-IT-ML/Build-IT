@@ -13,7 +13,6 @@ export default function Submission() {
          basis: user.tugas_basis,
       }
    );
-   console.log({user, alprog: data['alprog']});
 
    const toast = useRef(null);
 
