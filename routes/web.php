@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::resource('participants', AdminParticipantsController::class)->middleware(['auth']);
         Route::resource('submissions', AdminSubmissionsController::class)->middleware(['auth']);
+        Route::middleware(['auth', 'admin'])->put('/participants/reset-password', [AdminParticipantsController::class, 'resetPassword'])->name('participants.resetPassword');
     });
 });
 

@@ -10,6 +10,7 @@ import { Tag } from 'primereact/tag';
 import { Button } from 'primereact/button';
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
+import axios from 'axios';
 
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
@@ -17,7 +18,7 @@ import { Toast } from 'primereact/toast';
 export default function Participants() {
    const { user, participants } = usePage().props;
    const [dataParticipants, setDataParticipants] = useState(participants.data);
-   const { data, setData, put, reset , delete: destroy} = useForm({
+   const { data, setData, put, reset, delete: destroy} = useForm({
       id: '',
       nim: '',
       name: '',
@@ -191,7 +192,47 @@ export default function Participants() {
          <Button icon="pi pi-trash" className="p-button-rounded p-button-danger" onClick={() => confirmDelete(rowData.id)} />
       )
    }
-   
+
+   const resetPassword = (id, nim) => {
+      confirmDialog({
+          message: 'Apakah Anda yakin ingin mereset password?',
+          header: 'Konfirmasi Reset Password',
+          icon: 'pi pi-exclamation-triangle',
+          accept: () => {
+            axios.put('/participants/reset-password', {
+               id: id,
+               nim: nim
+           }, {
+               headers: {
+                  'Content-Type': 'application/json'
+               }
+           })
+           .then(response => {
+               console.log(response.data.message);
+               toast.current.show({ severity: 'success', summary: 'Berhasil', detail: response.data.message, life: 3000 });
+           })
+           .catch(error => {
+               console.log('Error:', error.response ? error.response.data : error.message);
+           
+               if (error.response && error.response.status === 422) {
+                   console.log('Validation error:', error.response.data.errors);
+                   toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan validasi', life: 3000 });
+               } else {
+                   toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan', life: 3000 });
+               }
+           });
+          },
+          reject: () => reject()
+      });
+  };
+
+  const resetPasswordTemplate = (rowData) => (
+      <Button 
+          label="Reset Password" 
+          className="p-button-danger" 
+          onClick={() => resetPassword(rowData.id, rowData.nim)} 
+      />
+  );
 
    return (
       <AdminAuthentication user={user} headerTitle='Peserta Build IT 2024'>
@@ -223,6 +264,7 @@ export default function Participants() {
                <Column field="status" header="Status" body={statusBodyTemplate} editor={(options) => statusEditor(options)} sortable style={{ minWidth: '12rem' }} />
                <Column field="kelompok" header="Kelompok" editor={(options) => textEditor(options)} sortable style={{ minWidth: '12rem' }} />
                <Column header="Edit" rowEditor={allowEdit} headerStyle={{ width: '10%', minWidth: '8rem'}} bodyStyle={{ textAlign: 'center' }} headerClassName="text-center"></Column>
+               <Column header="Reset Password" body={resetPasswordTemplate} style={{ width: '50%', minWidth: '10rem', textAlign: 'center'}} />
                <Column header="Hapus" body={deleteBodyTemplate} style={{ width: '10%', minWidth: '8rem'}} />
             </DataTable>
          </div>

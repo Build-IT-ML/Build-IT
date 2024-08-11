@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class AdminParticipantsController extends Controller
 {
@@ -62,4 +63,22 @@ class AdminParticipantsController extends Controller
         $participant->delete();
         return to_route('participants.index');
     }
+    
+    
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:users,id',
+            'nim' => 'required|string|max:10',
+        ]);
+    
+        $participant = User::findOrFail($request->id);
+    
+        $participant->update([
+            'password' => bcrypt($request->nim),
+        ]);
+    
+        return to_route('participants.resetPassword');
+    }
+    
 }
