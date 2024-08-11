@@ -85,7 +85,7 @@ export default function Welcome() {
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >TEKNOLOGI INFORMASI</p>
                                     <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
-                                    Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan.
+                                    Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan dan lomba serta penjurusan dilingkup TI.
                                 </p>
                                 <div className="w-full md:w-auto flex flex-col md:flex-row gap-2 md:gap-12 items-center">
                                     <a href="/register" className="w-full md:w-auto">
@@ -216,7 +216,7 @@ export default function Welcome() {
                                 Apa itu BUILD IT 2024?
                             </p>
                             <p className="mt-10 font-normal text-[14px] md:text-[20px] w-full md:w-[724px] text-center md:text-justify" data-aos="fade-up">
-                                <span className="font-extrabold">Basic Understanding in Learning and Developing Information Technology</span> atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Workshop Gemastik.
+                                <span className="font-extrabold">Basic Understanding in Learning and Developing Information Technology</span> atau yang disingkat “BUILD IT” merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan di luar kegiatan belajar mengajar serta mempersiapkan diri untuk mengikuti perlombaan di bidang Teknologi Informasi melalui Sosialisasi Lomba & Penjurusan.
                             </p>
                         </div>
                     </div>
@@ -243,22 +243,21 @@ export default function Welcome() {
                         <div className="mt-10 flex flex-col md:flex-row justify-around gap-5 items-center">
                             <CardMatkul
                                 heading="Algoritma dan Pemrograman"
-                                description="Algoritma adalah langkah-langkah logis yang jelas dan terstruktur untuk menyelesaikan suatu masalah."
+                                description="Matakuliah Algoritma dan Pemrograman adalah mata kuliah dasar yang memperkenalkan konsep-konsep fundamental dalam pemrograman komputer dan pemecahan masalah menggunakan algoritma. Dalam mata kuliah ini, mahasiswa akan mempelajari cara merancang, mengembangkan, dan menganalisis algoritma yang efisien untuk menyelesaikan berbagai jenis masalah komputasional."
                                 button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-alprog.png"
                                 url="/modul/alprog"
                             />
                             <CardMatkul
                                 heading="Basis Data"
-                                description="Basis data adalah kumpulan data yang terorganisir secara sistematis untuk memudahkan akses."
+                                description="Matakuliah Basis Data merupakan mata kuliah yang berfokus pada konsep, desain, implementasi, dan manajemen sistem basis data. Mahasiswa akan mempelajari bagaimana data diorganisasikan, disimpan, dan diakses secara efisien. Selain itu, mahasiswa akan belajar tentang penggunaan SQL (Structured Query Language) untuk mengelola dan memanipulasi data dalam basis data."
                                 button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-basis-data.png"
                                 url="/modul/basisdata"
                             />
                             <CardMatkul 
-                                heading="Jaringan Komputer"
-                                description="Jaringan komputer adalah kumpulan komputer dan perangkat lainnya yang 
-                                saling terhubung untuk berbagi sumber."
+                                heading="Jaringan Komputer dan Komunikasi"
+                                description="Matakuliah Jaringan Komputer dan Komunikasi merupakan matakuliah yang mempelajari konsep, arsitektur, dan teknologi yang mendasari sistem jaringan komputer serta proses komunikasi data antar perangkat. Mahasiswa akan memahami cara kerja jaringan mulai dari lapisan fisik hingga aplikasi, termasuk protokol-protokol jaringan seperti TCP/IP, routing, switching, serta keamanan jaringan."
                                 button="Lebih lanjut"
                                 image="asset/images/landing-page/icon-jaringan-komputer.png"
                                 url="/modul/jarkom"
@@ -286,7 +285,7 @@ export default function Welcome() {
                                 <IconKotakBottom />
                             </div>
                         <div className="flex flex-col z-10 mt-3 md:mt-10">
-                            <div className="flex flex-col gap-[120px] left-4 items-center pt-12 absolute w-1 bg-primary h-max md:left-1/2 transform md:-translate-x-1/2 z-10">
+                            <div className="flex flex-col gap-[130px] left-4 items-center pt-16 absolute w-1 bg-primary h-max md:left-1/2 transform md:-translate-x-1/2 z-10">
                                 <div className="w-5 h-5 md:w-9 md:h-9 bg-primary rounded-full relative z-20">
                                     <div className="items-center w-full h-full bg-primary rounded-full animate-ping"></div>
                                 </div>
@@ -312,14 +311,16 @@ export default function Welcome() {
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end z-10 md:pl-20" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md ">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Open Registration Peserta</h3>
-                                    <p className="text-[14px] md:text-[16px] font-medium mb-1">14 Agustus - 19 Agustus 2024
+                                    <p className="text-[14px] md:text-[16px] font-medium mb-1"> Batch I : 14 Agustus - 19 Agustus 2024
+                                    </p>
+                                    <p className="text-[14px] md:text-[16px] font-medium mb-1"> Batch II : 21 Agustus - 28 Agustus 2024
                                     </p>
                                     <p className="text-[14px] md:text-[16px]">Melalui website resmi BUILD IT https://buildit.hmtiudayana.id/</p>
                                 </div>
                             </div>
                             <div className="font-sans my-3 md:my-5 flex w-full justify-end md:justify-start z-10 pr-0 md:pr-24" data-aos="fade-up">
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
-                                    <h3 className="text-[16px] md:text-[20px] font-bold">Pembukaan & Pelatihan Jarkom</h3>
+                                    <h3 className="text-[16px] md:text-[20px] font-bold">Pembukaan dan Pelatihan Jaringan Komputer & Komunikasi</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
                                         Jumat, 6 September 2024
                                     </p>
