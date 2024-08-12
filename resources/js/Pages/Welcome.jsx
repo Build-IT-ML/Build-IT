@@ -600,10 +600,18 @@ const CardMatkul = ({heading, description, button, image, url}) => {
                 <img src={image} alt="" className="w-[213px] h-[213px]"/>
             </div>
             <div className="bg-primary w-full md:w-[348px] md:h-[250] h-full border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
-                <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white md:text-start text-center">
+                <p className="text-[15px] leading-[24px] tracking-[0.01em] font-bold text-white md:text-start text-center">
                     {heading}
                 </p>
-                <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center">
+                <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center text-wrap"
+                    style={{
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 5,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    }}
+                >
                     {description}
                 </p>
                 <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
