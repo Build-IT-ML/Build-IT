@@ -610,7 +610,7 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                     {heading}
                 </p>
                 <p className={`mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center text-wrap ${
-                    bacaSelengkapnya ? '' : 'line-clamp-4'
+                    bacaSelengkapnya ? '' : 'line-clamp-5'
                 }`}
                     style={{
                         display: '-webkit-box',
