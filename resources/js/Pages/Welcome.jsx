@@ -178,10 +178,10 @@ export default function Welcome() {
                             <IconHouseOffline />
                             <div className="divider h-[2px] w-[50px] bg-primary mt-3"></div>
                             <p className="mt-3 font-bold text-[16px] leading-[24px] tracking-[0.01em]">
-                                3 Offline Course
+                                3 Pelatihan Tatap Muka
                             </p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em] w-full">
-                                Membantu mahasiswa baru memahami mata kuliah dasar di perkuliahan seperti algoritma & pemrograman, basis data, dan jaringan komputer
+                                Membantu mahasiswa baru memahami mata kuliah dasar di perkuliahan seperti Algoritma & Pemrograman, Basis Data, dan Jaringan Komputer & Komunikasi
                             </p>
                         </div>
                         <div className="bg-white w-full h-max md:w-[420px] md:h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-up">
@@ -376,7 +376,7 @@ export default function Welcome() {
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
                                         Senin, 16 September 2024
                                     </p>
-                                    <p className="text-[14px]">On Webex https://webex</p>
+                                    {/* <p className="text-[14px]">On Webex https://webex</p> */}
                                 </div>
                             </div>
                         </div>
@@ -615,7 +615,8 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                     style={{
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',
-                        WebkitLineClamp: bacaSelengkapnya ? 'none' : 4,
+                        // WebkitLineClamp: bacaSelengkapnya ? 'none' : 4,
+                        WebkitLineClamp: 'none',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                     }}
