@@ -593,19 +593,40 @@ const AccordionLanding = ({heading, description, isOpen, onClick}) => {
     );
 }
 
-const CardMatkul = ({heading, description, button, image, url}) => {
-    return(
+const CardMatkul = ({ heading, description, button, image, url }) => {
+    const [bacaSelengkapnya, setbacaSelengkapnya] = useState(false);
+
+    const toggleDescription = () => {
+        setbacaSelengkapnya(!bacaSelengkapnya);
+    };
+
+    return (
         <div className="border-primary rounded-[10px] shadow-lg transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-up">
             <div className="border-2 border-primary rounded-t-[10px] w-full md:w-[348px] h-full md:h-[250px] p-10 flex justify-center items-center shadow-lg">
-                <img src={image} alt="" className="w-[213px] h-[213px]"/>
+                <img src={image} alt="" className="w-[213px] h-[213px]" />
             </div>
             <div className="bg-primary w-full md:w-[348px] md:h-[250] h-full border-2 border-primary rounded-b-[10px] p-5 shadow-lg">
-                <p className="text-[16px] leading-[24px] tracking-[0.01em] font-bold text-white md:text-start text-center">
+                <p className="text-[15px] leading-[24px] tracking-[0.01em] font-bold text-white md:text-start text-center">
                     {heading}
                 </p>
-                <p className="mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center">
+                <p className={`mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center text-wrap ${
+                    bacaSelengkapnya ? '' : 'line-clamp-4'
+                }`}
+                    style={{
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: bacaSelengkapnya ? 'none' : 4,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                    }}
+                >
                     {description}
                 </p>
+                <button 
+                    onClick={toggleDescription} 
+                    className="text-white font-bold text-[14px] mt-2 leading-[0.05em] hover:underline">
+                    {bacaSelengkapnya ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya'}
+                </button>
                 <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
                     <button className="flex justify-center items-center gap-2 mt-5 bg-white rounded-[37px] w-full md:w-[147px] h-full md:h-[44px] hover:bg-primer md:p-0 p-3">
                         {button}
