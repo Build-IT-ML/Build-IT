@@ -49,7 +49,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit-profile', [ParticipantProfileController::class, 'edit'])->middleware(['auth'])->name('participant.editprofile');
         Route::put('/edit-profile', [ParticipantProfileController::class, 'update'])->middleware(['auth'])->name('participant.updateprofile');
         Route::get('/participant-submissions', [ParticipantSubmissionController::class, 'index'])->middleware(['auth'])->name('participant.submissions');
-        Route::put('/participant-submissions', [ParticipantSubmissionController::class, 'update'])->middleware(['auth'])->name('participant.addsubmissions');
+        Route::put('/participant-submitalprog', [ParticipantSubmissionController::class, 'submitAlprog'])->middleware(['auth'])->name('participant.submitalprog');
+        Route::put('/participant-submitbasis', [ParticipantSubmissionController::class, 'submitBasis'])->middleware(['auth'])->name('participant.submitbasis');
+        Route::put('/participant-submitjarkom', [ParticipantSubmissionController::class, 'submitJarkom'])->middleware(['auth'])->name('participant.submitjarkom');
     });
 
     Route::middleware('admin')->group(function () {

@@ -16,21 +16,47 @@ export default function Submission() {
 
    const toast = useRef(null);
 
-   function submit(e){
+   function submitAlprog(e){
       e.preventDefault();
 
-      put(route('participant.addsubmissions'), {
+      put(route('participant.submitalprog'), {
          onSuccess: () => {
-            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan', life: 3000 })
+            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Algoritma dan Pemrograman', life: 3000 })
          }, 
          onError: (error) => {
-            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan', life: 3000 })
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Algoritma dan Pemrograman', life: 3000 })
+         }  
+      })
+   }
+
+   function submitBasis(e){
+      e.preventDefault();
+
+      put(route('participant.submitbasis'), {
+         onSuccess: () => {
+            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Basis Data', life: 3000 })
+         }, 
+         onError: (error) => {
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Basis Data', life: 3000 })
+         }  
+      })
+   }
+
+   function submitJarkom(e){
+      e.preventDefault();
+
+      put(route('participant.submitjarkom'), {
+         onSuccess: () => {
+            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Jaringan Komputer dan Komunikasi', life: 3000 })
+         }, 
+         onError: (error) => {
+            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Jaringan Komputer dan Komunikasi', life: 3000 })
          }  
       })
    }
 
    function checkInput(matkul){
-      if (data[matkul] === user['tugas_' + matkul] || data[matkul].trim() === '' ) {
+      if (data[matkul] === user['tugas_' + matkul]) {
          return true;
       } else {
          return false
@@ -49,9 +75,8 @@ export default function Submission() {
             ) }
 
             {user.status === 'Terverifikasi' && (
-               <div className="space-y-12">
-                  <form onSubmit={submit} className="space-y-5">
-                     <div className="flex flex-col gap-2 w-full">
+               <div className="space-y-6">
+                     <form onSubmit={submitAlprog} className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Algoritma & Pemrograman</h3>
                         <label htmlFor='alprog' className="text-primary/80 text-base">Link Google Drive</label>
                         <div className="space-y-4 md:space-x-4">
@@ -73,8 +98,8 @@ export default function Submission() {
                         <small className="text-red-500">
                            {errors.alprog}
                         </small>
-                     </div>
-                     <div className="flex flex-col gap-2 w-full">
+                     </form>
+                     <form onSubmit={submitBasis} className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Basis Data</h3>
                         <label htmlFor='basis' className="text-primary/80 text-base">Link Google Drive</label>
                         <div className="space-y-4 md:space-x-4">
@@ -95,9 +120,9 @@ export default function Submission() {
                         <small className="text-red-500">
                            {errors.basis}
                         </small>
-                     </div>
-                     <div className="flex flex-col gap-2 w-full">
-                        <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Jaringan dan Komputer</h3>
+                     </form>
+                     <form onSubmit={submitJarkom} className="flex flex-col gap-2 w-full">
+                        <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Jaringan Komputer dan Komunikasi</h3>
                         <label htmlFor='jarkom' className="text-primary/80 text-base">Link Google Drive</label>
                         <div className="space-y-4 md:space-x-4">
                            <input 
@@ -117,8 +142,7 @@ export default function Submission() {
                         <small className="text-red-500">
                            {errors.jarkom}
                         </small>
-                     </div>
-                  </form>   
+                     </form> 
                </div>
             )}
       </AdminAuthentication>

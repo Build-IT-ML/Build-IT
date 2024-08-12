@@ -22,24 +22,47 @@ class ParticipantSubmissionController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function submitAlprog(Request $request)
     {
         $user = User::findOrFail(auth()->user()->id);
 
         $request->validate([
-            'jarkom' => 'string|max:255|url|nullable',
-            'alprog' => 'string|max:255|url|nullable',
-            'basis' => 'string|max:255|url|nullable',
+            'alprog' => 'string|max:255|url',
         ]);
 
+        $user->update([
+            'tugas_alprog' => $request->alprog,
+        ]);
+
+        return to_route('participant.submissions');
+    }
+
+    public function submitBasis(Request $request)
+    {
+        $user = User::findOrFail(auth()->user()->id);
+
+        $request->validate([
+            'basis' => 'string|max:255|url',
+        ]);
 
         $user->update([
-            'tugas_jarkom' => $request->jarkom,
-            'tugas_alprog' => $request->alprog,
             'tugas_basis' => $request->basis,
         ]);
 
-        Session::flash('success', 'Kamu Berhasil Registrasi Akun, Sekaligus Build IT 😃.');
+        return to_route('participant.submissions');
+    }
+
+    public function submitJarkom(Request $request)
+    {
+        $user = User::findOrFail(auth()->user()->id);
+
+        $request->validate([
+            'jarkom' => 'string|max:255|url',
+        ]);
+
+        $user->update([
+            'tugas_jarkom' => $request->jarkom,
+        ]);
 
         return to_route('participant.submissions');
     }
