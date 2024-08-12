@@ -78,7 +78,7 @@ class AdminParticipantsController extends Controller
             'password' => bcrypt($request->nim),
         ]);
     
-        return to_route('participants.resetPassword');
+        return response()->json(['message' => 'Password berhasil direset.']);
     }
     
 }

@@ -48,20 +48,31 @@ export default function Participants() {
    const [editedRow, setEditedRow] = useState(null);
    useEffect(() => {
       if (editedRow !== null) {
-         put(route('participants.update', { participant: editedRow.id }), {
-               onSuccess: () => {
-                  reset();
+         const { id, nim, name, email, whatsapp_id, line_id, status, kelompok } = editedRow;
 
-                  // ngebug datanya double aku kasi reload aja ngab
-                  setTimeout(() => {
-                     // window.location.reload();
-                  }, 200);
-                  toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengedit data peserta', life: 3000 });
-                  
-               },
-               onError: () => {
-                  toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengedit data peserta', life: 3000 });
-               }
+         put(route('participants.update', { participant: id }), {
+            data: {
+               id,
+               nim,
+               name,
+               email,
+               whatsapp_id,
+               line_id,
+               status,
+               kelompok
+            },
+            onSuccess: () => {
+               reset();
+
+               // Reload halaman setelah update berhasil
+               setTimeout(() => {
+                  // window.location.reload();
+               }, 200);
+               toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengedit data peserta', life: 3000 });
+            },
+            onError: () => {
+               toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengedit data peserta', life: 3000 });
+            }
          });
       }
    }, [editedRow]);
@@ -199,37 +210,35 @@ export default function Participants() {
           header: 'Konfirmasi Reset Password',
           icon: 'pi pi-exclamation-triangle',
           accept: () => {
-            axios.put('/participants/reset-password', {
-               id: id,
-               nim: nim
-           }, {
-               headers: {
-                  'Content-Type': 'application/json'
-               }
-           })
-           .then(response => {
-               console.log(response.data.message);
-               toast.current.show({ severity: 'success', summary: 'Berhasil', detail: response.data.message, life: 3000 });
-           })
-           .catch(error => {
-               console.log('Error:', error.response ? error.response.data : error.message);
-           
-               if (error.response && error.response.status === 422) {
-                   console.log('Validation error:', error.response.data.errors);
-                   toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan validasi', life: 3000 });
-               } else {
-                   toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan', life: 3000 });
-               }
-           });
+              axios.put('/reset-password', {
+                  id: id,
+                  nim: nim
+              }, {
+                  headers: {
+                      'Content-Type': 'application/json'
+                  }
+              })
+              .then(response => {
+                  console.log(response.data.message);
+                  toast.current.show({ severity: 'success', summary: 'Berhasil', detail: response.data.message, life: 3000 });
+              })
+              .catch(error => {
+                  console.log('Error:', error.response ? error.response.data : error.message);
+                  if (error.response && error.response.status === 422) {
+                      console.log('Validation error:', error.response.data.errors);
+                      toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan validasi', life: 3000 });
+                  } else {
+                      toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan', life: 3000 });
+                  }
+              });
           },
-          reject: () => reject()
+          reject: () => {}
       });
   };
 
   const resetPasswordTemplate = (rowData) => (
       <Button 
-          label="Reset Password" 
-          className="p-button-danger" 
+          className="p-button-danger pi pi-eraser" 
           onClick={() => resetPassword(rowData.id, rowData.nim)} 
       />
   );
