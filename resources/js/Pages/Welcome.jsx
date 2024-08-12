@@ -624,7 +624,7 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                 </p>
                 <button 
                     onClick={toggleDescription} 
-                    className="text-white font-bold text-[14px] mt-2 leading-[0.05em]">
+                    className="text-white font-bold text-[14px] mt-2 leading-[0.05em] hover:underline">
                     {bacaSelengkapnya ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya'}
                 </button>
                 <a href={url} className="text-primary font-bold text-[14px] font-bold leading-[24px] tracking-[0.2px]">
