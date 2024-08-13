@@ -188,11 +188,13 @@ export default function Participants() {
 
    const confirmDelete = (id) => {
       confirmDialog({
-         message: 'Do you want to delete this record?',
-         header: 'Delete Confirmation',
+         message: 'Yakin ingin menghapus peserta ini?',
+         header: 'Konfirmasi Hapus Peserta',
          icon: 'pi pi-info-circle',
          defaultFocus: 'reject',
          acceptClassName: 'p-button-danger',
+         acceptLabel: 'Ya',
+         rejectLabel: 'Tidak',
          accept: () => accept(id),
          reject: () => reject()
       });
@@ -206,42 +208,44 @@ export default function Participants() {
 
    const resetPassword = (id, nim) => {
       confirmDialog({
-          message: 'Apakah Anda yakin ingin mereset password?',
-          header: 'Konfirmasi Reset Password',
-          icon: 'pi pi-exclamation-triangle',
-          accept: () => {
-              axios.put('/reset-password', {
+         message: 'Apakah Anda yakin ingin mereset password?',
+         header: 'Konfirmasi Reset Password',
+         icon: 'pi pi-exclamation-triangle',
+         acceptLabel: 'Ya',
+         rejectLabel: 'Tidak',
+         accept: () => {
+            axios.put('/reset-password', {
                   id: id,
                   nim: nim
-              }, {
+            }, {
                   headers: {
-                      'Content-Type': 'application/json'
+                     'Content-Type': 'application/json'
                   }
-              })
-              .then(response => {
+            })
+            .then(response => {
                   console.log(response.data.message);
                   toast.current.show({ severity: 'success', summary: 'Berhasil', detail: response.data.message, life: 3000 });
-              })
-              .catch(error => {
+            })
+            .catch(error => {
                   console.log('Error:', error.response ? error.response.data : error.message);
                   if (error.response && error.response.status === 422) {
-                      console.log('Validation error:', error.response.data.errors);
-                      toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan validasi', life: 3000 });
+                     console.log('Validation error:', error.response.data.errors);
+                     toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan validasi', life: 3000 });
                   } else {
-                      toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan', life: 3000 });
+                     toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Terjadi kesalahan', life: 3000 });
                   }
-              });
-          },
-          reject: () => {}
+            });
+         },
+         reject: () => {}
       });
-  };
+   };
 
-  const resetPasswordTemplate = (rowData) => (
-      <Button 
-          className="p-button-danger pi pi-eraser" 
-          onClick={() => resetPassword(rowData.id, rowData.nim)} 
-      />
-  );
+   const resetPasswordTemplate = (rowData) => (
+         <Button 
+            className="p-button-danger pi pi-eraser" 
+            onClick={() => resetPassword(rowData.id, rowData.nim)} 
+         />
+   );
 
    return (
       <AdminAuthentication user={user} headerTitle='Peserta Build IT 2024'>

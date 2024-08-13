@@ -68,7 +68,7 @@ export default function Dashboard() {
             {/* dashboard admin */}
             {user.roles[0].name == 'admin' && (
                <>
-               <p className="text-3xl text-primary font-bold">Angkatan</p>
+               <p className="text-3xl text-primary font-bold mb-4">Angkatan</p>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* card */}
                   <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
@@ -119,8 +119,8 @@ export default function Dashboard() {
                      </div>
                   </div>
                </div>
-               <p className="text-3xl text-primary font-bold pt-6">Kelompok</p>
-               <div className="grid grid-cols-1 pt-3 md:grid-cols-2 gap-6">
+               <p className="text-3xl text-primary font-bold pt-6 mb-4">Kelompok</p>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* card */}
                   <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
                      <div className="flex gap-6 h-full">
