@@ -50,6 +50,8 @@ export default function Welcome() {
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
+
+
     useEffect(() => {
         AOS.init({
           duration: 800,
