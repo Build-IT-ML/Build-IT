@@ -615,7 +615,7 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                     style={{
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',
-                        WebkitLineClamp: bacaSelengkapnya ? 'none' : 4,
+                        WebkitLineClamp: bacaSelengkapnya ? '' : 4,
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                     }}
