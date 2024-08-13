@@ -29,7 +29,7 @@ export default function Welcome() {
     const [visible, setVisible] = useState(false);
 
     const [batchInfo, setBatchInfo] = useState({
-        batchName: 'Pre-Order Batch I',
+        batchName: 'Pre-Order',
         batchDate: '14 Agustus 2024 - 28 Agustus 2024'
     });
 
@@ -41,7 +41,7 @@ export default function Welcome() {
     
         if (currentDate >= batch2Start && currentDate <= batch2End) {
             setBatchInfo({
-                batchName: 'Pre-Order Batch II',
+                batchName: 'Extended Pre-Order',
                 batchDate: '1 September 2024 - 15 September 2024'
             });
         }
