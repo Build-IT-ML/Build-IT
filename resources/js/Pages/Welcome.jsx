@@ -31,6 +31,16 @@ export default function Welcome() {
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
+
+    const [today, setToday] = useState(new Date());
+
+    useEffect(() => {
+        // Set today's date
+        setToday(new Date());
+    }, []);
+    const deadBatchI = new Date("2024-08-28");
+    const isTodayBeforeDead = today < deadBatchI;
+
     useEffect(() => {
         AOS.init({
           duration: 800,
@@ -532,8 +542,17 @@ export default function Welcome() {
                                         <div className="flex flex-row p-5 justify-start gap-3 ">
                                             <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]"/>
                                             <div className="flex flex-col">
-                                                <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch I</p>
-                                                <p className="font-medium text-[12px] leading-[18px] underline">32 Agustus 2024 - 23 October 2024</p>
+                                                {isTodayBeforeDead? (
+                                                    <>
+                                                        <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch I</p>
+                                                        <p className="font-medium text-[12px] leading-[18px] underline">14 Agustus 2024 - 28 Agustus 2024</p>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch II</p>
+                                                        <p className="font-medium text-[12px] leading-[18px] underline">1 September 2024 - 15 September 2024</p>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                         <div className="border-t border-primary"></div>
