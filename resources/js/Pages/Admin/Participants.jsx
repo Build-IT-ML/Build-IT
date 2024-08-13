@@ -46,14 +46,18 @@ export default function Participants() {
    };
 
    const [editedRow, setEditedRow] = useState(null);
+
    useEffect(() => {
       if (editedRow !== null) {
          const { id, nim, name, email, whatsapp_id, line_id, status, kelompok } = editedRow;
 
          if(status === "Terverifikasi" && kelompok == null){
-            return toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Data Kelompok harus diisi', life: 3000 });
+            setTimeout(() => {
+               window.location.reload();
+            }, 500);
+            toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Data Kelompok harus diisi', life: 3000 });
+            return;
          }
-
          put(route('participants.update', { participant: id }), {
             data: {
                id,
@@ -67,7 +71,6 @@ export default function Participants() {
             },
             onSuccess: () => {
                reset();
-
                // Reload halaman setelah update berhasil
                setTimeout(() => {
                   // window.location.reload();
