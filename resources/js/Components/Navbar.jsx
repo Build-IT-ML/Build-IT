@@ -47,7 +47,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className={`bg-white w-full flex justify-between items-center px-12 md:px-24 py-4 sticky z-50 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
+        <nav className={`bg-white w-full flex justify-between items-center px-6 md:px-24 py-4 sticky z-50 top-0 ${scrolled ? "shadow" : "shadow-md"}`}>
             <span>
                 <ApplicationLogo />
             </span>
