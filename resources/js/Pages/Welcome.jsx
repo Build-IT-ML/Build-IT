@@ -35,19 +35,18 @@ export default function Welcome() {
 
     useEffect(() => {
         const currentDate = new Date();
-        const batch1Start = new Date('2024-08-14');
         const batch1End = new Date('2024-08-28');
         const batch2Start = new Date('2024-09-01');
         const batch2End = new Date('2024-09-15');
-
-        if (currentDate > batch1End && currentDate < batch2Start) {
+    
+        if (currentDate >= batch2Start && currentDate <= batch2End) {
             setBatchInfo({
                 batchName: 'Pre-Order Batch II',
                 batchDate: '1 September 2024 - 15 September 2024'
             });
         }
     }, []);
-    
+
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
