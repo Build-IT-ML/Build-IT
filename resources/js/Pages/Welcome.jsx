@@ -28,18 +28,30 @@ export default function Welcome() {
 
     const [visible, setVisible] = useState(false);
 
+    const [batchInfo, setBatchInfo] = useState({
+        batchName: 'Pre-Order Batch I',
+        batchDate: '14 Agustus 2024 - 28 Agustus 2024'
+    });
+
+    useEffect(() => {
+        const currentDate = new Date();
+        const batch1Start = new Date('2024-08-14');
+        const batch1End = new Date('2024-08-28');
+        const batch2Start = new Date('2024-09-01');
+        const batch2End = new Date('2024-09-15');
+
+        if (currentDate > batch1End && currentDate < batch2Start) {
+            setBatchInfo({
+                batchName: 'Pre-Order Batch II',
+                batchDate: '1 September 2024 - 15 September 2024'
+            });
+        }
+    }, []);
+    
     const handleAccordionClick = (index) => {
       setOpenIndex(openIndex === index ? null : index);
     };
 
-    const [today, setToday] = useState(new Date());
-
-    useEffect(() => {
-        // Set today's date
-        setToday(new Date());
-    }, []);
-    const deadBatchI = new Date("2024-08-28");
-    const isTodayBeforeDead = today < deadBatchI;
 
     useEffect(() => {
         AOS.init({
@@ -490,8 +502,7 @@ export default function Welcome() {
                             </h1>
                             <div className="divider h-[2px] w-full md:w-[450px] bg-primary mt-2"></div>
                             <p className="w-full md:w-[700px] text-center mt-3 text-[20px] leading-[28px] tracking-[0.2px] text-gray-500" data-aos="fade-left">
-                                Merchandise BUILD IT 2024 merupakan T-shirt yang diharapkan
-                                dapat mendukung terlaksananya kegiatan ini.
+                                Merchandise BUILD IT 2024 merupakan T-shirt yang diharapkan dapat mendukung terlaksananya kegiatan ini.
                             </p>
                         </div>
                         
@@ -539,20 +550,11 @@ export default function Welcome() {
                                     </div>
 
                                     <div className="flex flex-col border border-primary rounded-[10px] w-full md:w-[417px]">
-                                        <div className="flex flex-row p-5 justify-start gap-3 ">
+                                        <div className="flex flex-row p-5 justify-start gap-3">
                                             <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]"/>
                                             <div className="flex flex-col">
-                                                {isTodayBeforeDead? (
-                                                    <>
-                                                        <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch I</p>
-                                                        <p className="font-medium text-[12px] leading-[18px] underline">14 Agustus 2024 - 28 Agustus 2024</p>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <p className="text-[16px] font-medium leading-[24px]">Pre-Order Batch II</p>
-                                                        <p className="font-medium text-[12px] leading-[18px] underline">1 September 2024 - 15 September 2024</p>
-                                                    </>
-                                                )}
+                                                <p className="text-[16px] font-medium leading-[24px]">{batchInfo.batchName}</p>
+                                                <p className="font-medium text-[12px] leading-[18px] underline">{batchInfo.batchDate}</p>
                                             </div>
                                         </div>
                                         <div className="border-t border-primary"></div>
