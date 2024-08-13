@@ -50,6 +50,10 @@ export default function Participants() {
       if (editedRow !== null) {
          const { id, nim, name, email, whatsapp_id, line_id, status, kelompok } = editedRow;
 
+         if(status === "Terverifikasi" && kelompok == null){
+            return toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Data Kelompok harus diisi', life: 3000 });
+         }
+
          put(route('participants.update', { participant: id }), {
             data: {
                id,
@@ -211,6 +215,8 @@ export default function Participants() {
          message: 'Apakah Anda yakin ingin mereset password?',
          header: 'Konfirmasi Reset Password',
          icon: 'pi pi-exclamation-triangle',
+         acceptClassName: 'p-button-danger',
+         defaultFocus: 'reject',
          acceptLabel: 'Ya',
          rejectLabel: 'Tidak',
          accept: () => {

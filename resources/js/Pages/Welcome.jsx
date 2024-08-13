@@ -240,7 +240,7 @@ export default function Welcome() {
                             </p>
                         </div>
 
-                        <div className="mt-10 flex flex-col md:flex-row justify-around gap-5 items-center">
+                        <div className="mt-10 flex flex-col md:flex-row justify-around gap-5 items-center md:items-start">
                             <CardMatkul
                                 heading="Algoritma dan Pemrograman"
                                 description="Matakuliah Algoritma dan Pemrograman adalah mata kuliah dasar yang memperkenalkan konsep-konsep fundamental dalam pemrograman komputer dan pemecahan masalah menggunakan algoritma. Dalam mata kuliah ini, mahasiswa akan mempelajari cara merancang, mengembangkan, dan menganalisis algoritma yang efisien untuk menyelesaikan berbagai jenis masalah komputasional."
