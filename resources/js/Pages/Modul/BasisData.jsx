@@ -48,7 +48,7 @@ export default function BasisData() {
                         alt="banner"    
                         className="absolute z-0 w-screen object-center rounded-none h-[850px] object-cover"
                     />
-                    <div className="h-max w-full px-6 md:px-24">
+                    <div className="h-max w-full px-3 md:px-24">
                         <div className="flex flex-col md:flex-row justify-between mt-20 mb-20 md:mb-96">
                             <div className="flex flex-col z-20">
                                 <p className="text-white  text-[32px] md:text-[36px] font-bold leading-[50px] tracking-[0.16em] text-wrap md:text-start text-center" data-aos="fade-up">

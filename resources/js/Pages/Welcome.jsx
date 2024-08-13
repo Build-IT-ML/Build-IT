@@ -125,12 +125,12 @@ export default function Welcome() {
                                         variant="ghost"
                                         visible={visible} modal={false} 
                                         onHide={() => {if (!visible) return; setVisible(false); }}
-                                        className="w-auto md:w-9/12 md:h-[564px] h-auto rounded-[10px] !px-0 py-0">
+                                        className="w-full md:w-9/12 md:h-[564px] h-full rounded-[10px] !px-0 py-0">
                                             <div className="w-full h-full max-[580px]">
                                                 <iframe
                                                     width="100%"
                                                     height="100%"
-                                                    src="https://www.youtube.com/embed/myz2jvh0O_A?si=UjtEa9jH51As185O"
+                                                    src="https://www.youtube.com/embed/rCqUKnEcPeU?si=--3xTQb-krchC6TD"
                                                     frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
