@@ -6,7 +6,7 @@ import { Messages } from 'primereact/messages';
 
 export default function Dashboard() {
    const {user, akt21, akt22, akt23, akt24} = usePage().props;
-   const title = 'Dashboard ' + user.roles[0].name;
+   const title = 'Dashboard ' + (user.roles[0].name === 'admin' ? 'Admin' :  'Peserta');
    const msgs = useRef(null);
 
    const messagesTemplates = {

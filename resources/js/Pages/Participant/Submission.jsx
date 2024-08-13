@@ -24,7 +24,7 @@ export default function Submission() {
             toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Algoritma dan Pemrograman', life: 3000 })
          }, 
          onError: (error) => {
-            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Algoritma dan Pemrograman', life: 3000 })
+            toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengirimkan penugasan Algoritma dan Pemrograman', life: 3000 })
          }  
       })
    }
@@ -37,7 +37,7 @@ export default function Submission() {
             toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Basis Data', life: 3000 })
          }, 
          onError: (error) => {
-            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Basis Data', life: 3000 })
+            toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengirimkan penugasan Basis Data', life: 3000 })
          }  
       })
    }
@@ -50,7 +50,7 @@ export default function Submission() {
             toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil mengirimkan penugasan Jaringan Komputer dan Komunikasi', life: 3000 })
          }, 
          onError: (error) => {
-            toast.current.show({ severity: 'error', summary: 'Error', detail: 'Gagal mengirimkan penugasan Jaringan Komputer dan Komunikasi', life: 3000 })
+            toast.current.show({ severity: 'error', summary: 'Gagal', detail: 'Gagal mengirimkan penugasan Jaringan Komputer dan Komunikasi', life: 3000 })
          }  
       })
    }

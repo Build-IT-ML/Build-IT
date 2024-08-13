@@ -21,8 +21,11 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
             header: 'Konfirmasi Logout',
             icon: 'pi pi-info-circle',
             defaultFocus: 'reject',
-            acceptClassName: 'px-2 py-2 bg-red-500 text-white',
-            rejectClassName: 'px-3 py-2 bg-blue-500 text-white mr-2',
+            acceptClassName: 'p-button-danger',
+            // acceptClassName: 'px-2 py-2 bg-red-500 text-white',
+            // rejectClassName: 'px-3 py-2 bg-blue-500 text-white mr-2',
+            acceptLabel: "Ya",
+            rejectLabel: "Tidak",
             accept,
             reject
         });
