@@ -293,7 +293,7 @@ export default function Welcome() {
                                 TIMELINE BUILD-IT 2024
                             </h1>
                             <div className="divider h-[2px] w-full md:w-[692px] bg-primary mt-2"></div>
-                            <p className="w-full md:w-[700px] text-center mt-3 text-[18px] md:text-[20px] leading-[28px] tracking-[0.2px]" data-aos="fade-right">
+                            <p className="w-full md:w-[700px] text-center mt-3 text-[18px] md:text-[20px] leading-[28px] tracking-[0.2px] z-20" data-aos="fade-right">
                                 Setiap detik adalah kesempatan untuk belajar, berbagi, dan terhubung dengan komunitas kreatif. Catat tanggalnya dan pastikan Anda tidak melewatkan momen di BUILD-IT 2024.
                             </p>
                         </div>
@@ -368,7 +368,7 @@ export default function Welcome() {
                             </div>
                             <div
                                 alt="gambar"
-                                className="max-w-[570px] h-[445px] absolute right-0 top-[5000px] md:top-[3200px] animate-bounce-custom"
+                                className="max-w-[570px] h-[445px] absolute right-0 top-[6000px] md:top-[3200px] animate-bounce-custom"
                                 data-aos="fade-up"
                             >
                                 <IconKotakTimeLine />
