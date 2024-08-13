@@ -71,7 +71,7 @@ export default function JaringanKomputer() {
                             <div className="hidden md:block absolute right-0 animate-bounce-custom" data-aos="fade-up">
                                 <KotakModulPrimary />
                             </div>
-                            <div className="absolute right-0 md:right-[200px] top-[650px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
+                            <div className="absolute right-0 md:right-[200px] top-[800px] md:top-[280px] animate-bounce-custom" data-aos="fade-up">
                                 <KotakModulSecondary />
                             </div>
                             <div className="w-full mt-20 flex justify-center mb-36">
