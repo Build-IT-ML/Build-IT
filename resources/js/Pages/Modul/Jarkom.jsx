@@ -90,7 +90,7 @@ export default function JaringanKomputer() {
                                 Pengisi materi untuk matakuliah Jaringan Komputer dan Komunikasi pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Jaringan Komputer dan Komunikasi.
                             </p>
                         </div>
-                        <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
+                        <div className="flex flex-col md:flex-row justify-around gap-28 md:gap-0 items-center mt-36">
                             <CardPembicara
                             imageSrc="../../../asset/images/modul/teja.png"
                             name="Teja" 

@@ -91,7 +91,7 @@ export default function Alprog() {
                                 Pengisi materi untuk matakuliah Algoritma dan Pemrograman pada BUILD IT 2024 merupakan ex-asisten dosen pada praktikum Algoritma dan Pemrogaman.
                             </p>
                         </div>
-                        <div className="flex flex-col md:flex-row justify-around gap-20 md:gap-0 items-center mt-36">
+                        <div className="flex flex-col md:flex-row justify-around gap-28 md:gap-0 items-center mt-36">
                             <CardPembicara 
                             imageSrc="../../../asset/images/modul/devta.png" 
                             name="Devta" 
