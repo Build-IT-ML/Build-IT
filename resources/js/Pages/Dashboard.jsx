@@ -5,7 +5,7 @@ import { useMountEffect } from 'primereact/hooks';
 import { Messages } from 'primereact/messages';
 
 export default function Dashboard() {
-   const {user, akt21, akt22, akt23, akt24} = usePage().props;
+   const {user, akt21, akt22, akt23, akt24, kelompok1, kelompok2, kelompok3, kelompok4} = usePage().props;
    const title = 'Dashboard ' + user.roles[0].name;
    const msgs = useRef(null);
 
@@ -66,6 +66,8 @@ export default function Dashboard() {
             <h1 className="text-3xl text-gray-800 mb-8">Hallo, {user.name} 😁👋</h1>
             {/* dashboard admin */}
             {user.roles[0].name == 'admin' && (
+               <>
+               <p className="text-3xl text-primary font-bold">Angkatan</p>
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* card */}
                   <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
@@ -116,6 +118,58 @@ export default function Dashboard() {
                      </div>
                   </div>
                </div>
+               <p className="text-3xl text-primary font-bold pt-6">Kelompok</p>
+               <div className="grid grid-cols-1 pt-3 md:grid-cols-2 gap-6">
+                  {/* card */}
+                  <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
+                     <div className="flex gap-6 h-full">
+                        <div class="row-span-2 bg-primer text-center h-full w-1/2 flex items-center justify-center rounded-md">
+                           <i className="pi pi-users text-9xl text-primary"></i>
+                        </div>
+                        <div class="w-1/2">
+                           <p className="text-xl text-primary font-bold">Kelompok 1</p>
+                           <p className="text-6xl text-gray-800 font-bold">{kelompok1}</p>
+                        </div>
+                     </div>
+                  </div>
+                  {/* card */}
+                  <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
+                     <div className="flex gap-6 h-full">
+                        <div class="row-span-2 bg-primer text-center h-full w-1/2 flex items-center justify-center rounded-md">
+                           <i className="pi pi-users text-9xl text-primary"></i>
+                        </div>
+                        <div class="w-1/2">
+                           <p className="text-xl text-primary font-bold">Kelompok 2</p>
+                           <p className="text-6xl text-gray-800 font-bold">{kelompok2}</p>
+                        </div>
+                     </div>
+                  </div>
+                  {/* card */}
+                  <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
+                     <div className="flex gap-6 h-full">
+                        <div class="row-span-2 bg-primer text-center h-full w-1/2 flex items-center justify-center rounded-md">
+                           <i className="pi pi-users text-9xl text-primary"></i>
+                        </div>
+                        <div class="w-1/2">
+                           <p className="text-xl text-primary font-bold">Kelompok 3</p> 
+                           <p className="text-6xl text-gray-800 font-bold">{kelompok3}</p>
+                        </div>
+                     </div>
+                  </div>
+                  {/* card */}
+                  <div className="bg-white shadow-md border border-gray-200 rounded-lg p-6">
+                     <div className="flex gap-6 h-full">
+                        <div class="row-span-2 bg-primer text-center h-full w-1/2 flex items-center justify-center rounded-md">
+                           <i className="pi pi-users text-9xl text-primary"></i>
+                        </div>
+                        <div class="w-1/2">
+                           <p className="text-xl text-primary font-bold">Kelompok 4</p>
+                           <p className="text-6xl text-gray-800 font-bold">{kelompok4}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </>
             )}
 
             {/* dashboard participant */}
