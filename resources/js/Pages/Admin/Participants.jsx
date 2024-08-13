@@ -188,8 +188,8 @@ export default function Participants() {
 
    const confirmDelete = (id) => {
       confirmDialog({
-         message: 'Do you want to delete this record?',
-         header: 'Delete Confirmation',
+         message: 'Apakah anda yakin ingin menghapus data baris ini?',
+         header: 'Konfirmasi Hapus',
          icon: 'pi pi-info-circle',
          defaultFocus: 'reject',
          acceptClassName: 'p-button-danger',
