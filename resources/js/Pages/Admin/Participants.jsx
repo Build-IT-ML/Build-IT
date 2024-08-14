@@ -87,17 +87,25 @@ export default function Participants() {
    const onRowEditComplete = (e) => {
       let _participants = [...dataParticipants];
       let { newData, index } = e;
-
-      _participants[index] = newData;
+  
+      
+      const participantIndex = _participants.findIndex(p => p.id === newData.id);
+  
+      if (participantIndex !== -1) {
+          _participants[participantIndex] = newData;
+      } else {
+          _participants[index] = newData;
+      }
+  
       setDataParticipants(_participants);
-
+  
       setData({
-         ...newData,
-         id: newData.id
+          ...newData,
+          id: newData.id
       });
-
+  
       setEditedRow(newData);
-   };
+  };
 
    const textEditor = (options) => {
       return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
