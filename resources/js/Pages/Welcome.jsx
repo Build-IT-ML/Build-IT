@@ -11,6 +11,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
+import { KotakModulSecondary } from "@/Components/Icons/modul";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Loading from "./Loading";
@@ -155,21 +156,21 @@ export default function Welcome() {
                                         <img
                                             src="asset/images/landing-page/image-1.png"
                                             alt="gambar"
-                                            className="max-w-full h-[240px] rounded-[10px] object-cover absolute top-[-30px] left-[150px] z-[2] hover:bg-gray-500"
+                                            className="max-w-full h-[240px] rounded-[20px] object-cover absolute top-[-30px] left-[150px] z-[2] hover:bg-gray-500"
                                             data-aos="fade-left"
                                         />
                                         {/* image2.png */}
                                         <img
                                             src="asset/images/landing-page/image-2.png"
                                             alt="gambar"
-                                            className="max-w-full h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[40px] z-[4]"
+                                            className="max-w-full h-[175px] rounded-[20px] object-cover absolute bottom-[80px] left-[50px] z-[4]"
                                             data-aos="fade-up"
                                         />
                                         {/* image3.png */}
                                         <img
                                             src="asset/images/landing-page/image-3.png"
                                             alt="gambar"
-                                            className="max-w-full h-[175px] rounded-[10px] object-cover absolute bottom-[80px] left-[395px] z-[4]"
+                                            className="max-w-full h-[175px] rounded-[20px] object-cover absolute bottom-[80px] left-[380px] z-[4]"
                                             data-aos="fade-right"
                                         />
                                         <div
@@ -179,6 +180,9 @@ export default function Welcome() {
                                         >
                                             <IconKotakCenter />
                                         </div>
+                                        <div className="absolute right-[20px] top-[50px] animate-bounce-custom" data-aos="fade-up">
+                                            <KotakModulSecondary />
+                                        </div>    
                                     </div>
                                     <div
                                         className="flex relative bottom-[50px] left-[200px] animate-bounce-custom"
@@ -386,7 +390,7 @@ export default function Welcome() {
                                 <div className="w-full md:w-[466px] ml-5 md:ml-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Sosialisasi Penjurusan & Lomba-lomba</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
-                                        Jumat, 13 September 2024
+                                        Minggu, 15 September 2024
                                     </p>
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>

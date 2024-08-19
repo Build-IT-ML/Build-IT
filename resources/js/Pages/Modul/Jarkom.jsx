@@ -75,7 +75,7 @@ export default function JaringanKomputer() {
                                 <KotakModulSecondary />
                             </div>
                             <div className="w-full mt-20 flex justify-center mb-36">
-                                <img src="../../../asset/images/modul/jarkom.JPG" alt="test" 
+                                <img src="../../../asset/images/modul/jarkom.png" alt="test" 
                                 className="w-[441px] h-[248px] rounded-[20px] relative right-0 object-cover z-20"/>
                             </div>
                         </div>
