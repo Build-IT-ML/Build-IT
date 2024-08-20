@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 
 import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import { KotakModulSecondary } from "@/Components/Icons/modul";
@@ -28,6 +29,26 @@ export default function Welcome() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const [visible, setVisible] = useState(false);
+
+    // modal untuk pendaftaran ditutup
+    const [isModalClOpen, setIsModalClOpen] = useState(false);
+
+    const handleRegisterClick = (e) => {
+        e.preventDefault();
+        
+        const closingDate = new Date('2024-08-28');
+        const currentDate = new Date();
+
+        if (currentDate > closingDate) {
+            setIsModalClOpen(true);
+        } else {
+            window.location.href = "/register";
+        }
+    };
+    
+    const isModalClHide = () => {
+        setIsModalClOpen(false);
+    }
 
     const [batchInfo, setBatchInfo] = useState({
         batchName: 'Pre-Order',
@@ -110,11 +131,24 @@ export default function Welcome() {
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan dan lomba serta penjurusan dilingkup TI.
                                 </p>
                                 <div className="w-full md:w-auto flex flex-col md:flex-row gap-2 md:gap-12 items-center">
-                                    <a href="/register" className="w-full md:w-auto">
-                                        <button className="mt-4 bg-primary hover:bg-secondary w-full p-4 text-white font-medium rounded-[10px] tracking-0 md:tracking-[0.05em]">
-                                            Daftar Sekarang
-                                        </button>
-                                    </a>
+                                    
+                                    <button className="mt-4 w-full md:w-auto bg-primary hover:bg-secondary w-full p-4 text-white font-medium rounded-[10px] tracking-0 md:tracking-[0.05em]"
+                                    onClick={handleRegisterClick}>
+                                        Daftar Sekarang
+                                    </button>
+                                    <Dialog
+                                        header={<h1 className="text-center text-3xl">Pendaftaran Ditutup</h1>}
+                                        visible={isModalClOpen}
+                                        style={{ width: '50vw' }}
+                                        onHide={isModalClHide}
+                                        footer={<button className="p-button bg-primary hover:bg-secondary" onClick={isModalClHide}>Tutup</button>}
+                                    >
+                                        <div className="flex justify-center items-center">
+                                            <i className={`pi pi-exclamation-triangle text-yellow-500 text-3xl mr-3`} />
+                                            <p className="text-xl">Maaf, pendaftaran Build-IT 2024 telah ditutup.</p>
+                                        </div>
+                                    </Dialog>
+                                    
                                     <div className="flex flex-row gap-5">
                                         <div className="bg-primary w-[60px] h-[60px] rounded-full mt-4 flex justify-center items-center hover:bg-secondary cursor-pointer shadow-lg" onClick={() => setVisible(true)}>
                                             <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
