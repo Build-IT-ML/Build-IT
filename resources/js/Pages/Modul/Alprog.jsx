@@ -58,7 +58,7 @@ export default function Alprog() {
                                 <p className="text-white mt-10 text-[16px] md:text-start text-center md:text-[20px] md:w-[817px] w-full text-balance" data-aos="fade-up">
                                     Mata kuliah Algoritma dan Pemrograman adalah fondasi penting dalam pendidikan ilmu komputer yang berfokus pada pengenalan konsep dasar algoritma dan teknik pemrograman. Mahasiswa akan mempelajari bagaimana merancang, menganalisis, dan mengimplementasikan algoritma untuk memecahkan berbagai masalah komputasi. Mata kuliah ini mencakup topik-topik seperti struktur data, pengendalian alur program, pemrosesan data, dan teknik pemecahan masalah.
                                 </p>
-                                <a href="https://drive.google.com/file/d/17rG08C3s8b8m2GYN49F0E1QwBUNCBazE/view?usp=drive_link" target="_blank" className="">                            
+                                <a href="https://drive.google.com/file/d/1koyXnZuK-QEU5kq1wtSVB6iMye6qJgi_/view?usp=sharing" target="_blank" className="">                            
                                     <button className="mt-5 bg-primary hover:bg-secondary w-full md:w-[166px] h-[52px] rounded-[5px] flex justify-center items-center text-white text-14 font-bold" data-aos="fade-up">Lihat Modul
                                     </button>
                                 </a>
