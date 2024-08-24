@@ -4,7 +4,8 @@ import { KotakModulPrimary, KotakModulPx102, KotakModulSecondary, KotakModulPx41
 import { ViewPassword, HidePassword } from "@/Components/Icons/login";
 import UserGuest from "@/Components/Layouts/User/UserGuest";
 import { Toast } from 'primereact/toast';
-
+import { useMountEffect } from 'primereact/hooks';
+import { Messages } from 'primereact/messages';
 
 export default function Register() {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -26,10 +27,25 @@ export default function Register() {
         };
     }, []);
 
+    const registerClose = () => {
+        const closingDate = new Date('2024-08-28');
+        const currentDate = new Date();
+
+        if (currentDate > closingDate) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     const toast = useRef(null);
     const submit = (e) => {
         e.preventDefault();
 
+        if (registerClose()) {
+            toast.current.show({ severity: 'error', summary: 'Peringatan', detail: 'Maaf, pendaftaran Build-IT 2024 telah ditutup', life: 3000 });
+            return;
+        }
         
         if (!data.nim || !data.name || !data.email || !data.line || !data.whatsapp || !data.password || !data.password_confirmation) {
             toast.current.show({ severity: 'error', summary: 'Peringatan', detail: 'Semua field wajib diisi', life: 3000 });
@@ -42,15 +58,15 @@ export default function Register() {
             return;
         }
 
-    post(route('register.store'), {
-        onSuccess: () => {
-            toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil melakukan pendaftaran', life: 3000 })
-            }, 
-            onError: (error) => {
-            toast.current.show({ severity: 'error', summary: 'Gagal melakukan pendaftaran', detail: 'Periksa kembali formulir pendaftaran', life: 3000 })
-            }  
-        });
-    };
+        post(route('register.store'), {
+            onSuccess: () => {
+                toast.current.show({ severity: 'success', summary: 'Berhasil', detail: 'Berhasil melakukan pendaftaran', life: 3000 })
+                }, 
+                onError: (error) => {
+                toast.current.show({ severity: 'error', summary: 'Gagal melakukan pendaftaran', detail: 'Periksa kembali formulir pendaftaran', life: 3000 })
+                }  
+            });
+        };
 
 
     const togglePasswordVisibility = () => {
@@ -66,6 +82,18 @@ export default function Register() {
             setPasswordConfirmVisible(false);
         }, 1000);
     };
+
+
+    // alert message if register date is over
+    const msgs = useRef(null);
+    useMountEffect(() => {
+        if (registerClose()) {
+            if (msgs.current) {
+                msgs.current.clear();
+                msgs.current.show({ id: '1', sticky: true, severity: 'error', icon: 'pi', summary: 'Maaf, pendaftaran Build-IT 2024 telah ditutup', detail: '', closable: false });
+            }
+        }
+    }); 
 
     return (
         <>
@@ -90,6 +118,7 @@ export default function Register() {
                                     <h1 className="w-full text-center text-lg text-black pt-3 mt-2">Pendaftaran BUILD IT</h1>
                                     <form onSubmit={submit} className="space-y-5 w-full">
                                         <div className="flex flex-col gap-2 w-full">
+                                        <Messages ref={msgs} />
                                             <label htmlFor='nim' className="font-semibold text-black text-base">NIM</label>
                                             <input 
                                                 type="text" 
