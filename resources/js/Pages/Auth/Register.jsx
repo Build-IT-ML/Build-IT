@@ -28,7 +28,7 @@ export default function Register() {
     }, []);
 
     const registerClose = () => {
-        const closingDate = new Date('2024-08-28');
+        const closingDate = new Date('2024-08-25');
         const currentDate = new Date();
 
         if (currentDate > closingDate) {
