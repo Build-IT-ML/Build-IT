@@ -36,7 +36,7 @@ export default function Welcome() {
     const handleRegisterClick = (e) => {
         e.preventDefault();
         
-        const closingDate = new Date('2024-08-28');
+        const closingDate = new Date('2024-08-25');
         const currentDate = new Date();
 
         if (currentDate > closingDate) {
