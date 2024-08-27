@@ -372,7 +372,7 @@ export default function Welcome() {
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Open Registration Peserta</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1"> Batch I : 14 Agustus - 19 Agustus 2024
                                     </p>
-                                    <p className="text-[14px] md:text-[16px] font-medium mb-1"> Batch II : 21 Agustus - 28 Agustus 2024
+                                    <p className="text-[14px] md:text-[16px] font-medium mb-1"> Batch II : 21 Agustus - 25 Agustus 2024
                                     </p>
                                     <p className="text-[14px] md:text-[16px]">Melalui website resmi BUILD IT https://buildit.hmtiudayana.id/</p>
                                 </div>
