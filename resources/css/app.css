@@ -14,6 +14,26 @@
   transform: rotateY(180deg);
 }
 
+
+::-webkit-scrollbar {
+  width: 16px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #257F80; 
+  border-radius: 10px; 
+  border: 1px solid #B3ECEC; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #297b7d ; 
+}
+
+
 @media (max-width: 1282px) {
   .custom-messages .p-message .p-message-wrapper{
     display: grid;
