@@ -18,6 +18,7 @@ import { Toast } from 'primereact/toast';
 export default function Participants() {
    const { user, participants } = usePage().props;
    const [dataParticipants, setDataParticipants] = useState(participants.data);
+   console.log(participants.data);
    const { data, setData, put, reset, delete: destroy} = useForm({
       id: '',
       nim: '',
@@ -26,11 +27,14 @@ export default function Participants() {
       whatsapp_id: '',
       line_id: '',
       status: '',
-      kelompok: ''
+      kelompok: '',
+      kelulusan: '',
    });
 
    const [statuses] = useState(['Terverifikasi', 'Belum Terverifikasi', 'Ditolak']);
+   const [kelulusans] = useState(['Lulus', 'Belum Lulus', 'Tidak Lulus']);
    const rowNumberTemplate = (rowData, column) => column.rowIndex + 1;
+
 
    const getSeverity = (value) => {
       switch (value) {
@@ -44,12 +48,24 @@ export default function Participants() {
                return null;
       }
    };
+   const getLevel = (value) => {
+      switch (value) {
+         case 'Lulus':
+               return 'success';
+         case 'Belum Lulus':
+               return 'warning';
+         case 'Tidak Lulus':
+               return 'danger';
+         default:
+               return null;
+      }
+   };
 
    const [editedRow, setEditedRow] = useState(null);
 
    useEffect(() => {
       if (editedRow !== null) {
-         const { id, nim, name, email, whatsapp_id, line_id, status, kelompok } = editedRow;
+         const { id, nim, name, email, whatsapp_id, line_id, status, kelompok, kelulusan } = editedRow;
 
          if(status === "Terverifikasi" && kelompok == null){
             setTimeout(() => {
@@ -67,7 +83,8 @@ export default function Participants() {
                whatsapp_id,
                line_id,
                status,
-               kelompok
+               kelompok,
+               kelulusan,
             },
             onSuccess: () => {
                reset();
@@ -125,9 +142,27 @@ export default function Participants() {
       );
    };
 
+   const kelulusanEditor = (option) => {
+      return (
+         <Dropdown
+            value={option.value}
+            options={kelulusans}
+            onChange={(e) => option.editorCallback(e.value)}
+            placeholder='Pilih Kelulusan'
+            itemTemplate={(option) => {
+               return <Tag value={option} severity={getLevel(option)}></Tag>
+            }}
+         />
+      );
+   };
+
    const statusBodyTemplate = (rowData) => {
       return <Tag value={rowData.status} severity={getSeverity(rowData.status)}></Tag>;
    };
+
+   const kelulusanBodyTemplate = (rowData) => {
+      return <Tag value={rowData.kelulusan} severity={getLevel(rowData.kelulusan)}></Tag>
+   }
 
    const allowEdit = (rowData) => rowData;
 
@@ -269,6 +304,7 @@ export default function Participants() {
          <Head title='participants' />
          <Toast ref={toast} />
          <div className="card p-6 bg-white shadow border border-gray-200 rounded-lg">
+            
             <DataTable
                ref={dt}
                header={header}
@@ -293,6 +329,7 @@ export default function Participants() {
                <Column field="line_id" header="Line" editor={(options) => textEditor(options)} style={{ minWidth: '12rem' }} />
                <Column field="status" header="Status" body={statusBodyTemplate} editor={(options) => statusEditor(options)} sortable style={{ minWidth: '12rem' }} />
                <Column field="kelompok" header="Kelompok" editor={(options) => textEditor(options)} sortable style={{ minWidth: '12rem' }} />
+               <Column field="kelulusan" header="Kelulusan" body={kelulusanBodyTemplate} editor={(options) => kelulusanEditor(options)} sortable style={{ minWidth: '12rem' }} />
                <Column header="Edit" rowEditor={allowEdit} headerStyle={{ width: '10%', minWidth: '8rem'}} bodyStyle={{ textAlign: 'center' }} headerClassName="text-center"></Column>
                <Column header="Reset Password" body={resetPasswordTemplate} style={{ width: '50%', minWidth: '10rem', textAlign: 'center'}} />
                <Column header="Hapus" body={deleteBodyTemplate} style={{ width: '10%', minWidth: '8rem'}} />
@@ -301,3 +338,5 @@ export default function Participants() {
       </AdminAuthentication>
    );
 }
+
+

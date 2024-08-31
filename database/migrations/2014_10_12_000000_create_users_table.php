@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('tugas_alprog')->nullable();
             $table->string('tugas_basis')->nullable();
             $table->string('tugas_jarkom')->nullable();
+            $table->enum('kelulusan', ['Lulus', 'Belum Lulus', 'Tidak Lulus'])->default('Belum Lulus');
             $table->rememberToken();
             $table->timestamps();
         });

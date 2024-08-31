@@ -32,7 +32,8 @@ class User extends Authenticatable
         'tugas_alprog',
         'tugas_basis',
         'status',
-        'kelompok'
+        'kelompok',
+        'kelulusan',
     ];
 
     /**
