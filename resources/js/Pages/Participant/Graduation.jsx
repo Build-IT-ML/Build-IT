@@ -36,7 +36,7 @@ export default function Graduation() {
                         <h2>NIM : {data.nim}</h2>
                         <h2>Nama : {data.name}</h2>
                     </div>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                    <a href="https://drive.google.com/drive/folders/1R9Q3GWaLoUIKSWwN8S6K_BwuNSfd39tt?usp=sharing" target="_blank" rel="noopener noreferrer">
                         <button className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center disabled:bg-primary/80">
                         Cari Sertifikat
                         </button>
