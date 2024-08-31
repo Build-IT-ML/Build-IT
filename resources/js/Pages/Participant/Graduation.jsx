@@ -23,8 +23,8 @@ export default function Graduation() {
          <Toast ref={toast} />
             {(data.kelulusan === 'Belum Lulus') && (
                <div className="flex flex-col justify-center items-center space-y-10 min-h-screen">
-                  <h1 className="font-bold text-orange-500 text-xl">Belum Terdapat Informasi Kelulusan</h1>
-                  <span><i className="pi pi-exclamation-circle text-[10rem] text-orange-500"></i></span>
+                  <h1 className="font-bold text-orange-500 text-4xl">Belum Terdapat Informasi Kelulusan</h1>
+                  <span><i className="pi pi-exclamation-circle text-[14rem] text-orange-500"></i></span>
                </div>
             ) }
 
