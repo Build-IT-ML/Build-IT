@@ -6,12 +6,12 @@ import { Dialog } from 'primereact/dialog';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import 'primereact/resources/themes/saga-blue/theme.css'; 
+import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 
-import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom,IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
+import { IconBuiltIT, IconKotakTop, IconKotakCenter, IconKotakBottom, IconHouseOffline, IconBookSharing, IconHumanSharing, ArrowRight, IconKotakTimeLine, IconFaq, IconContactCard, IconContactBanner } from "../Components/Icons/LandingPage";
 import { KotakModulSecondary } from "@/Components/Icons/modul";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,7 +35,7 @@ export default function Welcome() {
 
     const handleRegisterClick = (e) => {
         e.preventDefault();
-        
+
         const closingDate = new Date('2024-08-25');
         const currentDate = new Date();
 
@@ -45,7 +45,7 @@ export default function Welcome() {
             window.location.href = "/register";
         }
     };
-    
+
     const isModalClHide = () => {
         setIsModalClOpen(false);
     }
@@ -60,7 +60,7 @@ export default function Welcome() {
         const batch1End = new Date('2024-08-28');
         const batch2Start = new Date('2024-09-01');
         const batch2End = new Date('2024-09-15');
-    
+
         if (currentDate >= batch2Start && currentDate <= batch2End) {
             setBatchInfo({
                 batchName: 'Extended Pre-Order',
@@ -70,23 +70,23 @@ export default function Welcome() {
     }, []);
 
     const handleAccordionClick = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
+        setOpenIndex(openIndex === index ? null : index);
     };
 
 
     useEffect(() => {
         AOS.init({
-          duration: 800,
+            duration: 800,
         });
-      }, []);
+    }, []);
 
     // modal pop up merch
-      useEffect(() => {
+    useEffect(() => {
         setIsPopupOpen(true);
 
         const timer = setTimeout(() => {
             setIsPopupOpen(false);
-        }, 10000); 
+        }, 10000);
 
     }, []);
 
@@ -96,9 +96,9 @@ export default function Welcome() {
     //     return () => cleanup();
     // }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         document.documentElement.classList.add('smooth-scroll');
-      }, []);
+    }, []);
 
     const showModal = () => {
         setModalVisible(true);
@@ -126,14 +126,14 @@ export default function Welcome() {
                         <div className="flex justify-between mb-5   ">
                             <div className="flex flex-col mt-20 mb-5 w-full items-center md:items-start" data-aos="fade-up">
                                 <p className="font-semibold text-[20px] text-primary leading-[24px] tracking-[0.01em] mb-3" >TEKNOLOGI INFORMASI</p>
-                                    <IconBuiltIT />
+                                <IconBuiltIT />
                                 <p className="font-normal text-[20px] text-primary w-full md:w-[494px] mt-5 text-center md:text-start">
                                     Basic Understanding in Learning and Developing Information Technology merupakan kegiatan yang bertujuan mewadahi mahasiswa untuk menerima pemahaman lebih tentang materi dasar perkuliahan dan lomba serta penjurusan dilingkup TI.
                                 </p>
                                 <div className="w-full md:w-auto flex flex-col md:flex-row gap-2 md:gap-12 items-center">
-                                    
+
                                     <button className="mt-4 w-full md:w-auto bg-primary hover:bg-secondary w-full p-4 text-white font-medium rounded-[10px] tracking-0 md:tracking-[0.05em]"
-                                    onClick={handleRegisterClick}>
+                                        onClick={handleRegisterClick}>
                                         Daftar Sekarang
                                     </button>
                                     <Dialog
@@ -148,19 +148,19 @@ export default function Welcome() {
                                             <p className="text-xl">Maaf, pendaftaran Build-IT 2024 telah ditutup.</p>
                                         </div>
                                     </Dialog>
-                                    
+
                                     <div className="flex flex-row gap-5">
                                         <div className="bg-primary w-[60px] h-[60px] rounded-full mt-4 flex justify-center items-center hover:bg-secondary cursor-pointer shadow-lg" onClick={() => setVisible(true)}>
                                             <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.5342 7.0735L1.21875 0.106835C1.08988 0.0286161 0.946941 -0.00786758 0.803431 0.000832147C0.65992 0.00953187 0.520581 0.0631276 0.398585 0.156554C0.276588 0.249981 0.175963 0.380152 0.10622 0.534765C0.0364761 0.689378 -8.21365e-05 0.863326 1.38564e-07 1.04017V14.9602C-8.21365e-05 15.137 0.0364761 15.311 0.10622 15.4656C0.175963 15.6202 0.276588 15.7504 0.398585 15.8438C0.520581 15.9372 0.65992 15.9908 0.803431 15.9995C0.946941 16.0082 1.08988 15.9717 1.21875 15.8935L12.5342 8.92684C12.6747 8.84151 12.793 8.7095 12.8757 8.54574C12.9584 8.38198 13.0022 8.193 13.0022 8.00017C13.0022 7.80734 12.9584 7.61836 12.8757 7.4546C12.793 7.29084 12.6747 7.15883 12.5342 7.0735Z" fill="white"/>
+                                                <path d="M12.5342 7.0735L1.21875 0.106835C1.08988 0.0286161 0.946941 -0.00786758 0.803431 0.000832147C0.65992 0.00953187 0.520581 0.0631276 0.398585 0.156554C0.276588 0.249981 0.175963 0.380152 0.10622 0.534765C0.0364761 0.689378 -8.21365e-05 0.863326 1.38564e-07 1.04017V14.9602C-8.21365e-05 15.137 0.0364761 15.311 0.10622 15.4656C0.175963 15.6202 0.276588 15.7504 0.398585 15.8438C0.520581 15.9372 0.65992 15.9908 0.803431 15.9995C0.946941 16.0082 1.08988 15.9717 1.21875 15.8935L12.5342 8.92684C12.6747 8.84151 12.793 8.7095 12.8757 8.54574C12.9584 8.38198 13.0022 8.193 13.0022 8.00017C13.0022 7.80734 12.9584 7.61836 12.8757 7.4546C12.793 7.29084 12.6747 7.15883 12.5342 7.0735Z" fill="white" />
                                             </svg>
                                         </div>
-                                        <Dialog   
-                                        header="How to join" 
-                                        variant="ghost"
-                                        visible={visible} modal={false} 
-                                        onHide={() => {if (!visible) return; setVisible(false); }}
-                                        className="w-full md:w-9/12 md:h-[564px] h-full rounded-[10px] !px-0 py-0">
+                                        <Dialog
+                                            header="How to join"
+                                            variant="ghost"
+                                            visible={visible} modal={false}
+                                            onHide={() => { if (!visible) return; setVisible(false); }}
+                                            className="w-full md:w-9/12 md:h-[564px] h-full rounded-[10px] !px-0 py-0">
                                             <div className="w-full h-full max-[580px]">
                                                 <iframe
                                                     width="100%"
@@ -174,14 +174,15 @@ export default function Welcome() {
                                         </Dialog>
                                         <p className="text-primary text-[16px] font-medium flex justify-center items-center mt-4">How to Join</p>
                                     </div>
+
                                 </div>
                             </div>
                             <div className="w-full right-side mt-16 hidden md:block">
                                 <div className="static">
                                     <div
-                                    className="relative left-[80px] top-[0] animate-bounce-custom"
-                                    alt="gambar"
-                                    data-aos="fade-up"
+                                        className="relative left-[80px] top-[0] animate-bounce-custom"
+                                        alt="gambar"
+                                        data-aos="fade-up"
                                     >
                                         <IconKotakTop />
                                     </div>
@@ -216,7 +217,7 @@ export default function Welcome() {
                                         </div>
                                         <div className="absolute right-[20px] top-[50px] animate-bounce-custom" data-aos="fade-up">
                                             <KotakModulSecondary />
-                                        </div>    
+                                        </div>
                                     </div>
                                     <div
                                         className="flex relative bottom-[50px] left-[200px] animate-bounce-custom"
@@ -250,7 +251,7 @@ export default function Welcome() {
                                 Sosialisasi Lomba & Penjurusan
                             </p>
                             <p className="text-[#737373] mt-3 font-normal text-[14px] leading-[20px] tracking-[0.02em]">
-                                Sosialisasi ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi 
+                                Sosialisasi ini akan dipandu oleh dosen dan mahasiswa Teknologi Informasi
                             </p>
                         </div>
                         <div className="bg-white w-full h-max md:w-[420px] md:h-[288px] rounded-[10px] p-10 flex flex-col transition-transform transform hover:scale-105 active:scale-110" data-aos="fade-left">
@@ -265,7 +266,7 @@ export default function Welcome() {
 
                     {/* about built it */}
                     <div className="px-6 md:px-24 md:mt-20 mt-10 flex flex-col md:flex-row gap-20 justify-between md:justify-center items-center" id="About">
-                        <img src="asset/images/landing-page/icon-build-it.png" alt="" className="mx-12 w-[390px] h-[410px] animate-bounce-custom"/>
+                        <img src="asset/images/landing-page/icon-build-it.png" alt="" className="mx-12 w-[390px] h-[410px] animate-bounce-custom" />
                         <div className="mt-12 flex flex-col items-center md:items-start">
                             <p className="text-[24px] md:text-[36px] text-primary font-bold tracking-[0.16em]" data-aos="fade-left">
                                 TENTANG BUILD IT
@@ -314,7 +315,7 @@ export default function Welcome() {
                                 image="asset/images/landing-page/icon-basis-data.png"
                                 url="/modul/basisdata"
                             />
-                            <CardMatkul 
+                            <CardMatkul
                                 heading="Jaringan Komputer dan Komunikasi"
                                 description="Matakuliah Jaringan Komputer dan Komunikasi merupakan matakuliah yang mempelajari konsep, arsitektur, dan teknologi yang mendasari sistem jaringan komputer serta proses komunikasi data antar perangkat. Mahasiswa akan memahami cara kerja jaringan mulai dari lapisan fisik hingga aplikasi, termasuk protokol-protokol jaringan seperti TCP/IP, routing, switching, serta keamanan jaringan."
                                 button="Lebih lanjut"
@@ -335,14 +336,14 @@ export default function Welcome() {
                                 Setiap detik adalah kesempatan untuk belajar, berbagi, dan terhubung dengan komunitas kreatif. Catat tanggalnya dan pastikan Anda tidak melewatkan momen di BUILD-IT 2024.
                             </p>
                         </div>
-                            <div
-                                className="z-0 flex relative left-[170px] top-[50px] animate-bounce-custom animate-pulse"
-                                width={40}
-                                height={40}
-                                data-aos="fade-up"
-                            >
-                                <IconKotakBottom />
-                            </div>
+                        <div
+                            className="z-0 flex relative left-[170px] top-[50px] animate-bounce-custom animate-pulse"
+                            width={40}
+                            height={40}
+                            data-aos="fade-up"
+                        >
+                            <IconKotakBottom />
+                        </div>
                         <div className="flex flex-col z-10 mt-3 md:mt-10">
                             <div className="flex flex-col gap-[130px] left-4 items-center pt-16 absolute w-1 bg-primary h-max md:left-1/2 transform md:-translate-x-1/2 z-10">
                                 <div className="w-5 h-5 md:w-9 md:h-9 bg-primary rounded-full relative z-20">
@@ -390,7 +391,7 @@ export default function Welcome() {
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Pelatihan Algoritma & Pemrograman</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
-                                    Senin, 9 September 2024
+                                        Senin, 9 September 2024
                                     </p>
                                     <p className="text-[14px]">Gedung TI, Fakultas Teknik, Jimbaran</p>
                                 </div>
@@ -457,7 +458,7 @@ export default function Welcome() {
                                 <IconFaq />
                             </div>
                             <div className="w-full md:w-1/2 mt-0 flex flex-col justify-center items-center" data-aos="fade-right">
-                                <AccordionLanding 
+                                <AccordionLanding
                                     heading="Apakah kegiatan ini berbayar?"
                                     description="Tidak, ini merupakan kegiatan yang diselanggarakan oleh Himpunan Mahasiswa Teknologi Informasi Universitas Udayana untuk memberikan pengetahuan dasar mengenai berbagai hal yang diperlukan sebagai mahasiswa TI."
                                     isOpen={openIndex === 0}
@@ -475,7 +476,7 @@ export default function Welcome() {
                                     isOpen={openIndex === 2}
                                     onClick={() => handleAccordionClick(2)}
                                 />
-                                <AccordionLanding 
+                                <AccordionLanding
                                     heading="Apa yang mahasiswa perlu persiapkan sebelum pelatihan BUILD IT 2024??"
                                     description="Adapun beberapa hal yang perlu mahasiswa siapkan sebelum mengikuti pelatihan ini adalah memahami modul yang diberikan karena akan ada quiz dan tugas mandiri serta melakukan instalasi tools yang diperlukan yang akan digunakan dalam pelatihan."
                                     isOpen={openIndex === 3}
@@ -542,27 +543,27 @@ export default function Welcome() {
                                 Merchandise BUILD IT 2024 merupakan T-shirt yang diharapkan dapat mendukung terlaksananya kegiatan ini.
                             </p>
                         </div>
-                        
+
                         <div className="b-none md:border border-primary rounded-[35px] shadow-lg p-3">
                             <div className="flex flex-col md:flex-row justify-between" data-aos="fade-up">
                                 <div className="flex flex-col w-full justify-center items-center">
-                                    <img src={imageSrc} alt="" className="w-auto h-auto md:h-[440px] animate-bounce-merch"/>
+                                    <img src={imageSrc} alt="" className="w-auto h-auto md:h-[440px] animate-bounce-merch" />
                                     <div className="flex flex-row justify-center gap-5">
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
                                             onClick={() => setImageSrc('asset/images/landing-page/merch-black.png')}
                                         >
-                                        <div className="border border-primary rounded-[15px] p-1">
-                                            <img src="asset/images/landing-page/merch-black.png" alt="" className="w-[80px] h-[60px]"/>
-                                        </div>
+                                            <div className="border border-primary rounded-[15px] p-1">
+                                                <img src="asset/images/landing-page/merch-black.png" alt="" className="w-[80px] h-[60px]" />
+                                            </div>
                                             <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">Black</p>
                                         </div>
                                         <div
                                             className="flex flex-col items-center transition-transform transform hover:scale-105 active:scale-110 cursor-pointer"
                                             onClick={() => setImageSrc('asset/images/landing-page/merch-white.png')}
-                                            >
+                                        >
                                             <div className="border border-primary rounded-[15px] p-1">
-                                                <img src="asset/images/landing-page/merch-white.png" alt="" className="w-[80px] h-[60px]"/>
+                                                <img src="asset/images/landing-page/merch-white.png" alt="" className="w-[80px] h-[60px]" />
                                             </div>
                                             <p className="text-primary text-[17px] leading-[50px] tracking-[0.16em] font-bold">White</p>
                                         </div>
@@ -588,7 +589,7 @@ export default function Welcome() {
 
                                     <div className="flex flex-col border border-primary rounded-[10px] w-full md:w-[417px]">
                                         <div className="flex flex-row p-5 justify-start gap-3">
-                                            <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]"/>
+                                            <img src="asset/images/landing-page/pre-order.png" alt="" className="w-[44px] h-[45px]" />
                                             <div className="flex flex-col">
                                                 <p className="text-[16px] font-medium leading-[24px]">{batchInfo.batchName}</p>
                                                 <p className="font-medium text-[12px] leading-[18px] underline">{batchInfo.batchDate}</p>
@@ -596,11 +597,11 @@ export default function Welcome() {
                                         </div>
                                         <div className="border-t border-primary"></div>
                                         <div className="flex flex-row p-5 justify-start gap-3">
-                                            <img src="asset/images/landing-page/pickup.png" alt="" className="w-[44px] h-[45px]"/>
+                                            <img src="asset/images/landing-page/pickup.png" alt="" className="w-[44px] h-[45px]" />
                                             <div className="flex flex-col">
                                                 <p className="text-[16px] font-medium leading-[24px]">Pick-up Offline</p>
-                                                <p className="font-medium text-[12px] leading-[18px] w-[200px] md:w-[292px]">Gedung Teknologi Informasi, Universitas Udayana, 
-                                                Jimbaran, Bali</p>
+                                                <p className="font-medium text-[12px] leading-[18px] w-[200px] md:w-[292px]">Gedung Teknologi Informasi, Universitas Udayana,
+                                                    Jimbaran, Bali</p>
                                             </div>
                                         </div>
                                     </div>
@@ -614,40 +615,39 @@ export default function Welcome() {
     );
 }
 
-const AccordionLanding = ({heading, description, isOpen, onClick}) => {
-    return(
+const AccordionLanding = ({ heading, description, isOpen, onClick }) => {
+    return (
         <div className="w-full md:w-[636px] border border-primary rounded-[10px] m-2 p-2 shadow-lg">
             <button
                 className="w-full px-4 py-2 text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 onClick={onClick}
             >
-            <div className="flex items-center justify-between">
-                <span className="text-[15px] md:text-lg font-semibold text-gray-900">{heading}</span>
-                {/* icon arrow */}
-                <svg
-                    className={`w-6 h-6 transition-transform transform ${
-                    isOpen ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                    />
-                </svg>
-            </div>
-        </button>
-        {isOpen && (
-            <div className="px-4 py-2 text-gray-700">
-                {description}
-            </div>
-        )}
-    </div>
+                <div className="flex items-center justify-between">
+                    <span className="text-[15px] md:text-lg font-semibold text-gray-900">{heading}</span>
+                    {/* icon arrow */}
+                    <svg
+                        className={`w-6 h-6 transition-transform transform ${isOpen ? 'rotate-180' : ''
+                            }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                        />
+                    </svg>
+                </div>
+            </button>
+            {isOpen && (
+                <div className="px-4 py-2 text-gray-700">
+                    {description}
+                </div>
+            )}
+        </div>
     );
 }
 
@@ -667,9 +667,8 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                 <p className="text-[15px] leading-[24px] tracking-[0.01em] font-bold text-white md:text-start text-center">
                     {heading}
                 </p>
-                <p className={`mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center text-wrap ${
-                    bacaSelengkapnya ? '' : 'line-clamp-4'
-                }`}
+                <p className={`mt-5 text-white text-[14px] leading-[20px] tracking-[0.2px] md:text-start text-center text-wrap ${bacaSelengkapnya ? '' : 'line-clamp-4'
+                    }`}
                     style={{
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',
@@ -680,8 +679,8 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
                 >
                     {description}
                 </p>
-                <button 
-                    onClick={toggleDescription} 
+                <button
+                    onClick={toggleDescription}
                     className="text-white font-bold text-[14px] mt-2 leading-[0.05em] hover:underline md:text-start text-center w-full">
                     {bacaSelengkapnya ? 'Tampilkan Lebih Sedikit' : 'Baca Selengkapnya'}
                 </button>
@@ -696,8 +695,8 @@ const CardMatkul = ({ heading, description, button, image, url }) => {
     );
 }
 
-const CardContact = ({name, wa, line}) => {
-    return(
+const CardContact = ({ name, wa, line }) => {
+    return (
         <div className="bg-primer/50 p-5 flex gap-5 border border-primary/20 rounded-[10px]" data-aos="fade-up">
             <IconContactCard />
             <div className="flex flex-col">

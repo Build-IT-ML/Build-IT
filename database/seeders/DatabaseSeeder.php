@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'participant']);
 
-        $this->call([
-            UserSeeder::class
-        ]);
+        // $this->call([
+        //     UserSeeder::class
+        // ]);
 
         User::factory(150)->create()->each(function ($users) {
             $users->assignRole('participant');
