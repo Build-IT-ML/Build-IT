@@ -19,7 +19,6 @@ class AdminParticipantsController extends Controller
         $user = auth()->user();
         $role = auth()->user()->getRoleNames();
         $participants = UserResourceShared::collection(User::role('participant')->get());
-
         return Inertia::render('Admin/Participants', compact('user', 'role', 'participants'));
     }
 
@@ -36,6 +35,7 @@ class AdminParticipantsController extends Controller
             'line_id' => 'required|string|max:255',
             'status' => 'required|string|in:Terverifikasi,Belum Terverifikasi,Ditolak',
             'kelompok' => 'nullable|string|max:255',
+            'kelulusan' => 'required|string|in:Lulus,Belum Lulus,Tidak Lulus',
         ]);
 
         $participant = User::findOrFail($id);
@@ -48,6 +48,7 @@ class AdminParticipantsController extends Controller
             'line_id' => $request->line_id,
             'status' => $request->status,
             'kelompok' => $request->kelompok,
+            'kelulusan' => $request->kelulusan,
         ]);
 
         return to_route('participants.index');

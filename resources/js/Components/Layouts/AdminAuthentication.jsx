@@ -121,6 +121,16 @@ export default function AdminAuthentication({ user, headerTitle, children }) {
                                     <span className="-mr-1 font-medium">Pengumpulan Tugas</span>
                                 </Link>
                             </li>
+                            <li>
+                                <Link 
+                                    href={route('participant.graduation')} 
+                                    aria-label="informasi kelulusan" 
+                                    className={`relative px-4 py-3 flex items-center space-x-4 rounded-xl text-gray-800 transition-all duration-300 ${currentRoute === 'participant.graduation' ? 'bg-primary text-white' : 'hover:text-primary hover:bg-gradient-background-lighten'}`}
+                                >
+                                    <i className="pi pi-flag"></i>
+                                    <span className="-mr-1 font-medium">Informasi Kelulusan</span>
+                                </Link>
+                            </li>
                         </ul>
                     )}
                 </div>

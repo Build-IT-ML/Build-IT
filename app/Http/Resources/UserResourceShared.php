@@ -23,7 +23,8 @@ class UserResourceShared extends JsonResource
             'line_id' => $this->line_id,
             'whatsapp_id' => $this->whatsapp_id,
             'status' => $this->status,
-            'kelompok' => $this->kelompok
+            'kelompok' => $this->kelompok,
+            'kelulusan' => $this->kelulusan,
         ];
     }
 }

@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\AdminParticipantsController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ParticipantProfileController;
-use App\Http\Controllers\ParticipantSubmissionController;
-use App\Http\Controllers\AdminSubmissionsController;
+use Inertia\Inertia;
 use GuzzleHttp\Middleware;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminSubmissionsController;
+use App\Http\Controllers\AdminParticipantsController;
+use App\Http\Controllers\ParticipantProfileController;
+use App\Http\Controllers\ParticipantGraduationController;
+use App\Http\Controllers\ParticipantSubmissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit-profile', [ParticipantProfileController::class, 'edit'])->middleware(['auth'])->name('participant.editprofile');
         Route::put('/edit-profile', [ParticipantProfileController::class, 'update'])->middleware(['auth'])->name('participant.updateprofile');
         Route::get('/participant-submissions', [ParticipantSubmissionController::class, 'index'])->middleware(['auth'])->name('participant.submissions');
+        Route::get('/participant-graduation', [ParticipantGraduationController::class, 'index'])->middleware(['auth'])->name('participant.graduation');
         Route::put('/participant-submitalprog', [ParticipantSubmissionController::class, 'submitAlprog'])->middleware(['auth'])->name('participant.submitalprog');
         Route::put('/participant-submitbasis', [ParticipantSubmissionController::class, 'submitBasis'])->middleware(['auth'])->name('participant.submitbasis');
         Route::put('/participant-submitjarkom', [ParticipantSubmissionController::class, 'submitJarkom'])->middleware(['auth'])->name('participant.submitjarkom');
