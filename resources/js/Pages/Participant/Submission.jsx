@@ -78,7 +78,7 @@ export default function Submission() {
                <div className="space-y-6">
                      <form onSubmit={submitAlprog} className="flex flex-col gap-2 w-full">
                         <h3 className="text-xl text-primary font-bold">Link Pengumpulan Tugas Algoritma & Pemrograman</h3>
-                        <label htmlFor='alprog' className="text-primary/80 text-base">Link Google Drive</label>
+                        <label htmlFor='alprog' className="text-primary/80 text-base">Link Reporistory Github</label>
                         <div className="space-y-4 md:space-x-4">
                            <input 
                               type="text" 
