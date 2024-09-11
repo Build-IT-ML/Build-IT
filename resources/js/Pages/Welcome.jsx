@@ -416,7 +416,7 @@ export default function Welcome() {
                                 <div className="w-full md:w-[466px] ml-5 md:ml-0 mr-0 md:mr-20 p-4 bg-white border shadow-lg rounded-md">
                                     <h3 className="text-[16px] md:text-[20px] font-bold">Deadline Pengumpulan Tugas</h3>
                                     <p className="text-[14px] md:text-[16px] font-medium mb-1">
-                                        Kamis, 12 September 2024
+                                        Selasa, 17 September 2024 23.59 WITA
                                     </p>
                                     <p className="text-[14px]">Melalui website resmi BUILD IT https://buildit.hmtiudayana.id/</p>
                                 </div>

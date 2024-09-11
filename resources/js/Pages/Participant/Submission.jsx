@@ -63,10 +63,34 @@ export default function Submission() {
       }
    }
 
+   const submissionClose = () => {
+      const currentDate = new Date();
+      const closingDate = new Date("2024-09-17");
+
+      return (currentDate > closingDate) ?  true :  false;
+   }
+
    return(
       <AdminAuthentication user={user} headerTitle="Pengumpulan Tugas Peserta">
          <Head title="Participant Submission"/>
          <Toast ref={toast} />
+            {submissionClose() && (
+               <>
+               {user.status === 'Terverifikasi' && (
+               <div className="flex flex-col justify-center items-center space-y-10 min-h-screen">
+                  <h1 className="font-bold text-red-500 text-4xl">Anda tidak dapat mengumpulkan tugas</h1>
+                  <span><i className="pi pi-times-circle text-[14rem] text-red-500"></i></span>
+                  <div className="flex flex-col justify-center items-center text-red-500 font-semibold">
+                     <h2>Pengumpulan tugas sudah ditutup</h2>
+                     <h2>Semoga lulus BUILD IT 2024</h2>
+                  </div>
+               </div>
+            )}
+               </>
+            )}
+
+            {!submissionClose() && (
+               <>
             {(user.status === 'Belum Terverifikasi'  || user.status === 'Ditolak') && (
                <div className="flex flex-col justify-center items-center space-y-10 min-h-screen">
                   <h1 className="font-bold text-red-500 text-xl">Halaman pengumpulan tugas tersedia jika status peserta sudah terverifikasi</h1>
@@ -87,7 +111,7 @@ export default function Submission() {
                               value={data.alprog}
                               onChange={(e) => setData('alprog', e.target.value)}
                               className={`bg-secondary/20 w-full md:w-7/12 border-2 rounded-lg focus:outline-none focus:ring-1  text-primary p-2 ${errors.alprog ? "border-red-500 focus:ring-red-500" : "border-primary focus:ring-primary"}`}
-                           />
+                              />
                            <button type="submit"
                            disabled={checkInput('alprog')}
                            className="py-3 px-6 bg-primary hover:bg-secondary font-bold text-white rounded-lg transition-all duration-300 text-center disabled:bg-primary/80" 
@@ -145,6 +169,8 @@ export default function Submission() {
                      </form> 
                </div>
             )}
+            </>
+         )}
       </AdminAuthentication>
    )
 }
