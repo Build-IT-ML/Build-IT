@@ -65,7 +65,7 @@ export default function Submission() {
 
    const submissionClose = () => {
       const currentDate = new Date();
-      const closingDate = new Date("2024-09-17");
+      const closingDate = new Date("2024-09-18");
 
       return (currentDate > closingDate) ?  true :  false;
    }
