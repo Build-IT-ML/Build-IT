@@ -1,4 +1,4 @@
-const disableInspect = () => {
+const DisableInspect = () => {
     document.addEventListener('contextmenu', (e) => e.preventDefault());
 
     const handleKeyDown = (e) => {
@@ -20,4 +20,4 @@ const disableInspect = () => {
     };
 };
 
-export default disableInspect;
+export default DisableInspect;

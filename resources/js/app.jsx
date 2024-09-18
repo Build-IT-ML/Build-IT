@@ -12,10 +12,16 @@ import Tailwind from 'primereact/passthrough/tailwind';
 import '@fontsource/poppins';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Loading from './Pages/Loading'; 
+import DisableInspect from './Utils/disableInspect';
+import Loading from './Pages/Loading';
 
 const AppWrapper = ({ App, props }) => {
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const cleanup = DisableInspect();
+        return () => cleanup();
+    }, []);
 
     useEffect(() => {
         const start = () => setLoading(true);
@@ -37,7 +43,7 @@ const AppWrapper = ({ App, props }) => {
             {loading && <Loading />}
             <PrimeReactProvider value={{ unstyled: false, pt: { Tailwind } }}>
                 <App {...props} />
-            </PrimeReactProvider>
+            </PrimeReactProvider >
         </>
     );
 };
@@ -50,7 +56,9 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(
-            <AppWrapper App={App} props={props} />
+            <>
+                <AppWrapper App={App} props={props} />
+            </>
         );
     },
     progress: {
