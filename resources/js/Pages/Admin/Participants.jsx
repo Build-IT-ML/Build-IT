@@ -275,7 +275,6 @@ export default function Participants() {
                   }
             })
             .then(response => {
-                  console.log(response.data.message);
                   toast.current.show({ severity: 'success', summary: 'Berhasil', detail: response.data.message, life: 3000 });
             })
             .catch(error => {

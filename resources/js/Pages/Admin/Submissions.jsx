@@ -14,7 +14,6 @@ import { Toast } from 'primereact/toast';
 export default function Participants() {
    const { user, submissions } = usePage().props;
    const [dataSubmissions, setDataSubmissions] = useState(submissions.data);
-   console.log(dataSubmissions);
    const { data, setData, put, reset} = useForm({
       id: '',
       nim: '',
